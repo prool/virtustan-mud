@@ -30,3 +30,17 @@
 .crash
 .killscript
 syslog
+changelog
+circle
+log/perslog.txt
+log/ip.log
+log/imlog.txt
+log/errlog.txt
+lib/plrstuff/sets_drop.xml
+lib/plrstuff/glory.lst
+lib/plrstuff/depot/*
+lib/plrstuff/crc.lst
+lib/plrs/*
+lib/misc/new_name
+lib/misc/globaluid
+lib/etc/board/*
