@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="koi8-r"?>
+<smtp>
+	<Server>prool.kharkov.org</Server>
+	<Port>25</Port>
+	<Login></Login>
+	<Password></Password>
+	<SenderName>VirtustanMUD</SenderName>
+  	<SenderMail>proolix@gmail.com</SenderMail>
+  	<ReplyTo>proolix@gmail.com</ReplyTo>
+        <Subject>New pass</Subject>
+</smtp>

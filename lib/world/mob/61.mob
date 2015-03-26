@@ -1,0 +1,175 @@
+#6100
+эхо злости~
+эхо злости~
+эха злости~
+эху злости~
+эхо злости~
+эхом злости~
+эхе злости~
+Отголосок чьей-то злобы парит здесь в воздухе.
+~
+___Туманное и призрачное создание, оно источает лиш одну не выносимую злобу
+~
+d0f0g0l0z0b1e2h2 d0k0x0A0e2 0 E
+30 5 -3 1d100+6000 5d10+20
+0d0+0 8000000
+8 8 0
+Str: 40
+Dex: 30
+Wis: 40
+Con: 3
+Size: 30
+LikeWork: 1
+ExtraAttack: 1
+Class: 101
+Height: 198
+Weight: 200
+Special_Bitvector: l0 
+Spell: 94
+Spell: 152
+E
+#6101
+демон зла~
+демон зла~
+демона зла~
+демону зла~
+демона зла~
+демоном зла~
+демоне зла~
+Существо источающее смертельную злобу парит здесь.
+~
+Выглядит достаточно незавершенно.
+~
+d0 u1 0 E
+50 20 0 1d1+30000 1d1+0
+0d0+0 10000000
+8 8 1
+Size: 30
+Class: 100
+Height: 198
+Weight: 200
+Special_Bitvector: 0 
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+E
+#6190
+&YЗолотая карета с белымы пегасами в упряжке~
+&YЗолотая карета с &Wбелыми пегасами в &rупряжке~
+&YЗолотой кареты с &Wбелыми пегасами в &rупряжке~
+&YЗолотой карете с &Wбелыми пегасами в &rупряжке~
+&YЗолотую карету с &Wбелыми пегасами в &rупряжке~
+&YЗолотой каретой с &Wбелыми пегасами в &rупряжке~
+&YЗолотой карете с &Wбелыми пегасами в &rупряжке~
+&YЗолотая карета с &Wбелыми пегасами в &rупряжке стоит и ждет невесту и жениха
+~
+Выглядит достаточно незавершенно.
+Карета Амрины
+~
+d0s0a1b1s1 h0q0 1000 E
+10 20 0 1d100+100 1d1+0
+0d0+100 100
+8 8 2
+BareHandAttack: 14
+Dex: 15
+Size: 30
+Class: 103
+Height: 198
+Weight: 200
+Special_Bitvector: 0 
+E
+#6191
+Мерседес~
+&RRed Mersedes~
+&RRed Mersedes~
+&RRed Mersedes~
+&RRed Mersedes~
+&RRed Mersedes~
+&RRed Mersedes~
+&RRed Mersedes - красный крассавец
+~
+
+&Rистинный &rАриец
+под капотом туча коней
+~
+d0s0 0 1000 E
+34 20 0 30d100+1000 30d1+0
+0d0+0 0
+8 8 1
+Size: 30
+Class: 102
+Height: 198
+Weight: 200
+Special_Bitvector: 0 
+E
+#6193
+Космолет~
+&WК&Cо&cс&Bм&bо&Bл&cе&Cт~
+&WК&Cо&cс&Bм&bо&Bл&cе&Cт&Wа~
+&WК&Cо&cс&Bм&bо&Bл&cе&Cт&Wу~
+&WК&Cо&cс&Bм&bо&Bл&cе&Cт&Wа~
+&WК&Cо&cс&Bм&bо&Bл&cе&Cт&Wо&Bм~
+&WК&Cо&cс&Bм&bо&Bл&cе&Cт&Wе~
+&WК&Cо&cс&Bм&bо&Bл&cе&Cт &Wобыкновенный
+~
+&WК&Cо&cс&Bм&bо&Bл&cе&Cт &Wмарки ИЖ-ПЛАНЕТА
+сделано в &RСССР
+~
+d0s0b1 x0 0 E
+0 20 0 1d100+1 1d1+0
+0d0+0 0
+8 8 1
+Size: 30
+Class: 100
+Height: 198
+Weight: 200
+Special_Bitvector: 0 
+E
+$

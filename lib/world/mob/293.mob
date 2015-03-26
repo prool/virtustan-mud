@@ -1,0 +1,375 @@
+* Сгенерировано BZEditor
+* Количество мобов : 10
+* Сохранено 19.08.2011 20:46:10
+#29300
+умертвие слона~
+умертвие слона~
+умертвия слона~
+умертвию слона~
+умертвие слона~
+умертвием слона~
+умертвие слона~
+*Умертвие слона стоит здесь
+~
+
+~
+b0d0g0m0z0 c0d0e0 0 E
+30 -13 -1 10d10+5000 10d10+10
+0d0+0 350000
+8 8 0
+AResist: 0
+MResist: 0
+BareHandAttack: 14
+Str: 50
+Int: 1
+Wis: 1
+Dex: 19
+Con: 50
+Cha: 1
+LikeWork: 0
+MaxFactor: 100
+ExtraAttack: 3
+Class: 101
+Race: 100
+Size: 50
+Height: 175
+Weight: 140
+E
+#29301
+чернокнижник~
+чернокнижник~
+чернокнижника~
+чернокнижнику~
+чернокнижника~
+чернокнижником~
+чернокнижнике~
+Чернокнижник в черном плаще стоит здесь.
+~
+
+~
+l0m0n0o0b0d0 c0d0e0f0 600 E
+30 5 -30 10d10+1500 2d2+2
+10d10+600 400000
+8 8 1
+AResist: 0
+MResist: 0
+BareHandAttack: 0
+Str: 20
+Int: 30
+Wis: 30
+Dex: 20
+Con: 20
+Cha: 11
+LikeWork: 100
+MaxFactor: 255
+ExtraAttack: 1
+Class: 100
+Race: 100
+Size: 50
+Height: 175
+Weight: 140
+Spell: 23
+Spell: 156
+Spell: 25
+E
+T 29300
+#29302
+чернокнижник~
+чернокнижник~
+чернокнижника~
+чернокнижнику~
+чернокнижника~
+чернокнижником~
+чернокнижнике~
+Чернокнижник в черном плаще стоит здесь.
+~
+
+~
+l0m0n0o0b0d0 c0d0e0f0 600 E
+30 5 -30 10d10+1500 2d2+2
+10d10+600 400000
+8 8 1
+AResist: 0
+MResist: 0
+BareHandAttack: 0
+Str: 20
+Int: 30
+Wis: 30
+Dex: 20
+Con: 20
+Cha: 20
+LikeWork: 100
+MaxFactor: 255
+ExtraAttack: 1
+Class: 100
+Race: 100
+Size: 50
+Height: 175
+Weight: 140
+Spell: 23
+Spell: 156
+Spell: 25
+E
+T 29300
+#29303
+чернокнижник~
+чернокнижник~
+чернокнижника~
+чернокнижнику~
+чернокнижника~
+чернокнижником~
+чернокнижнике~
+Чернокнижник в черном плаще стоит здесь.
+~
+
+~
+l0m0n0o0b0d0 c0d0e0f0 600 E
+30 5 -30 10d10+1500 2d2+2
+10d10+600 400000
+8 8 1
+AResist: 0
+MResist: 0
+BareHandAttack: 0
+Str: 20
+Int: 30
+Wis: 30
+Dex: 20
+Con: 20
+Cha: 20
+LikeWork: 100
+MaxFactor: 255
+ExtraAttack: 1
+Class: 100
+Race: 100
+Size: 50
+Height: 175
+Weight: 140
+Spell: 23
+Spell: 156
+Spell: 25
+E
+T 29300
+#29304
+чернокнижник~
+чернокнижник~
+чернокнижника~
+чернокнижнику~
+чернокнижника~
+чернокнижником~
+чернокнижнике~
+Чернокнижник в черном плаще стоит здесь.
+~
+
+~
+l0m0n0o0b0d0 c0d0e0f0 600 E
+30 5 -30 10d10+1500 2d2+2
+10d10+600 400000
+8 8 1
+AResist: 0
+MResist: 0
+BareHandAttack: 0
+Str: 20
+Int: 30
+Wis: 30
+Dex: 20
+Con: 20
+Cha: 20
+LikeWork: 100
+MaxFactor: 255
+ExtraAttack: 1
+Class: 100
+Race: 100
+Size: 50
+Height: 175
+Weight: 140
+Spell: 23
+Spell: 156
+Spell: 25
+E
+T 29300
+#29305
+умертвие вепря~
+умертвие вепря~
+умертвия вепря~
+умертвию вепря~
+умертвие вепря~
+умертвием вепря~
+умертвие вепря~
+*Умертвие вепря стоит здесь
+~
+
+~
+b0d0g0m0z0 c0d0e0 0 E
+30 -13 -1 10d10+5000 10d10+10
+0d0+0 350000
+8 8 0
+AResist: 0
+MResist: 0
+BareHandAttack: 14
+Str: 50
+Int: 1
+Wis: 1
+Dex: 19
+Con: 50
+Cha: 50
+LikeWork: 0
+MaxFactor: 100
+ExtraAttack: 3
+Class: 101
+Race: 100
+Size: 50
+Height: 175
+Weight: 140
+E
+#29306
+умертвие тигра~
+умертвие тигра~
+умертвия тигра~
+умертвию тигра~
+умертвие тигра~
+умертвием тигра~
+умертвие тигра~
+*Умертвие тигра стоит здесь
+~
+
+~
+b0d0g0m0z0 c0d0e0 0 E
+30 -13 -1 10d10+5000 10d10+10
+0d0+0 350000
+8 8 0
+AResist: 0
+MResist: 0
+BareHandAttack: 14
+Str: 50
+Int: 1
+Wis: 1
+Dex: 19
+Con: 50
+Cha: 50
+LikeWork: 0
+MaxFactor: 100
+ExtraAttack: 3
+Class: 101
+Race: 100
+Size: 50
+Height: 175
+Weight: 140
+E
+#29307
+командир чернокнижников~
+командир чернокнижников~
+командира чернокнижников~
+командиру чернокнижников~
+командира чернокнижников~
+командиром чернокнижников~
+командире чернокнижников~
+Самый сильный, мудрый чернокнижник размышляет над новым планом.
+~
+
+~
+l0m0n0o0b0d0 c0d0e0f0 600 E
+30 5 -30 10d10+1500 2d2+2
+10d10+600 500000
+8 8 1
+AResist: 0
+MResist: 0
+BareHandAttack: 0
+Str: 20
+Int: 30
+Wis: 30
+Dex: 20
+Con: 20
+Cha: 20
+LikeWork: 100
+MaxFactor: 255
+ExtraAttack: 1
+Class: 100
+Race: 100
+Size: 50
+Height: 175
+Weight: 140
+Spell: 23
+Spell: 156
+Spell: 25
+Spell: 48
+Helper: 29300
+Helper: 29301
+Helper: 29302
+Helper: 29303
+Helper: 29304
+Helper: 29305
+Helper: 29306
+E
+#29308
+орк~
+орк~
+орка~
+орку~
+орка~
+орком~
+орке~
+Тупой орк стоит здесь
+~
+
+~
+b0d0f0g0c0 d0c0b0f0 0 E
+30 -5 0 10d10+6000 10d10+25
+0d0+300 250000
+8 8 1
+AResist: 0
+MResist: 0
+BareHandAttack: 0
+Str: 50
+Int: 11
+Wis: 11
+Dex: 10
+Con: 50
+Cha: 11
+LikeWork: 100
+MaxFactor: 100
+ExtraAttack: 3
+Class: 100
+Race: 100
+Size: 50
+Height: 175
+Weight: 140
+Skill: 132 200
+E
+#29309
+командир орков~
+командир орков~
+командира орков~
+командиру орков~
+командира орков~
+командиром орков~
+командире орков~
+Огромный орк тупо хрюкает здесь.
+~
+
+~
+b0d0f0g0c0 d0c0b0f0 0 E
+30 -5 0 10d10+6000 10d10+25
+0d0+300 250000
+8 8 1
+AResist: 0
+MResist: 0
+BareHandAttack: 0
+Str: 50
+Int: 11
+Wis: 11
+Dex: 10
+Con: 50
+Cha: 50
+LikeWork: 100
+MaxFactor: 100
+ExtraAttack: 3
+Class: 100
+Race: 100
+Size: 50
+Height: 175
+Weight: 140
+Spell: 48
+Skill: 132 200
+E
+$
+$

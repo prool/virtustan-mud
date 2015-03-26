@@ -1,0 +1,32 @@
+#
+cd ~prool/proolmud
+
+# PREsave syslog
+mv syslog syslog-tail-`date "+%d-%m-%Y-%H-%M-%S"`
+
+while [ 1 ]; do
+
+date "+%d-%m-%Y %H:%M:%S VMUD start"
+date "+%d-%m-%Y %H:%M:%S start" >> autolog.txt
+mail -s "VMUD start" prool@itl.ua < letter.txt
+mail -s "VMUD start" proolix@gmail.com < letter.txt
+date "+%d-%m-%Y %H:%M:%S Virtustan MUD started" > ~/web/mud.kharkov.org/public_html/mudstat/vmud2.html
+bin/circle
+date "+%d-%m-%Y %H:%M:%S exit" >> autolog.txt
+date "+%d-%m-%Y %H:%M:%S exit"
+
+# save syslog
+mv syslog syslog-tail-`date "+%d-%m-%Y-%H-%M-%S"`
+
+  if [ -r .killscript ]; then
+    DATE=`date`;
+    echo "autoscript killed $DATE"  >> syslog
+    rm .killscript
+    date "+%d-%m-%Y %H:%M:%S Virtustan MUD stopped" > ~/web/mud.kharkov.org/public_html/mudstat/vmud2.html
+    exit
+  fi
+
+# echo pause 6 sec begin
+# sleep 6
+# echo - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+done

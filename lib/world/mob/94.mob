@@ -1,0 +1,71 @@
+* Created by Zone Generator by proolix@gmail.com
+#9400
+горная ящерица lizard~
+горная ящерица~
+горной ящерицы~
+горной ящерице~
+горную ящерицу~
+горной ящерицей~
+горной ящерице~
+Горная ящерица греется на камне
+~
+Горная ящерица очень прыткая. Попробуй пойма ее
+~
+b0 0 0 E
+5 6 10 5d5+500 2d5+5
+0d0+0 600
+8 8 2
+BareHandAttack: 5
+Str: 15
+Int: 15
+Wis: 15
+Dex: 14
+Con: 15
+Cha: 18
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 255
+Class: 103
+Size: 60
+Height: 0
+Weight: 10
+Special_Bitvector: a1b1c1d1
+Skill: 134 90
+Skill: 136 90
+E
+#9401
+горная ящерица lizard~
+горная ящерица~
+горной ящерицы~
+горной ящерице~
+горную ящерицу~
+горной ящерицей~
+горной ящерице~
+Горная ящерица греется на камне
+~
+Горная ящерица очень прыткая. Попробуй пойма ее
+~
+b0 0 0 E
+5 6 10 5d5+500 2d5+5
+0d0+0 600
+8 8 2
+BareHandAttack: 5
+Str: 15
+Int: 15
+Wis: 15
+Dex: 14
+Con: 15
+Cha: 18
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 255
+Class: 103
+Size: 60
+Height: 0
+Weight: 10
+Special_Bitvector: a1b1c1d1
+Skill: 134 90
+Skill: 136 90
+E
+$
+$

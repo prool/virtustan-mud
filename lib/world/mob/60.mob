@@ -1,0 +1,498 @@
+#6000
+Валькирия стражница~
+валькирия-стражница~
+валькирии-стражници~
+валькирие-стражнице~
+валькирию-стражницу~
+валькирией-стражницей~
+валькирие-стражнице~
+Дева-воительница стоит на страже у входа в замок.
+~
+Выглядит достаточно незавершенно.  
+Дева-воительница в серебристых латах охраняет покой небесных жителей
+~
+a0b0c0d0e0g0l0n0p0q0r0t0A0b1t1a2g2o2 0 0 E
+50 -30 -3 1d100+30000 30d40+50
+0d0+0 0
+8 8 2
+BareHandAttack: 11
+Destination: 6000
+Size: 30
+Class: 100
+Height: 198
+Weight: 200
+Special_Bitvector: 0 
+E
+#6001
+неоконченный моб~
+неоконченный моб~
+неоконченного моба~
+неоконченному мобу~
+неоконченного моба~
+неоконченным мобом~
+неоконченном мобе~
+Неоконченный моб стоит тут.
+~
+Выглядит достаточно незавершенно.
+~
+d0 0 0 E
+0 20 -3 1d100+1 1d1+0
+0d0+0 1000000000
+8 8 0
+Con: 3
+Size: 30
+LikeWork: 100
+Class: 100
+Height: 198
+Weight: 200
+Special_Bitvector: 0 
+E
+#6002
+зеленая елочка~
+зеленая елочка~
+зеленой елочки~
+зеленой елочке~
+зеленую елочку~
+зеленой елочкой~
+зеленой елочке~
+Нарядная новогодняя елка подмигивает Вам огоньками гирлянд
+~
+
+Красиво разукрашеная елка тихо шевелится :)
+~
+b0d0o1l2 c0d0f0h0k0D0a1n1o1p1q1r1x1y1z1 0 E
+50 20 0 1d100+1 1d1+0
+0d0+0 0
+8 8 2
+Size: 30
+Class: 100
+Height: 50
+Weight: 200
+Special_Bitvector: m0 
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 155
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+Spell: 166
+E
+T 6005
+#6090
+розовый трех скоросной слоник~
+&Rрозовый трехскоростной слоник&n~
+&Rрозового трехскоростного слоника&n~
+&Rрозовому трехскоростному слонику&n~
+&Rрозового трехскоростного слоника&n~
+&Rрозовым трехскоростным слоником&n~
+&Rрозовом трехскоростном слонике&n~
+&RРозовый слоник тихонько прижимается к Вам&n
+~
+
+Ну слоник как слоник, ну розовый, ну жужжит и что теперь, в обморок падать?
+~
+d0 d0f0k0 0 E
+50 20 0 1d100+30000 1d1+0
+0d0+0 0
+8 8 1
+Size: 30
+ExtraAttack: 5
+Class: 100
+Height: 198
+Weight: 200
+Special_Bitvector: 0 
+E
+$

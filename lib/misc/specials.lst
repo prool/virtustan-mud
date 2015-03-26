@@ -1,0 +1,108 @@
+; Мобы, комнаты и предметы, которым соответствуют спец. процедуры (см. spec_*.cpp )
+;
+;содержатель гостиницы / рентер / криогенщик
+mob 9916 rent
+mob 2001 rent
+mob 2101 cryo
+mob 8108 rent
+mob 9002 rent
+mob 27000 rent
+mob 40104 rent
+
+;почтальон / ямщик / постмастер
+mob 2002 mail
+mob 9914 mail
+mob 2501 mail
+mob 27004 mail
+
+;банкир
+mob 1300 bank
+mob 2004 bank
+mob 9913 bank
+mob 2500 bank
+mob 27005 bank
+
+;продавец лошадей / конюх
+mob 2003 horse
+
+;биржевики-аукционисты на базаре (команда БАЗАР, не АУКЦИОН !)
+mob 1784 exchange
+mob 7500 exchange
+mob 9821 exchange
+mob 2502 exchange
+
+;доски обьявлений
+;obj 250 board
+
+obj 110 artefakt
+
+;obj 174 igra-v-palochki
+
+; панк / пьяница / наркоман
+mob 9918 puff
+
+; собака
+mob 9919 fido
+
+; дворник / мусорщик
+mob 9920 janitor
+mob 11010 janitor
+
+; гильдейский/замковый страж
+mob 2000 guild_guard
+
+; городской страж
+mob 9915 cityguard
+
+; продавец жывотных
+; mob 9604 pet_shops
+
+; мэр
+mob 2400 mayor
+
+; змея
+mob 9501 snake
+
+; вор
+mob 9605 thief
+
+; колдун
+mob 9502 mage
+
+; свалка / мусорка
+room 9983 dump
+
+; guide
+mob 9926 guide
+mob 9927 guide
+
+; destroy - комната поломки
+room 203 destroy
+
+; repair - комната починки
+room 204 repair
+room 1232 repair
+room 9996 repair
+room 101203 repair
+
+; shop2 - магазин треста "Магазины-2"
+; их уже не надо описывать здесь, все делается в коде. prool
+;room 9648 shop2
+
+; kazino - казино (команда РУЛЕТКА)
+room 9711 kazino
+
+; robot
+mob 300 robot1
+
+; majordomo
+;mob 301 majordomo
+
+; quest mobs
+mob 9936 quest
+
+; quest rooms - квесты, привязанные к комнатам
+; их уже не надо описывать здесь, все делается в коде. prool
+;room 117 questroom
+
+; конец файла. После последней информационной строки обязательно должен быть перевод строки

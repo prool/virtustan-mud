@@ -1,0 +1,702 @@
+* Сгенерировано BZEditor
+* Количество мобов : 18
+* Сохранено 02.05.2010 22:13:28
+#8000
+страж ворот~
+страж ворот~
+стража ворота~
+стражу вороту~
+стража ворота~
+стражом воротом~
+страже вороте~
+Страж ворот стоит здесь
+~
+Невысокий, коренастый мужчина.
+~
+b0d0c0A0l0m0 d0f0k0r0o1 0 E
+25 -10 -30 1d1+678 7d10+15
+1d1+150 150000
+8 8 1
+BareHandAttack: 9
+Str: 28
+Int: 17
+Wis: 9
+Dex: 34
+Con: 30
+Cha: 22
+LikeWork: 100
+MaxFactor: 100
+ExtraAttack: 2
+Class: 102
+Race: 101
+Size: 50
+Height: 175
+Weight: 140
+Special_Bitvector: b1c1
+Spell: 28
+Spell: 26
+Spell: 26
+Skill: 132 100
+Skill: 154 100
+Skill: 155 100
+E
+T 8000
+T 8001
+T 8003
+#8001
+черный призрак~
+черный призрак~
+черного призрака~
+черному призраку~
+черного призрака~
+черным призраком~
+черном призраке~
+Черный призрак летает здесь
+~
+Вместо лица у него черный овал
+~
+d0f0g0z0 k0j0x0 -600 E
+25 10 -10 10d10+1400 4d7+9
+1d1+70 150000
+8 8 1
+BareHandAttack: 2
+Str: 25
+Int: 14
+Wis: 14
+Dex: 30
+Con: 30
+Cha: 10
+LikeWork: 100
+MaxFactor: 100
+ExtraAttack: 2
+Class: 101
+Race: 111
+Size: 50
+Height: 175
+Weight: 140
+Special_Bitvector: l0
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 6
+E
+#8002
+черный призрак~
+черный призрак~
+черного призрака~
+черному призраку~
+черного призрака~
+черным призраком~
+черном призраке~
+Черный призрак летает здесь
+~
+Вместо лица у него черный овал
+~
+d0f0g0z0 k0j0x0 -600 E
+25 10 -10 10d10+1400 4d7+9
+1d1+70 150000
+8 8 1
+BareHandAttack: 2
+Str: 25
+Int: 14
+Wis: 14
+Dex: 30
+Con: 30
+Cha: 25
+LikeWork: 100
+MaxFactor: 100
+ExtraAttack: 2
+Class: 101
+Race: 111
+Size: 50
+Height: 175
+Weight: 140
+Special_Bitvector: l0
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 6
+E
+#8003
+черный призрак~
+черный призрак~
+черного призрака~
+черному призраку~
+черного призрака~
+черным призраком~
+черном призраке~
+Черный призрак летает здесь
+~
+Вместо лица у него черный овал
+~
+d0f0g0z0 k0j0x0 -600 E
+25 10 -10 10d10+1400 4d7+9
+1d1+70 150000
+8 8 1
+BareHandAttack: 2
+Str: 25
+Int: 14
+Wis: 14
+Dex: 30
+Con: 30
+Cha: 25
+LikeWork: 100
+MaxFactor: 100
+ExtraAttack: 2
+Class: 101
+Race: 111
+Size: 50
+Height: 175
+Weight: 140
+Special_Bitvector: l0
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 6
+E
+#8004
+серый призрак~
+серый призрак~
+серого призрака~
+серому призраку~
+серого призрака~
+серым призраком~
+сером призраке~
+Серый призрак летает здесь
+~
+Вместо лица у него серый провал
+~
+d0f0g0z0 k0j0x0 -600 E
+25 9 -12 10d10+1200 4d7+10
+1d1+70 150000
+8 8 1
+BareHandAttack: 2
+Str: 25
+Int: 14
+Wis: 14
+Dex: 30
+Con: 30
+Cha: 25
+LikeWork: 100
+MaxFactor: 100
+ExtraAttack: 2
+Class: 101
+Race: 111
+Size: 50
+Height: 175
+Weight: 140
+Special_Bitvector: l0
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 8
+E
+#8005
+серый призрак~
+серый призрак~
+серого призрака~
+серому призраку~
+серого призрака~
+серым призраком~
+сером призраке~
+Серый призрак летает здесь
+~
+Вместо лица у него серый провал
+~
+d0f0g0z0 k0j0x0 -600 E
+25 9 -12 10d10+1200 4d7+10
+1d1+70 150000
+8 8 1
+BareHandAttack: 2
+Str: 25
+Int: 14
+Wis: 14
+Dex: 30
+Con: 30
+Cha: 25
+LikeWork: 100
+MaxFactor: 100
+ExtraAttack: 2
+Class: 101
+Race: 111
+Size: 50
+Height: 175
+Weight: 140
+Special_Bitvector: l0
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 8
+E
+#8006
+серый призрак~
+серый призрак~
+серого призрака~
+серому призраку~
+серого призрака~
+серым призраком~
+сером призраке~
+Серый призрак летает здесь
+~
+Вместо лица у него серый провал
+~
+d0f0g0z0 k0j0x0 -600 E
+25 9 -12 10d10+1200 4d7+10
+1d1+70 150000
+8 8 1
+BareHandAttack: 2
+Str: 25
+Int: 14
+Wis: 14
+Dex: 30
+Con: 30
+Cha: 25
+LikeWork: 100
+MaxFactor: 100
+ExtraAttack: 2
+Class: 101
+Race: 111
+Size: 50
+Height: 175
+Weight: 140
+Special_Bitvector: l0
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 8
+E
+#8007
+черная тварь~
+черная тварь~
+черной твари~
+черной твари~
+черную тварь~
+черной тварью~
+черной твари~
+Черная тварь летает здесь
+~
+Сгусток тьмы
+~
+d0f0g0z0j0i1b0 k0j0x0 -600 E
+25 5 -12 10d10+1500 4d7+12
+1d1+70 160000
+8 8 2
+BareHandAttack: 2
+Str: 25
+Int: 14
+Wis: 14
+Dex: 30
+Con: 30
+Cha: 25
+LikeWork: 100
+MaxFactor: 100
+ExtraAttack: 3
+Class: 101
+Race: 111
+Size: 50
+Height: 175
+Weight: 140
+Special_Bitvector: l0
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 8
+E
+#8008
+белая тварь~
+белая тварь~
+белой твари~
+белой твари~
+белую тварь~
+белой тварью~
+белой твари~
+Белая тварь летает здесь
+~
+Сгусток света
+~
+d0f0g0z0h1i0 k0j0x0 -600 E
+25 5 -12 10d10+1500 4d7+12
+1d1+70 160000
+8 8 2
+BareHandAttack: 2
+Str: 25
+Int: 14
+Wis: 14
+Dex: 30
+Con: 30
+Cha: 25
+LikeWork: 100
+MaxFactor: 100
+ExtraAttack: 3
+Class: 101
+Race: 111
+Size: 50
+Height: 175
+Weight: 140
+Special_Bitvector: l0
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 8
+E
+#8009
+огромная черная тварь~
+огромная черная тварь~
+огромной черной твари~
+огромной черной твари~
+огромную черную тварь~
+огромной черной тварью~
+огромной черной твари~
+Огромная черная тварь летает здесь
+~
+Сгусток тьмы
+~
+d0f0g0z0j0i1b0m0 k0j0x0d0f0 -600 E
+25 5 -12 10d10+2000 4d7+16
+1d1+70 200000
+8 8 2
+BareHandAttack: 2
+Str: 25
+Int: 14
+Wis: 14
+Dex: 30
+Con: 30
+Cha: 25
+LikeWork: 100
+MaxFactor: 100
+ExtraAttack: 3
+Class: 101
+Race: 111
+Size: 50
+Height: 175
+Weight: 140
+Special_Bitvector: l0
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 8
+E
+#8010
+серая тварь~
+серая тварь~
+серой твари~
+серой твари~
+серую тварь~
+серой тварью~
+серой твари~
+Серая тварь летает здесь
+~
+Сгусток серой субстанции
+~
+d0f0g0z0 k0j0x0 -600 E
+25 7 -12 10d10+1200 4d7+20
+1d1+70 196000
+8 8 2
+BareHandAttack: 2
+Str: 25
+Int: 14
+Wis: 14
+Dex: 30
+Con: 30
+Cha: 25
+LikeWork: 100
+MaxFactor: 100
+ExtraAttack: 4
+Class: 101
+Race: 111
+Size: 50
+Height: 175
+Weight: 140
+Special_Bitvector: l0
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 8
+E
+#8011
+серая тварь~
+серая тварь~
+серой твари~
+серой твари~
+серую тварь~
+серой тварью~
+серой твари~
+Серая тварь летает здесь
+~
+Сгусток серой субстанции
+~
+d0f0g0z0 k0j0x0 -600 E
+25 7 -12 10d10+1200 4d7+20
+1d1+70 196000
+8 8 2
+BareHandAttack: 2
+Str: 25
+Int: 14
+Wis: 14
+Dex: 30
+Con: 30
+Cha: 25
+LikeWork: 100
+MaxFactor: 100
+ExtraAttack: 4
+Class: 101
+Race: 111
+Size: 50
+Height: 175
+Weight: 140
+Special_Bitvector: l0
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 8
+E
+#8012
+серая тварь~
+серая тварь~
+серой твари~
+серой твари~
+серую тварь~
+серой тварью~
+серой твари~
+Серая тварь летает здесь
+~
+Сгусток серой субстанции
+~
+d0f0g0z0 k0j0x0 -600 E
+25 7 -12 10d10+1200 4d7+20
+1d1+70 196000
+8 8 2
+BareHandAttack: 2
+Str: 25
+Int: 14
+Wis: 14
+Dex: 30
+Con: 30
+Cha: 25
+LikeWork: 100
+MaxFactor: 100
+ExtraAttack: 4
+Class: 101
+Race: 111
+Size: 50
+Height: 175
+Weight: 140
+Special_Bitvector: l0
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 8
+E
+#8013
+черная субстанция~
+черная субстанция~
+черной субстанции~
+черной субстанции~
+черную субстанция~
+черной субстанцей~
+черной субстанции~
+Черная субстанция летает здесь
+~
+Непонятная черная субстанция
+~
+d0f0g0z0 k0j0x0 -600 E
+25 7 -12 10d10+1200 4d7+20
+1d1+70 196000
+8 8 2
+BareHandAttack: 2
+Str: 25
+Int: 14
+Wis: 14
+Dex: 30
+Con: 30
+Cha: 25
+LikeWork: 100
+MaxFactor: 100
+ExtraAttack: 4
+Class: 101
+Race: 111
+Size: 50
+Height: 175
+Weight: 140
+Special_Bitvector: l0
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 8
+E
+#8014
+черная субстанция~
+черная субстанция~
+черной субстанции~
+черной субстанции~
+черную субстанция~
+черной субстанциёй~
+черной субстанции~
+Черная субстанция летает здесь
+~
+Непонятная черная субстанция
+~
+d0f0g0z0 k0j0x0 -600 E
+25 7 -12 10d10+1200 4d7+20
+1d1+70 196000
+8 8 2
+BareHandAttack: 2
+Str: 25
+Int: 14
+Wis: 14
+Dex: 30
+Con: 30
+Cha: 25
+LikeWork: 100
+MaxFactor: 100
+ExtraAttack: 4
+Class: 101
+Race: 111
+Size: 50
+Height: 175
+Weight: 140
+Special_Bitvector: l0
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 8
+E
+#8015
+черная субстанция~
+черная субстанция~
+черной субстанции~
+черной субстанции~
+черную субстанция~
+черной субстанциёй~
+черной субстанции~
+Черная субстанция летает здесь
+~
+Непонятная черная субстанция
+~
+d0f0g0z0 k0j0x0 -600 E
+25 7 -12 10d10+1200 4d7+20
+1d1+70 196000
+8 8 2
+BareHandAttack: 2
+Str: 25
+Int: 14
+Wis: 14
+Dex: 30
+Con: 30
+Cha: 25
+LikeWork: 100
+MaxFactor: 100
+ExtraAttack: 4
+Class: 101
+Race: 111
+Size: 50
+Height: 175
+Weight: 140
+Special_Bitvector: l0
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 8
+E
+#8016
+огромный черный призрак~
+огромный черный призрак~
+огромного черного призрака~
+огромному черному призраку~
+огромного черного призрака~
+огромным черным призраком~
+огромном черном призраке~
+Огромный призрак летает здесь
+~
+Просто огромный призрак
+~
+d0f0g0z0e0b0o0n0p0r0t0x0y0A0 k0j0x0d0f0r0A0 -600 E
+25 0 -12 10d10+1200 4d7+20
+1d1+70 400000
+8 8 1
+BareHandAttack: 2
+Str: 25
+Int: 14
+Wis: 14
+Dex: 30
+Con: 30
+Cha: 25
+LikeWork: 100
+MaxFactor: 100
+ExtraAttack: 5
+Class: 101
+Race: 111
+Size: 50
+Height: 175
+Weight: 140
+Special_Bitvector: l0b1c1
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 8
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 28
+Spell: 10
+Spell: 10
+Spell: 10
+Spell: 94
+Spell: 94
+Spell: 94
+Spell: 94
+Helper: 8017
+E
+T 8002
+#8017
+маленький сгусток тьмы~
+маленький сгусток тьмы~
+маленького сгустка тьмы~
+маленькому сгустку тьмы~
+маленького сгустка тьмы~
+маленьким сгустком тьмы~
+маленьким сгустке тьмы~
+Маленький сгусток тьмы летает здесь
+~
+Небольшой маленький сгусток тьмы
+~
+d0f0g0z0 k0j0x0 -600 E
+25 -10 -12 10d10+700 1d1+1
+1d1+70 50000
+8 8 1
+BareHandAttack: 2
+Str: 25
+Int: 14
+Wis: 14
+Dex: 30
+Con: 30
+Cha: 25
+LikeWork: 100
+MaxFactor: 100
+ExtraAttack: 2
+Class: 101
+Race: 111
+Size: 50
+Height: 175
+Weight: 140
+Special_Bitvector: l0
+Spell: 6
+Spell: 6
+Spell: 6
+Spell: 6
+E
+$
+$
