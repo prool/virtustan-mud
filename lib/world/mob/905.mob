@@ -271,10 +271,10 @@ E
 обойти ее стороной? Вдруг она заразная?  
 ~
 c0d0e0m0p0q0r0t0u0A0s1t1a2i2 d0f0k0r0z0A0D0a1d2 -600 E
-41 -30 -20 20d20+20000 30d30+50
+43 -30 -20 20d20+20000 30d30+50
 0d0+20000 5000000
 8 8 2
-Saves: -34 -34 -34 -34
+Saves: -58 -58 -58 -58
 Resistances: 50 50 50 50 50 50 50
 HPreg: 50
 Armour: 50
@@ -282,7 +282,7 @@ PlusMem: 100
 CastSuccess: 100
 Success: 50
 Initiative: 50
-Absorbe: 50
+Absorbe: 43
 AResist: 50
 MResist: 50
 PResist: 50
@@ -534,11 +534,11 @@ Spell: 76
 Spell: 76
 Spell: 76
 Spell: 76
-Helper: 90517
-Helper: 90508
-Helper: 90507
-Helper: 90510
 Helper: 90511
+Helper: 90510
+Helper: 90507
+Helper: 90508
+Helper: 90517
 Role: 100000000
 E
 T 90503

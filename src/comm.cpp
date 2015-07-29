@@ -580,7 +580,7 @@ else
 	 */
 	log(circlemud_version);
 	log(DG_SCRIPT_VERSION);
-	log("Virtustan MUD by Prool: http://mud.kharkov.org http://prool.in.ua https://bitbucket.org/prool/hgmud");
+	log("Virtustan MUD by Prool: http://mud.kharkov.org https://bitbucket.org/prool/hgmud");
 	log_code_date();
 	if (chdir(dir) < 0)
 	{
@@ -1115,7 +1115,8 @@ inline void process_io(fd_set input_set, fd_set output_set, fd_set exc_set, fd_s
 			< 0)
 	{
 		//perror("SYSERR: Select poll");
-		printf("%s SYSERR: Select poll\n", ptime()); // prool
+		//printf("vmud %s SYSERR: Select poll\n", ptime()); // prool
+		log("SYSERR: Select poll\n"); // prool
 		return;
 	}
 	// If there are new connections waiting, accept them.
@@ -3020,7 +3021,7 @@ int write_to_descriptor(socket_t desc, const char *txt, size_t total)
 		{
 			// Fatal error.  Disconnect the player_data.
 			//perror("SYSERR: write_to_descriptor");
-			printf("%s SYSERR: write_to_descriptor\n", ptime()); // prool
+			printf("vmud %s SYSERR: write_to_descriptor\n", ptime()); // prool
 			return (0);
 		}
 		else if (bytes_written == 0)

@@ -33,7 +33,8 @@
         <name>Зона Бодрича</name>
         <shortdesc>киев</shortdesc>
         <menustring>Харьковское княжество.</menustring>
-        <room vnum="40122" />
+        <!-- <room vnum="40122" /> -->
+        <room vnum="4056" />
         <items>
             <item vnum="4056" />
         </items>

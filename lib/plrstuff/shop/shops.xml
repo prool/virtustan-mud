@@ -180,9 +180,34 @@
 	<item_set>POTION</item_set>
     </shop>
 
-    <shop currency="ËÕÎÙ" id="WEAPON_SHOP" profit="40" waste_time_min="0">
+    <shop currency="ËÕÎÙ" id="CAFE" profit="40" waste_time_min="0">
 	<mob mob_vnum="9928" />
+	<item_set>FOOD</item_set>
+    </shop>
+
+    <shop currency="ËÕÎÙ" id="APTEKA" profit="40" waste_time_min="0">
+	<mob mob_vnum="9923" />
+	<item_set>POTION</item_set>
+    </shop>
+
+    <shop currency="ËÕÎÙ" id="WEAPON_SHOP" profit="40" waste_time_min="0">
+	<mob mob_vnum="9804" />
 	<item_set>WEAPON</item_set>
+    </shop>
+
+    <shop currency="ËÕÎÙ" id="ARMOR_SHOP" profit="40" waste_time_min="0">
+	<mob mob_vnum="9814" />
+	<item_set>ARMOR</item_set>
+    </shop>
+
+    <shop currency="ËÕÎÙ" id="TOOLS_SHOP" profit="40" waste_time_min="0">
+	<mob mob_vnum="9815" />
+	<item_set>TOOLS</item_set>
+    </shop>
+
+    <shop currency="ËÕÎÙ" id="MAGIC_SHOP" profit="40" waste_time_min="0">
+	<mob mob_vnum="9824" />
+	<item_set>MAGIC</item_set>
     </shop>
 
 </shop_list>

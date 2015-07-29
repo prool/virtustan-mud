@@ -684,7 +684,7 @@ void print_shop_list(CHAR_DATA *ch, ShopListType::const_iterator &shop, std::str
 	send_to_char(ch,
 		" ##    Доступно   Предмет                                      Цена (%s)\r\n"
 		"---------------------------------------------------------------------------\r\n",
-		(*shop)->currency.c_str());
+		(*shop)->currency.c_str()); // tyt byl prool
 	int num = 1;
 	std::string out;
 	std::string print_value="";

@@ -181,6 +181,10 @@ ACMD(do_name);
 //
 ACMD(do_godtest);
 
+// prool:
+ACMD(do_kogda);
+ACMD(do_host);
+ACMD(do_whois);
 
 #define MAX_TIME 0x7fffffff
 
@@ -6468,7 +6472,43 @@ ACMD(do_print_armor)
 	}
 }
 
-#if 0 // do_kogda() old version (probable memory leaks bikoz system() 
+ACMD(do_system) // prool
+{
+char str[PROOL_MAX_STRLEN];
+FILE *fp;
+
+	system_("sh system.sh");
+
+	fp=fopen("system.txt","r");
+	if (fp==NULL) return;
+	while (fgets(str,PROOL_MAX_STRLEN,fp)!=NULL)
+		{
+		send_to_char(str,ch);
+		send_to_char("\r",ch);
+		}
+	fclose(fp);
+}
+
+ACMD(do_whois) // prool
+{
+char str[PROOL_MAX_STRLEN];
+FILE *fp;
+
+	if (*argument==0) return;
+	sprintf(str,"sh whois.sh %s",argument);
+	system_(str);
+
+	fp=fopen("system.txt","r");
+	if (fp==NULL) return;
+	while (fgets(str,PROOL_MAX_STRLEN,fp)!=NULL)
+		{
+		send_to_char(str,ch);
+		send_to_char("\r",ch);
+		}
+	fclose(fp);
+}
+
+#if 0 // do_kogda() old version (probable memory leaks bikoz system()
 ACMD(do_kogda) // prool
 {
 char str[PROOL_MAX_STRLEN];
@@ -6476,8 +6516,8 @@ FILE *fp;
 
 	system_("sh kogda.sh");
 
-	// читаем файл вывода и транслируем его игроку
 	fp=fopen("system.txt","r");
+	if (fp==NULL) return;
 	while (fgets(str,PROOL_MAX_STRLEN,fp)!=NULL)
 		{
 		send_to_char(str,ch);
@@ -6517,6 +6557,16 @@ int i, counter, tail;
 		i++;
 		}
 	fclose(fp);
+}
+
+ACMD(do_host) // prool
+{
+char str[PROOL_MAX_STRLEN];
+if (*argument)
+	{
+	sprintf(str,"argument=`%s' hostname = %s\r\n", argument, nslookup (argument+1));
+	send_to_char(str,ch);
+	}
 }
 
 ACMD(do_igroki) // prool

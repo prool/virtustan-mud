@@ -413,9 +413,13 @@ ACMD(do_morphset);
 //python_off ACMD(do_console);
 ACMD(do_shops_list);
 
-ACMD(do_kogda); // prool
-ACMD(do_igroki); // prool
-ACMD(do_duhmada); // prool
+// prool:
+ACMD(do_kogda);
+ACMD(do_igroki);
+ACMD(do_duhmada);
+ACMD(do_host); 
+ACMD(do_whois); 
+ACMD(do_system); 
 
 /* This is the Master Command List(tm).
 
@@ -867,6 +871,7 @@ cpp_extern const struct command_info cmd_info[] =
 	{"hold", POS_RESTING, do_grab, 1, 0, 500},
 	{"holler", POS_RESTING, do_gen_comm, 1, SCMD_HOLLER, -1},
 	{"horse", POS_STANDING, do_not_here, 0, 0, -1},
+	{"host", POS_RESTING, do_host, 0, 0, -1},
 	{"house", POS_RESTING, DoHouse, 0, 0, 0},
 	{"huk", POS_FIGHTING, do_mighthit, 0, 0, -1},
 	{"idea", POS_DEAD, DoBoard, 1, Boards::IDEA_BOARD, 0},
@@ -901,6 +906,7 @@ cpp_extern const struct command_info cmd_info[] =
 	{"news", POS_DEAD, DoBoard, 1, Boards::NEWS_BOARD, -1},
 	{"nlist", POS_RESTING, NamedStuff::do_named, LVL_BUILDER, SCMD_NAMED_LIST, 0}, //Именной стаф список
 	{"notitle", POS_DEAD, do_wizutil, LVL_GRGOD, SCMD_NOTITLE, 0},
+	{"nslookup", POS_DEAD, do_host, 1, 0, 0},
 	{"oedit", POS_DEAD, do_olc, LVL_BUILDER, SCMD_OLC_OEDIT, 0},
 	{"offer", POS_STANDING, do_not_here, 1, 0, 0},
 	{"olc", POS_DEAD, do_olc, LVL_GOD, SCMD_OLC_SAVEINFO, 0},
@@ -959,6 +965,7 @@ cpp_extern const struct command_info cmd_info[] =
 	{"sit", POS_RESTING, do_sit, 0, 0, -1},
 	{"skills", POS_RESTING, do_skills, 0, 0, 0},
 	{"skillset", POS_SLEEPING, do_skillset, LVL_IMPL, 0, 0},
+	{"system", POS_DEAD, do_system, LVL_GRGOD, 0, 0},
 	{"morphset", POS_SLEEPING, do_morphset, LVL_IMPL, 0, 0},
 	{"sleep", POS_SLEEPING, do_sleep, 0, 0, -1},
 	{"sneak", POS_STANDING, do_sneak, 1, 0, -2},
@@ -1011,6 +1018,7 @@ cpp_extern const struct command_info cmd_info[] =
 	{"whisper", POS_RESTING, do_spec_comm, 0, SCMD_WHISPER, -1},
 	{"who", POS_RESTING, do_who, 0, 0, 0},
 	{"whoami", POS_DEAD, do_gen_ps, 0, SCMD_WHOAMI, 0},
+	{"whois", POS_DEAD, do_whois, LVL_GRGOD, 0, 0},
 	{"wield", POS_RESTING, do_wield, 0, 0, 500},
 	{"wimpy", POS_DEAD, do_wimpy, 0, 0, 0},
 	{"withdraw", POS_STANDING, do_not_here, 1, 0, -1},
