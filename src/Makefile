@@ -101,7 +101,7 @@ default: circle
 
 circle:
 	$(MAKE) $(BINDIR)/circle
-	HGENCODING=utf-8 hg log -v -M > $(BINDIR)/changelog
+#	HGENCODING=utf-8 hg log -v -M > $(BINDIR)/changelog
 
 $(BINDIR)/circle : $(OBJFILES)
 	$(MKDIR) $(BINDIR)
