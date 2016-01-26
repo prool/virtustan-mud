@@ -623,14 +623,14 @@ E
 ~
 Собака дворовой породы, вся в репьях
 ~
-a0d0 0 0 E
+a0c0d0A0 0 0 E
 1 10 5 0d0+2 0d0+1
 0d0+1 22
 8 8 2
 Absorbe: 1
 BareHandAttack: 4
 Str: 3
-Dex: 3
+Dex: 4
 Int: 3
 Wis: 3
 Con: 3

@@ -419,7 +419,7 @@ void gettimeofday(struct timeval *t, struct timezone *dummy)
 
 int main(int argc, char **argv)
 {
-printf("%sVirtustan MUD%s code by Prool, https://bitbucket.org/prool/proolmud\n", ansi_lcyan, ansi_reset);
+printf("%sVirtustan MUD%s code by Prool, www.prool.kharkov.org, mud.kharkov.org, bitbucket.org/prool/proolmud, github.com/prool/virtustan-mud\n", ansi_lcyan, ansi_reset);
 total_players=0;
 
 #ifdef TEST_BUILD
@@ -457,10 +457,23 @@ console_codetable=T_KOI;
 log_codetable=T_KOI;
 web_codetable=T_KOI;
 
-fconfig=fopen("prool.cfg","r");
+prool_log("Log of Virtustan MUD start\nVirtustan MUD sites: prool.kharkov.org, mud.kharkov.org, github.com/prool/virtustan-mud");
+
+fconfig=fopen("../proolmud.cfg","r");
 if (fconfig)
 	{
-	//printf("prool.cfg open\n");
+	printf("!Using ../proolmud.cfg\n");
+	prool_log("!Using ../proolmud.cfg");
+	}
+else 	{ fconfig=fopen("proolmud.cfg", "r");
+	if (fconfig)
+			{	
+			printf("Using proolmud.cfg\n");
+			prool_log("Using proolmud.cfg");
+			}
+	}
+if (fconfig)
+	{
 	while (!feof(fconfig))
 		{char *pp;
 		string[0]=0;
@@ -475,12 +488,23 @@ if (fconfig)
 		else if (!strcmp(string,"log_codetable_utf")) log_codetable=T_UTF;
 		else if (!strcmp(string,"web_codetable_utf")) web_codetable=T_UTF;
 		else if (!strcmp(string,"web_codetable_koi")) web_codetable=T_KOI;
+		else if (!memcmp(string,"reboot ",strlen("reboot ")))
+			{char buffer_string[PROOL_MAX_STRLEN];
+			int i; char *cc;
+			//printf("config: reboot param\n");
+			cc=string;
+			i=atoi(cc+strlen("reboot "));
+			sprintf(buffer_string, "config: reboot uptime %i", i);
+			puts(buffer_string);
+			prool_log(buffer_string);
+			if (i) reboot_uptime=i*60*24;
+			}
 		}
 	fclose(fconfig);
 	}
 else
 	{
-	printf("prool.cfg not open\n");
+	printf("proolmud.cfg not found\n");
 	}
 
 #ifdef CIRCLE_MACINTOSH
@@ -3111,7 +3135,8 @@ ssize_t perform_socket_read(socket_t desc, char *read_point, size_t space_left)
 	 * a SYSERR because we have no idea what happened at this point.
 	 */
 	//perror("SYSERR: perform_socket_read: about to lose connection");
-	printf("vmud %s SYSERR: perform_socket_read: about to lose connection\n", ptime()); // prool
+	log("SYSERR: perform_socket_read: about to lose connection"); // prool
+	//printf("vmud %s SYSERR: perform_socket_read: about to lose connection\n", ptime()); // prool
 	return (-1);
 }
 

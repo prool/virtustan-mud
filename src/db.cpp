@@ -346,6 +346,7 @@ void go_boot_socials(void)
 
 void load_sheduled_reboot()
 {
+#if 0 // prool
 	FILE *sch;
 	int day = 0, hour = 0, minutes = 0, numofreaded = 0, timeOffset = 0;
 	char str[10];
@@ -418,6 +419,7 @@ void load_sheduled_reboot()
 			i = -1;
 	}
 	log("Setting up reboot_uptime: %i", reboot_uptime);
+#endif
 }
 
 // Базовая функция загрузки XML конфигов
@@ -6434,7 +6436,7 @@ void init_char(CHAR_DATA * ch)
 //	if (ch->player_specials == NULL)
 //		CREATE(ch->player_specials, struct player_special_data, 1);
 
-#ifdef TEST_BUILD
+#if 1 /* TEST_BUILD */ // by prool
 	if (top_of_p_table == 0)
 	{
 		// При собирании через make test первый чар в маде становится иммом 34
@@ -7017,7 +7019,7 @@ void entrycount(char *name)
 					player_table[top_of_p_table].last_logon = LAST_LOGON(short_ch);
 					player_table[top_of_p_table].activity = number(0, OBJECT_SAVE_ACTIVITY - 1);
 				}
-				#ifdef TEST_BUILD
+				#if 1 /* TEST_BUILD */ // by prool
 				log("entry: char:%s level:%d mail:%s ip:%s", player_table[top_of_p_table].name, player_table[top_of_p_table].level, player_table[top_of_p_table].mail, player_table[top_of_p_table].last_ip);
 				#endif
 				top_idnum = MAX(top_idnum, GET_IDNUM(short_ch));

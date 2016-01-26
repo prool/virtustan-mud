@@ -547,6 +547,11 @@ void go_steal(CHAR_DATA * ch, CHAR_DATA * vict, char *obj_name)
 	if (!AWAKE(vict))	// Easier to steal from sleeping people.
 		percent = MAX(percent - 50, 0);
 
+	if (IS_IMMORTAL(vict)) // prool
+	{
+	send_to_char("У имморталов воровать нельзя. Пруль\r\n", ch);
+	return;
+	}
 	// NO NO With Imp's and Shopkeepers, and if player thieving is not allowed
 	if ((IS_IMMORTAL(vict) || GET_GOD_FLAG(vict, GF_GODSLIKE) || GET_MOB_SPEC(vict) == shop_ext)
 		&& !IS_IMPL(ch))

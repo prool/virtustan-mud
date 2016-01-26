@@ -1882,8 +1882,8 @@ void equip_char(CHAR_DATA * ch, OBJ_DATA * obj, int pos)
 		return;
 	}
 
-	if ((!IS_NPC(ch) && invalid_align(ch, obj)) || invalid_no_class(ch, obj)
-			|| (AFF_FLAGGED(ch, AFF_CHARM) && (OBJ_FLAGGED(obj, ITEM_SHARPEN) || OBJ_FLAGGED(obj, ITEM_ARMORED))))
+	if (0/*(!IS_NPC(ch) && invalid_align(ch, obj)) || invalid_no_class(ch, obj) // prool: всё всем!
+	|| (AFF_FLAGGED(ch, AFF_CHARM) && (OBJ_FLAGGED(obj, ITEM_SHARPEN) || OBJ_FLAGGED(obj, ITEM_ARMORED)))*/)
 	{
 		act("$o0 явно не предназначен$A для вас.", FALSE, ch, obj, 0, TO_CHAR);
 		act("$n попытал$u использовать $o3, но у н$s ничего не получилось.", FALSE, ch, obj, 0, TO_ROOM);

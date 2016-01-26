@@ -298,6 +298,7 @@ void pulse_room_affect_handler(ROOM_DATA * room, CHAR_DATA * ch, AFFECT_DATA * a
 			tch = random_char_in_room(room);
 			if (tch)
 			{
+			if (IS_IMMORTAL(tch)) break; // prool: иммов не бьем
 				call_magic(ch, tch, NULL, NULL, SPELL_CHAIN_LIGHTNING, GET_LEVEL(ch), CAST_SPELL);
 			}
 			break;
@@ -306,6 +307,7 @@ void pulse_room_affect_handler(ROOM_DATA * room, CHAR_DATA * ch, AFFECT_DATA * a
 			tch = random_char_in_room(room);
 			if (tch)
 			{
+			if (IS_IMMORTAL(tch)) break; // prool
 				send_to_char("Удар молнии просто испепелил вас", tch);
 				act("Удар молнии призванной испепелил $n!", FALSE, tch, 0, 0, TO_ROOM | TO_ARENA_LISTEN);
 				pk_agro_action(ch, tch);
@@ -317,6 +319,7 @@ void pulse_room_affect_handler(ROOM_DATA * room, CHAR_DATA * ch, AFFECT_DATA * a
 			tch = random_char_in_room(room);
 			if (tch)
 			{
+			if (IS_IMMORTAL(tch)) break; // prool
 				call_magic(ch, tch, NULL, NULL, SPELL_CHAIN_LIGHTNING, GET_LEVEL(ch), CAST_SPELL);
 			}
 			break;

@@ -8,7 +8,6 @@ while [ 1 ]; do
 
 date "+%d-%m-%Y %H:%M:%S VMUD start"
 date "+%d-%m-%Y %H:%M:%S start" >> autolog.txt
-# mail -s "VMUD start" prool@itl.ua < letter.txt
 # mail -s "VMUD start" proolix@gmail.com < letter.txt
 # date "+%d-%m-%Y %H:%M:%S Virtustan MUD started" > ~/web/mud.kharkov.org/public_html/mudstat/vmud2.html
 bin/circle

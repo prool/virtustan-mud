@@ -44,6 +44,7 @@
 
 char *ptime(void); // Возвращаемое значение: ссылка на текстовую строку с текущим временем
 void perslog (char *verb, const char *pers);
+void prool_log(char *);
 void send_email2 (char *from, char *to, char *subj, char *text);
 char *nslookup(const char *ip);
 

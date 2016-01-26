@@ -500,12 +500,12 @@ int can_take_obj(CHAR_DATA * ch, OBJ_DATA * obj)
 		act("$p: Вы не можете взять $S.", FALSE, ch, obj, 0, TO_CHAR);
 		return (0);
 	}
-	else if (invalid_anti_class(ch, obj))
+	else if (0/*invalid_anti_class(ch, obj)*/) // prool: всё всем! земля крестьянам! мечи воинам!
 	{
 		act("$p: Эта вещь не предназначена для вас!", FALSE, ch, obj, 0, TO_CHAR);
 		return (0);
 	}
-	else if (NamedStuff::check_named(ch, obj, 0))
+	else if (0/*NamedStuff::check_named(ch, obj, 0)*/) // prool
 	{
 		if(!NamedStuff::wear_msg(ch, obj))
 			act("$p: Эта вещь не предназначена для вас!", FALSE, ch, obj, 0, TO_CHAR);

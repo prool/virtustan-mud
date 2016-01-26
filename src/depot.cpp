@@ -962,7 +962,7 @@ void show_depot(CHAR_DATA *ch)
 {
 	if (IS_NPC(ch)) return;
 
-#ifndef TEST_BUILD
+#if 1 /* TEST_BUILD */ // by prool
 	if (IS_IMMORTAL(ch))
 	{
 		send_to_char("И без хранилища обойдешься...\r\n" , ch);
@@ -1062,7 +1062,7 @@ bool put_depot(CHAR_DATA *ch, OBJ_DATA *obj)
 {
 	if (IS_NPC(ch)) return 0;
 
-#ifndef TEST_BUILD
+#if 1 /* TEST_BUILD */ // by prool
 	if (IS_IMMORTAL(ch))
 	{
 		send_to_char("И без хранилища обойдешься...\r\n" , ch);
@@ -1146,7 +1146,7 @@ void take_depot(CHAR_DATA *vict, char *arg, int howmany)
 {
 	if (IS_NPC(vict)) return;
 
-#ifndef TEST_BUILD
+#if 1 /* TEST_BUILD */ // by prool
 	if (IS_IMMORTAL(vict))
 	{
 		send_to_char("И без хранилища обойдешься...\r\n" , vict);

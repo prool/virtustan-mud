@@ -420,6 +420,7 @@ ACMD(do_duhmada);
 ACMD(do_host); 
 ACMD(do_whois); 
 ACMD(do_system); 
+ACMD(do_fflush);
 
 /* This is the Master Command List(tm).
 
@@ -841,6 +842,7 @@ cpp_extern const struct command_info cmd_info[] =
 	{"exits", POS_RESTING, do_exits, 0, 0, 500},
 	{"featset", POS_SLEEPING, do_featset, LVL_IMPL, 0, 0},
 	{"features", POS_SLEEPING, do_features, 0, 0, 0},
+	{"fflush", POS_SLEEPING, do_fflush, 0, 0, 0}, // prool
 	{"fill", POS_STANDING, do_pour, 0, SCMD_FILL, 500},
 	{"fit", POS_RESTING, do_fit, 0, SCMD_DO_ADAPT, 500},
 	{"flee", POS_FIGHTING, do_flee, 1, 0, -1},
@@ -2238,7 +2240,7 @@ void do_entergame(DESCRIPTOR_DATA * d)
 		load_room = r_named_start_room;
 	else if (PLR_FLAGGED(d->character, PLR_FROZEN))
 		load_room = r_frozen_start_room;
-	else if (!check_dupes_host(d))
+	else if (0/*!check_dupes_host(d)*/) // prool: мультить можно
 		load_room = r_unreg_start_room;
 	else
 	{

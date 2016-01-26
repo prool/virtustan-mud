@@ -50,8 +50,17 @@ if (system(cmd)==-1)
 	}
 }
 
+void prool_log(char *str)
+{
+FILE *fp; char buffer [PROOL_MAX_STRLEN];
+fp=fopen("proolmud.log", "a");
+fprintf(fp,"%s %s\n",ptime(),str);
+fclose(fp);
+}
+
 void perslog (char *verb, const char *pers)
-{FILE *fp; char buffer [PROOL_MAX_STRLEN];
+{
+FILE *fp; char buffer [PROOL_MAX_STRLEN];
 fp=fopen(PERSLOG_FILE, "a");
 fprintf(fp,"%s %s %s\n",ptime(),pers,verb);
 if (console_codetable==T_UTF)
@@ -83,6 +92,12 @@ char *ptime(void) // Возвращаемое значение: ссылка на текстовую строку с текущим
 ACMD(do_omol)
 {
 ch->player_data.time.birth=time(0);
+}
+
+ACMD(do_fflush)
+{
+send_to_char("fflush!\n", ch);
+fflush(0);
 }
 
 #define PUT_OBJ(obj_number) {r_num = real_object(obj_number); if (r_num==-1) {send_to_char("&RЭтого предмета почему-то не существует в мире и я не могу его найти!&n :(\r\n",ch); return;} obj = read_object(r_num, REAL); GET_OBJ_MAKER(obj) = GET_UNIQUE(ch); obj_to_char(obj, ch); act("$n получил$g от духа мада $o3!", FALSE, ch, obj, 0, TO_ROOM); act("Вы получили от духа мада $o3.", FALSE, ch, obj, 0, TO_CHAR); /* load_otrigger(obj); obj_decay(obj); */ olc_log("Духмада: %s load obj %s #%d", GET_NAME(ch), GET_OBJ_ALIAS(obj), obj_number);}
