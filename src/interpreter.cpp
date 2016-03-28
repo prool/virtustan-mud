@@ -11,6 +11,9 @@
 *  $Revision$                                                       *
 ************************************************************************ */
 
+//#define PROOLDEBUG
+//#define PROOLDEBUG2
+
 #define __INTERPRETER_C__
 
 #include "conf.h"
@@ -1178,23 +1181,48 @@ void command_interpreter(CHAR_DATA * ch, char *argument)
 {
 	int cmd, length, social = FALSE, hardcopy = FALSE;
 	char *line;
+#ifdef PROOLDEBUG2
+printf("proolfool. checkpoint #I0\n");
+#endif
 
 	// just drop to next line for hitting CR
 	CHECK_AGRO(ch) = 0;
 	skip_spaces(&argument);
+#ifdef PROOLDEBUG2
+printf("proolfool. checkpoint #I1\n");
+#endif
 
 	if (!*argument)
 		return;
 	if (!IS_NPC(ch))
 	{
+#ifdef PROOLDEBUG2
+printf("proolfool. checkpoint #Ia\n");
+#endif
+#if 1 // proolfool: bug here
 		log("<%s> {%5d} [%s]", GET_NAME(ch), GET_ROOM_VNUM(IN_ROOM(ch)), argument);
+#endif
+#ifdef PROOLDEBUG2
+printf("proolfool. checkpoint #Ia2\n");
+#endif
+#if 1 // proolfool
 		if (GET_LEVEL(ch) >= LVL_IMMORT || GET_GOD_FLAG(ch, GF_PERSLOG) || GET_GOD_FLAG(ch, GF_DEMIGOD))
 			pers_log(ch, "<%s> {%5d} [%s]", GET_NAME(ch), GET_ROOM_VNUM(IN_ROOM(ch)), argument);
+#endif
+#ifdef PROOLDEBUG2
+printf("proolfool. checkpoint #Ia3\n");
+#endif
 	}
 
 	//Polud спешиал для спешиалов добавим обработку числового префикса перед именем команды
 
+#ifdef PROOLDEBUG
+printf("proolfool. checkpoint #I3\n");
+#endif
 	int fnum = get_number(&argument);
+#ifdef PROOLDEBUG
+printf("proolfool. checkpoint #I3\n");
+#endif
 
 	/*
 	 * special case to handle one-character, non-alphanumeric commands;
@@ -1210,6 +1238,9 @@ void command_interpreter(CHAR_DATA * ch, char *argument)
 	else
 		line = any_one_arg(argument, arg);
 
+#ifdef PROOLDEBUG
+printf("proolfool. checkpoint #I4\n");
+#endif
 	if ((length = strlen(arg)) && length > 1 && *(arg + length - 1) == '!')
 	{
 		hardcopy = TRUE;
@@ -1217,6 +1248,9 @@ void command_interpreter(CHAR_DATA * ch, char *argument)
 		*(argument + length) = ' ';
 	}
 
+#ifdef PROOLDEBUG
+printf("proolfool. checkpoint #50\n");
+#endif
 	if ((!GET_MOB_HOLD(ch) && !AFF_FLAGGED(ch, AFF_STOPFIGHT) && !AFF_FLAGGED(ch, AFF_MAGICSTOPFIGHT)))
 	{
 		int cont;	// continue the command checks
@@ -1232,6 +1266,9 @@ void command_interpreter(CHAR_DATA * ch, char *argument)
 		}
 	}
 
+#ifdef PROOLDEBUG
+printf("proolfool. checkpoint #I6\n");
+#endif
 	//python_off Try scripting
 	//python_off if (scripting::execute_player_command(ch, arg, line))
 		//python_off return;
@@ -1253,17 +1290,29 @@ void command_interpreter(CHAR_DATA * ch, char *argument)
 		}
 	}
 
+#ifdef PROOLDEBUG
+printf("proolfool. checkpoint #70\n");
+#endif
 	if (*cmd_info[cmd].command == '\n')
 	{
 		if (find_action(arg) >= 0)
 			social = TRUE;
 		else
 		{
-			send_to_char("Чаво?\r\n", ch);
+#ifdef PROOLDEBUG
+printf("proolfool. checkpoint #i0\n");
+#endif
+			send_to_char("Bad command\r\n", ch);
+#ifdef PROOLDEBUG
+printf("proolfool. checkpoint #i1\n");
+#endif
 			return;
 		}
 	}
 
+#ifdef PROOLDEBUG
+printf("proolfool. checkpoint #I8\n");
+#endif
 	if (((!IS_NPC(ch) && (GET_FREEZE_LEV(ch) > GET_LEVEL(ch)) && (PLR_FLAGGED(ch, PLR_FROZEN)))
 			|| GET_MOB_HOLD(ch) > 0
 			|| AFF_FLAGGED(ch, AFF_STOPFIGHT)

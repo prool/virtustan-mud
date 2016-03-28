@@ -9,6 +9,8 @@
 *                                                                         *
 ************************************************************************ */
 
+//#define PROOLDEBUG
+
 /*
  * Compression support.  Currently could be used with:
  *
@@ -462,8 +464,8 @@ prool_log("Log of Virtustan MUD start\nVirtustan MUD sites: prool.kharkov.org, m
 fconfig=fopen("../proolmud.cfg","r");
 if (fconfig)
 	{
-	printf("!Using ../proolmud.cfg\n");
-	prool_log("!Using ../proolmud.cfg");
+	printf("Using ../proolmud.cfg\n");
+	prool_log("Using ../proolmud.cfg");
 	}
 else 	{ fconfig=fopen("proolmud.cfg", "r");
 	if (fconfig)
@@ -1239,7 +1241,13 @@ inline void process_io(fd_set input_set, fd_set output_set, fd_set exc_set, fd_s
 				d->has_prompt = 1;	// To get newline before next cmd output.
 			else if (perform_alias(d, comm))	// Run it through aliasing system
 				get_from_q(&d->input, comm, &aliased);
+#ifdef PROOLDEBUG
+printf("proolfool. checkpoint #00\n");
+#endif
 			command_interpreter(d->character, comm);	// Send it to interpreter
+#ifdef PROOLDEBUG
+printf("proolfool. checkpoint #01\n");
+#endif
 			cmd_cnt++;
 		}
 	}
@@ -3657,8 +3665,14 @@ void close_socket(DESCRIPTOR_DATA * d, int direct)
 			if (d->character->get_fighting() && PRF_FLAGGED(d->character, PRF_ANTIDC_MODE))
 			{
 				snprintf(buf2, sizeof(buf2), "зачитать свиток.возврата");
+#ifdef PROOLDEBUG
+printf("proolfool. checkpoint #02\n");
+#endif
 				command_interpreter(d->character, buf2);
 			}
+#ifdef PROOLDEBUG
+printf("proolfool. checkpoint #03\n");
+#endif
 			if (!IS_NPC(d->character))
 			{
 				d->character->save_char();

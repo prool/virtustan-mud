@@ -5515,7 +5515,9 @@ void make_who2html(void)
 	if ((opf = fopen(WHOLIST_FILE, "w")) == 0)
 		return;		// or log it ? *shrug*
 
-	fprintf(opf, "<HTML><HEAD><TITLE>Who in Virtustan MUD</TITLE></HEAD>\n");
+	fprintf(opf, "<HTML><HEAD><TITLE>Who in Virtustan MUD</TITLE>\n\
+<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n\
+</HEAD>\n");
 	fprintf(opf, "<BODY>%s <b>Who in Virtustan MUD</b><HR>\n",ptime());
 
 	sprintf(buf, "Gods <BR> \r\n");

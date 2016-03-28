@@ -9,6 +9,8 @@
 * 									  *
 ************************************************************************ */
 
+//#define PROOLDEBUG
+
 #include <vector>
 #include <string>
 #include <fstream>
@@ -368,6 +370,8 @@ void log(const char *format, ...)
 	char buffer1[PROOL_MAX_STRLEN];
 	char buffer2[PROOL_MAX_STRLEN];
 
+	buffer2[0]=0; // proolfool
+
 	if (logfile == NULL)
 		puts("SYSERR: Using log() before stream was initialized!");
 	if (format == NULL)
@@ -382,20 +386,44 @@ void log(const char *format, ...)
 //	write_test_time(logfile);
 	va_list args;
 	va_start(args, format);
+#ifdef PROOLDEBUG
+printf("proolfool. checkpoint #U0\n");
+#endif
 	if (log_codetable==T_UTF) // prool
 		{
-		vsprintf(buffer1, format, args);
+#ifdef PROOLDEBUG
+printf("proolfool. checkpoint #U1\n");
+#endif
+		vsnprintf(buffer1, PROOL_MAX_STRLEN, format, args);
+#ifdef PROOLDEBUG
+printf("proolfool. checkpoint #U2\n");
+#endif
 		koi_to_utf8(buffer1,buffer2);
+#ifdef PROOLDEBUG
+printf("proolfool. checkpoint #U3\n");
+#endif
 		fprintf(logfile,"%s",buffer2);
+#ifdef PROOLDEBUG
+printf("proolfool. checkpoint #U4\n");
+#endif
 		}
 	else
 		vfprintf(logfile, format, args);
 	va_end(args);
+#ifdef PROOLDEBUG
+printf("proolfool. checkpoint #U5\n");
+#endif
 	fprintf(logfile, "\n");
+#ifdef PROOLDEBUG
+printf("proolfool. checkpoint #U6\n");
+#endif
 
 // shapirus: для дебаггинга
 #ifdef LOG_AUTOFLUSH
 	fflush(logfile);
+#endif
+#ifdef PROOLDEBUG
+printf("proolfool. checkpoint #U7\n");
 #endif
 }
 
