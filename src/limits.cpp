@@ -74,6 +74,8 @@ extern int CheckProxy(DESCRIPTOR_DATA * ch);
 extern int check_death_ice(int room, CHAR_DATA * ch);
 extern int get_max_slot(CHAR_DATA* ch);
 
+extern char mudname[]; // prool
+
 void decrease_level(CHAR_DATA * ch);
 int max_exp_gain_pc(CHAR_DATA * ch);
 int max_exp_loss_pc(CHAR_DATA * ch);
@@ -628,7 +630,7 @@ void beat_punish(CHAR_DATA * i)
 			};
 		};
 	}
-	else if (!RegisterSystem::is_registered(i) && i->desc && STATE(i->desc) == CON_PLAYING)
+	else if (0/*!RegisterSystem::is_registered(i) && i->desc && STATE(i->desc) == CON_PLAYING*/) // prool: multing enable!
 	{
 		if (restore != r_unreg_start_room
 				&& !RENTABLE(i)
@@ -1132,7 +1134,12 @@ void hour_update(void)
 	{
 		if (STATE(i) != CON_PLAYING || i->character == NULL || PLR_FLAGGED(i->character, PLR_WRITING))
 			continue;
-		sprintf(buf, "%sПрошел час (VMUD)%s\r\n", CCIRED(i->character, C_NRM), CCNRM(i->character, C_NRM)); // prool
+		if (mudname[0]) // prool
+			sprintf(buf, "%sПрошел час ( %s ) %s\r\n",
+				CCIRED(i->character, C_NRM), mudname, CCNRM(i->character, C_NRM));
+		else
+			sprintf(buf, "%sПрошел час (VMUD)%s\r\n",
+				CCIRED(i->character, C_NRM), CCNRM(i->character, C_NRM));
 		SEND_TO_Q(buf, i);
 	}
 }

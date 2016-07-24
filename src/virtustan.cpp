@@ -41,6 +41,7 @@
 extern int total_players;
 extern int boot_time;
 extern int console_codetable;
+extern char mudname[];
 
 void system_(char *cmd)
 {
@@ -61,16 +62,21 @@ fclose(fp);
 void perslog (char *verb, const char *pers)
 {
 FILE *fp; char buffer [PROOL_MAX_STRLEN];
+char *ident;
+
+if (mudname[0]) ident=mudname;
+else ident = "VMUD";
+
 fp=fopen(PERSLOG_FILE, "a");
 fprintf(fp,"%s %s %s\n",ptime(),pers,verb);
 if (console_codetable==T_UTF)
 	{
 	koi_to_utf8((char*)pers,buffer);
-	printf("vmud %s %s %s\n",ptime(),buffer,verb);
+	printf("%s %s %s %s\n",ident, ptime(),buffer,verb);
 	}
 else
 	{
-	printf("vmud %s %s %s\n",ptime(),pers,verb);
+	printf("%s %s %s %s\n",ident, ptime(),pers,verb);
 	}
 fclose(fp);
 }

@@ -394,7 +394,7 @@ void load_sheduled_reboot()
 		//7 empty days was cycled - break with default uptime
 		if (reboot_uptime - 1440 * 7 >= 0)
 		{
-			reboot_uptime = DEFAULT_REBOOT_UPTIME;	//2 days reboot bu default if no schedule
+			reboot_uptime = DEFAULT_REBOOT_UPTIME;
 			break;
 		}
 		//if we get non-1-full-day offset, but server will reboot to early (36 hour is minimum)

@@ -25,6 +25,8 @@
 #include "room.hpp"
 #include "house.h"
 
+#include "virtustan.h" // prool
+
 // List each room saved, was used for debugging.
 #if 0
 #define REDIT_LIST	1
@@ -67,6 +69,8 @@ void redit_disp_exit_flag_menu(DESCRIPTOR_DATA * d);
 void redit_disp_flag_menu(DESCRIPTOR_DATA * d);
 void redit_disp_sector_menu(DESCRIPTOR_DATA * d);
 void redit_disp_menu(DESCRIPTOR_DATA * d);
+
+int real_zone(int number); // proto add by prool
 
 //***************************************************************************
 #define  W_EXIT(room, num) (world[(room)]->dir_option[(num)])
@@ -994,4 +998,174 @@ void redit_parse(DESCRIPTOR_DATA * d, char *arg)
 	// * If we get this far, something has been changed.
 	OLC_VAL(d) = 1;
 	redit_disp_menu(d);
+}
+/******************************************************************************************************************/
+ACMD(do_build) //prool: build new room
+{char buf [PROOL_MAX_STRLEN];
+int i, vnum, rnum, new_vnum, new_rnum, zone, dir, build_dir, number;
+char c, symbol_dir[] = {'n', 'e', 's', 'w', 'u', 'd'};
+int back [] = {2, 3, 0, 1, 5, 4}; // back directions
+DESCRIPTOR_DATA *d;
+ROOM_DATA *room = new ROOM_DATA;
+ROOM_DATA *room0 = new ROOM_DATA;
+
+if (IS_NPC(ch)) return;
+
+//if (argument==0) send_to_char("argument==0\r\n", ch);
+//if (*argument==0) send_to_char("*argument==0\r\n", ch);
+//snprintf(buf, PROOL_MAX_STRLEN, "build. argument '%s'\r\n", argument);
+//send_to_char(buf, ch);
+
+if (strlen(argument)<2)
+	{
+	snprintf(buf, PROOL_MAX_STRLEN, "usage: build <dir>\r\nf.e. build n\r\n");
+	send_to_char(buf, ch);
+	return;
+	}
+
+c=argument[1];
+build_dir=-1;
+for (dir = 0; dir < NUM_OF_DIRS; dir++)
+	{
+	if (symbol_dir[dir]==c)
+		{
+		build_dir=dir;
+		break;
+		}
+	}
+if (build_dir==-1)
+	{
+	snprintf(buf, PROOL_MAX_STRLEN, "Invalid direct '%c'\r\nusage: build <dir>\r\nf.e. build n\r\n", c);
+	send_to_char(buf, ch);
+	return;
+	}
+
+vnum = world[IN_ROOM(ch)]->number;
+snprintf(buf, PROOL_MAX_STRLEN, "build. origin room number %i\r\n", vnum);
+send_to_char(buf, ch);
+
+rnum=real_room(vnum);
+//snprintf(buf, PROOL_MAX_STRLEN, "build. room real number %i\r\n", rnum);
+//send_to_char(buf, ch);
+
+#if 0
+rnum=real_room(160);
+snprintf(buf, PROOL_MAX_STRLEN, "build. room real number vnum 160 = %i\r\n", rnum);
+send_to_char(buf, ch);
+#endif
+
+zone=vnum/100;
+
+for (i=0;i<99;i++)
+	{
+	new_vnum=zone*100+i;
+	new_rnum=real_room(new_vnum);
+	if (new_rnum==0)
+		{
+		snprintf(buf, PROOL_MAX_STRLEN, "build. free room vnum = %i\r\n", new_vnum);
+		send_to_char(buf, ch);
+		break;
+		}
+	}
+if (new_rnum)
+	{
+	snprintf(buf, PROOL_MAX_STRLEN, "build. no free room. zone = %i\r\n", zone);
+	send_to_char(buf, ch);
+	return;
+	}
+
+#if 0
+for (dir = 0; dir < NUM_OF_DIRS; dir++)
+	if (EXIT(ch, dir)) 
+		{
+		snprintf(buf, PROOL_MAX_STRLEN, "build. exit on dir %c\r\n", symbol_dir[dir]);
+		send_to_char(buf, ch);
+		}
+#endif
+
+if (EXIT(ch, build_dir))
+	{
+	snprintf(buf, PROOL_MAX_STRLEN, "build. exit busy\r\n");
+	send_to_char(buf, ch);
+	return;
+	}
+//snprintf(buf, PROOL_MAX_STRLEN, "build. exit free!\r\n");
+//send_to_char(buf, ch);
+
+// create new room
+	number=new_vnum;
+	d = ch->desc;
+	d->olc = new olc_data;
+	// * Find the zone.
+	if ((OLC_ZNUM(d) = real_zone(number)) == -1)
+	{
+		send_to_char("Sorry, this zone is not exist\r\n", ch);
+		delete d->olc;
+		return;
+	}
+	OLC_NUM(d) = number;
+
+	// redit_setup
+	room->name = str_dup("Created room");
+	room->temp_description = str_dup("d e s c r\r\n");
+	room->sector_type=1;
+	OLC_ROOM(d) = room;
+	OLC_ITEM_TYPE(d) = WLD_TRIGGER;
+
+	OLC_VAL(d) = back[build_dir];
+	CREATE(OLC_EXIT(d), EXIT_DATA, 1);
+	OLC_EXIT(d)->to_room = rnum;
+
+	redit_save_internally(d);
+	sprintf(buf, "build: OLC: %s edits room %d.", GET_NAME(d->character), OLC_NUM(d));
+	olc_log("%s build room %d", GET_NAME(d->character), OLC_NUM(d));
+	mudlog(buf, NRM, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), SYSLOG, TRUE);
+	cleanup_olc(d, CLEANUP_STRUCTS);
+	//send_to_char("Created room saved to memory.\r\n", d->character);
+
+// make link from origin room to new room. origin num vnum/rnum, new room new_vnum/new_rnum
+
+	new_rnum = real_room (new_vnum);
+	number=vnum;
+	d = ch->desc;
+	d->olc = new olc_data;
+	// * Find the zone.
+	if ((OLC_ZNUM(d) = real_zone(number)) == -1)
+	{
+		send_to_char("Sorry, this zone is not exist\r\n", ch);
+		delete d->olc;
+		return;
+	}
+	OLC_NUM(d) = number;
+	
+	// redit_setup
+	room_copy(room0, world[rnum]);
+	// temp_description существует только на время редактирования комнаты в олц
+	room0->temp_description = str_dup(RoomDescription::show_desc(world[rnum]->description_num).c_str());
+	//room0->temp_description = str_dup("iPWNED\r\n");
+	OLC_ROOM(d) = room0;
+	OLC_ITEM_TYPE(d) = WLD_TRIGGER;
+
+	// * if exit doesn't exist, alloc/create it
+	if (!OLC_EXIT(d))
+	{
+		//send_to_char("OLC_EXIT(d)==0\r\n", d->character);
+		OLC_VAL(d) = build_dir;
+		CREATE(OLC_EXIT(d), EXIT_DATA, 1);
+		OLC_EXIT(d)->to_room = new_rnum;
+	}
+	else
+	{
+	printf("build: OLC_EXIT(d)!=0\r\n");
+	send_to_char("build: OLC_EXIT(d)!=0\r\n", ch);
+	return;
+	}
+	//printf("new_rnum %i\n", new_rnum);
+
+	redit_save_internally(d);
+	sprintf(buf, "build: OLC: %s edits room0 %d.", GET_NAME(d->character), OLC_NUM(d));
+	olc_log("%s build room0 %d", GET_NAME(d->character), OLC_NUM(d));
+	mudlog(buf, NRM, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), SYSLOG, TRUE);
+	cleanup_olc(d, CLEANUP_STRUCTS);
+	//send_to_char("Modified origin room saved to memory.\r\n", d->character);
 }

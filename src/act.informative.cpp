@@ -82,8 +82,11 @@ extern int top_imtypes;
 extern void show_code_date(CHAR_DATA *ch);
 extern int nameserver_is_slow; //config.cpp
 
-extern int total_players; // prool
-extern int web_codetable; // prool
+// prool's extern:
+extern int total_players;
+extern int web_codetable;
+extern int webstat;
+extern char mudname[];
 
 // extern functions
 long find_class_bitvector(char arg);
@@ -5512,13 +5515,18 @@ void make_who2html(void)
 
 	char utf_buf [PROOL_MAX_STRLEN];
 
+	if (webstat==0) return;
+
 	if ((opf = fopen(WHOLIST_FILE, "w")) == 0)
 		return;		// or log it ? *shrug*
 
 	fprintf(opf, "<HTML><HEAD><TITLE>Who in Virtustan MUD</TITLE>\n\
 <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n\
 </HEAD>\n");
-	fprintf(opf, "<BODY>%s <b>Who in Virtustan MUD</b><HR>\n",ptime());
+	if (mudname[0])
+	    fprintf(opf, "<BODY>%s <b>Who in %s</b><HR>\n",ptime(), mudname);
+	else
+	    fprintf(opf, "<BODY>%s <b>Who in Virtustan MUD</b><HR>\n",ptime());
 
 	sprintf(buf, "Gods <BR> \r\n");
 	imms = str_add(imms, buf);

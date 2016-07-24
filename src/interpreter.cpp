@@ -112,7 +112,9 @@ extern struct show_struct show_fields[];
 extern BanList *ban;
 extern char *name_rules;
 
-extern int total_players; // prool
+// prool:
+extern int total_players;
+extern int send_email;
 
 // external functions
 void do_start(CHAR_DATA * ch, int newbie);
@@ -424,6 +426,7 @@ ACMD(do_host);
 ACMD(do_whois); 
 ACMD(do_system); 
 ACMD(do_fflush);
+ACMD(do_build);
 
 /* This is the Master Command List(tm).
 
@@ -807,6 +810,7 @@ cpp_extern const struct command_info cmd_info[] =
 	{"bash", POS_FIGHTING, do_bash, 1, 0, -1},
 	{"beep", POS_DEAD, do_beep, LVL_IMMORT, 0, 0},
 	{"block", POS_FIGHTING, do_block, 0, 0, -1},
+	{"build", POS_DEAD, do_build, LVL_IMPL, 0, -1},
 	{"bug", POS_DEAD, report_on_board, 0, Boards::ERROR_BOARD, 0},
 	{"buy", POS_STANDING, do_not_here, 0, 0, -1},
 	{"best", POS_DEAD, DoBest, 0, 0, 0},
@@ -1006,7 +1010,7 @@ cpp_extern const struct command_info cmd_info[] =
 	{"unban", POS_DEAD, do_unban, LVL_GRGOD, 0, 0},
 	{"ungroup", POS_DEAD, do_ungroup, 0, 0, -1},
 	{"unlock", POS_SITTING, do_gen_door, 0, SCMD_UNLOCK, 500},
-	{"uptime", POS_DEAD, do_date, LVL_IMMORT, SCMD_UPTIME, 0},
+	{"uptime", POS_DEAD, do_date, 0, SCMD_UPTIME, 0},
 	{"use", POS_SITTING, do_use, 1, SCMD_USE, 500},
 	{"users", POS_DEAD, do_users, LVL_IMMORT, 0, 0},
 	{"value", POS_STANDING, do_not_here, 0, 0, -1},
@@ -2087,7 +2091,7 @@ int check_dupes_host(DESCRIPTOR_DATA * d, bool autocheck = 0)
 				&& !IS_IMMORTAL(i->character)
 				&& (STATE(i) == CON_PLAYING || STATE(i) == CON_MENU))
 		{
-			switch (CheckProxy(d))
+			switch (2/*CheckProxy(d)*/) // prool: multing enable!
 			{
 			case 0:
 				// если уже сидим в проксе, то смысла спамить никакого
@@ -2434,7 +2438,7 @@ void do_entergame(DESCRIPTOR_DATA * d)
 	}
 
 	sprintf(buf, "%s вошел в игру.", GET_NAME(d->character));
-	if (strcmp(GET_NAME(d->character),"Пруль"))
+	if (send_email) if (strcmp(GET_NAME(d->character),"Пруль"))
 		{
 		send_email2("VMUD", "prool@itl.ua", "User logon", (char *) GET_NAME(d->character));
 		send_email2("VMUD", "proolix@gmail.com", "User logon", (char *) GET_NAME(d->character));

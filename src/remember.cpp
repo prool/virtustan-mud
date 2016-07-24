@@ -28,9 +28,9 @@ RememberWiznetListType wiznet_;
 
 std::string time_format()
 {
-	char time_buf[9];
+	char time_buf[127];
 	time_t tmp_time = time(0);
-	strftime(time_buf, sizeof(time_buf), "[%H:%M] ", localtime(&tmp_time));
+	strftime(time_buf, sizeof(time_buf), "[%d/%m/%Y %H:%M] ", localtime(&tmp_time));
 	return time_buf;
 }
 

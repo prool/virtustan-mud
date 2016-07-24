@@ -142,6 +142,11 @@
 # endif
 #endif
 
+// prool static
+char mudname [PROOL_MAX_STRLEN];
+int webstat;
+int send_email;
+
 void our_terminate();
 
 namespace
@@ -449,6 +454,7 @@ extern int ports[10]; // prool
 
 FILE *fconfig;
 char string[PROOL_MAX_STRLEN];
+char buffer_string[PROOL_MAX_STRLEN];
 
 #ifdef CYGWIN
 console_codetable=T_UTF;
@@ -456,8 +462,13 @@ console_codetable=T_UTF;
 console_codetable=T_KOI;
 #endif
 
+webstat=0;
+send_email=0;
+
 log_codetable=T_KOI;
 web_codetable=T_KOI;
+
+mudname[0]=0;
 
 prool_log("Log of Virtustan MUD start\nVirtustan MUD sites: prool.kharkov.org, mud.kharkov.org, github.com/prool/virtustan-mud");
 
@@ -491,15 +502,52 @@ if (fconfig)
 		else if (!strcmp(string,"web_codetable_utf")) web_codetable=T_UTF;
 		else if (!strcmp(string,"web_codetable_koi")) web_codetable=T_KOI;
 		else if (!memcmp(string,"reboot ",strlen("reboot ")))
-			{char buffer_string[PROOL_MAX_STRLEN];
+			{
 			int i; char *cc;
 			//printf("config: reboot param\n");
 			cc=string;
 			i=atoi(cc+strlen("reboot "));
-			sprintf(buffer_string, "config: reboot uptime %i", i);
+			if (i) {reboot_uptime=i*60*24;
+			sprintf(buffer_string, "config: reboot uptime %i days", i);}
+			}
+		else if (!memcmp(string,"port ",strlen("port ")))
+			{
+			int i; char *cc;
+			cc=string;
+			i=atoi(cc+strlen("port "));
+			if (i)	{
+				sprintf(buffer_string, "config: port %i", i);
+				ports[0]=i; ports[1]=-1;
+				}
+			}
+		else if (!memcmp(string,"webstat ",strlen("webstat ")))
+			{
+			int i; char *cc;
+			cc=string;
+			i=atoi(cc+strlen("webstat "));
+			webstat=i;
+			sprintf(buffer_string, "config: webstat %i", i);
+			}
+		else if (!memcmp(string,"send_email ",strlen("send_email ")))
+			{
+			int i; char *cc;
+			cc=string;
+			i=atoi(cc+strlen("send_email "));
+			send_email=i;
+			sprintf(buffer_string, "config: send_email %i", i);
+			}
+		else if (!memcmp(string,"mudname ",strlen("mudname ")))
+			{
+			char *cc;
+			cc=string;
+			strcpy(mudname, cc+strlen("mudname "));
+			sprintf(buffer_string, "config: mudname %s", mudname);
+			}
+		else buffer_string[0]=0;
+		if (buffer_string[0])
+			{
 			puts(buffer_string);
 			prool_log(buffer_string);
-			if (i) reboot_uptime=i*60*24;
 			}
 		}
 	fclose(fconfig);

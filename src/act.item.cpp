@@ -2862,11 +2862,13 @@ ACMD(do_makefood)
 	mob = (mob_proto + real_mobile(mobn));
 	mob->set_normal_morph();
 
+#if 0 // prool: свежуем всё
 	if (!IS_IMMORTAL(ch) && (GET_RACE(mob) != NPC_RACE_ANIMAL || (wgt = GET_WEIGHT(mob)) < 11))
 	{
 		send_to_char("Этот труп невозможно освежевать.\r\n", ch);
 		return;
 	}
+#endif
 	prob = number(1, skill_info[SKILL_MAKEFOOD].max_percent);
 	percent =
 		train_skill(ch, SKILL_MAKEFOOD, skill_info[SKILL_MAKEFOOD].max_percent,
