@@ -1074,9 +1074,9 @@ if (new_rnum)
 	return;
 	}
 
-#if 0
+#if 1
 for (dir = 0; dir < NUM_OF_DIRS; dir++)
-	if (EXIT(ch, dir)) 
+	if (EXIT(ch, dir))
 		{
 		snprintf(buf, PROOL_MAX_STRLEN, "build. exit on dir %c\r\n", symbol_dir[dir]);
 		send_to_char(buf, ch);
@@ -1147,17 +1147,17 @@ if (EXIT(ch, build_dir))
 	OLC_ITEM_TYPE(d) = WLD_TRIGGER;
 
 	// * if exit doesn't exist, alloc/create it
+	OLC_VAL(d) = build_dir;
 	if (!OLC_EXIT(d))
 	{
 		//send_to_char("OLC_EXIT(d)==0\r\n", d->character);
-		OLC_VAL(d) = build_dir;
 		CREATE(OLC_EXIT(d), EXIT_DATA, 1);
 		OLC_EXIT(d)->to_room = new_rnum;
 	}
 	else
 	{
-	printf("build: OLC_EXIT(d)!=0\r\n");
-	send_to_char("build: OLC_EXIT(d)!=0\r\n", ch);
+	sprintf(buf,"build ERROR. OLC_EXIT(d) != 0\r\nexit to rnum %i\r\n", world[OLC_EXIT(d)->to_room]->number);
+	send_to_char(buf, ch);
 	return;
 	}
 	//printf("new_rnum %i\n", new_rnum);

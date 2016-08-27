@@ -81,6 +81,7 @@ extern im_type *imtypes;
 extern int top_imtypes;
 extern void show_code_date(CHAR_DATA *ch);
 extern int nameserver_is_slow; //config.cpp
+extern int top_of_p_table;
 
 // prool's extern:
 extern int total_players;
@@ -5501,13 +5502,14 @@ ACMD(do_affects)
 // Create web-page with users list
 void make_who2html(void)
 {
-
 	FILE *opf;
 
 	DESCRIPTOR_DATA *d;
 	CHAR_DATA *ch;
+	CHAR_DATA *vict;
+	OBJ_DATA *obj;
 
-	int imms_num = 0, morts_num = 0;
+	int imms_num = 0, morts_num = 0, j, k;
 
 	char *imms = NULL;
 	char *morts = NULL;
@@ -5596,8 +5598,24 @@ void make_who2html(void)
 	free(buffer);
 	free(imms);
 	free(morts);
+	fprintf(opf, " <HR>\n");
 
+		// mob/obj statistics
+		
+		j = 0;
+		k = 0;
+		for (vict = character_list; vict; vict = vict->next)
+		{
+			if (IS_NPC(vict))
+				j++;
+		}
 
-	fprintf(opf, " <HR></BODY></HTML>\n");
+		for (obj = object_list; obj; obj = obj->next)
+			k++;
+
+	fprintf(opf, "Total mobs %i\n<BR>\n", j);
+	fprintf(opf, "Total objects %i\n<BR>\n", k);
+	fprintf(opf, "Total registered players %i\n<BR>\n", top_of_p_table + 1);
+	fprintf(opf, " </BODY></HTML>\n");
 	fclose(opf);
 }

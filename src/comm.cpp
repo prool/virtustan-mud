@@ -3265,7 +3265,7 @@ int process_input(DESCRIPTOR_DATA * t)
                              else if (ptr[2] == (char) MSSP) // prool
                                         {char buf0[100];
                                         mssp_start(t);
-                                        // printf("%s MSSP start %s. Online %i\n", ptime(), t->host, total_players);
+                                        printf("%s MSSP start %s. Online %i\n", ptime(), t->host, total_players);
                                         sprintf(buf0,"MSSP start %s. Online %i", t->host, total_players);
                                         log(buf0);
                                         }
