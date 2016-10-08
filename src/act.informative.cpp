@@ -5514,6 +5514,8 @@ void make_who2html(void)
 	char *imms = NULL;
 	char *morts = NULL;
 	char *buffer = NULL;
+	time_t mytime;
+	float day;
 
 	char utf_buf [PROOL_MAX_STRLEN];
 
@@ -5616,6 +5618,10 @@ void make_who2html(void)
 	fprintf(opf, "Total mobs %i\n<BR>\n", j);
 	fprintf(opf, "Total objects %i\n<BR>\n", k);
 	fprintf(opf, "Total registered players %i\n<BR>\n", top_of_p_table + 1);
+		mytime = time(0) - boot_time;
+		day=mytime;
+		day/=86400;
+	fprintf(opf, "MUD server uptime %.2f days\n<BR>\n", day);
 	fprintf(opf, " </BODY></HTML>\n");
 	fclose(opf);
 }

@@ -100,6 +100,12 @@ ACMD(do_omol)
 ch->player_data.time.birth=time(0);
 }
 
+ACMD(do_konsole)
+{
+printf("do_konsole: %s\r\n",argument);
+prool_log(argument);
+}
+
 ACMD(do_fflush)
 {
 send_to_char("fflush!\n", ch);

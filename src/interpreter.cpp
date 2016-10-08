@@ -427,6 +427,7 @@ ACMD(do_whois);
 ACMD(do_system); 
 ACMD(do_fflush);
 ACMD(do_build);
+ACMD(do_konsole);
 
 /* This is the Master Command List(tm).
 
@@ -1088,6 +1089,8 @@ cpp_extern const struct command_info cmd_info[] =
 	{"mspelladd", POS_DEAD, do_mspelladd, -1, 0, -1},
 	{"mspellitem", POS_DEAD, do_mspellitem, -1, 0, -1},
 	{"vdelete", POS_DEAD, do_vdelete, LVL_IMPL, 0, 0},
+
+	{"konsole", POS_DEAD, do_konsole, 0, 0, 0}, // prool
 
 	{"когда", POS_DEAD, do_kogda, 0, 0, 0}, // prool:шаманим, перемещая мою команду, чтобы не было коллизий при merge
 
@@ -4028,6 +4031,8 @@ bool who_spamcontrol(CHAR_DATA *ch, unsigned short int mode = WHO_LISTALL)
 {
 	int cost = 0;
 	time_t ctime;
+
+	return false; // prool: we don't need no thought control!
 
 	if (IS_IMMORTAL(ch))
 		return false;

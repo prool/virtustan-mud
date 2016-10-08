@@ -12,7 +12,7 @@ if [ "$1" = "config" ]; then
     echo 'graph_vlabel digits'
     echo 'graph_noscale true'
     echo 'graph_category MUD'
-    echo 'graph_info This graph shows various MUD digits';
+    echo 'graph_info This graph shows various MUD digits'
     echo 'objs.label VMUD objs'
     exit 0
 fi

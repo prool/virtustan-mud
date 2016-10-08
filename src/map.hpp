@@ -14,7 +14,7 @@
 #include "char.hpp"
 #include "interpreter.h"
 
-ACMD(do_map);
+void do_map(CHAR_DATA *ch, char *argument, int cmd, int subcmd);
 
 namespace MapSystem
 {
@@ -59,3 +59,5 @@ struct Options
 } // namespace MapSystem
 
 #endif // MAP_HPP_INCLUDED
+
+// vim: ts=4 sw=4 tw=0 noet syntax=cpp :

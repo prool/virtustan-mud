@@ -22,6 +22,7 @@ mv syslog syslog-tail-`date "+%d-%m-%Y-%H-%M-%S"`
     echo "MUD shutdown $DATE"  >> syslog
     rm .killscript
     # date "+%d-%m-%Y %H:%M:%S Virtustan MUD stopped" > ~/web/mud.kharkov.org/public_html/mudstat/vmud2.html
+	cp vmud0.html /var/www/mud.kharkov.org/mudstat/vmud2.html
     exit
   fi
 

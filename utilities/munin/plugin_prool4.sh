@@ -8,13 +8,15 @@
 #
 
 if [ "$1" = "config" ]; then
-    echo 'graph_title Z) Prool MUDs registered players http://mud.kharkov.org'
+    echo 'graph_title Z) Prool MUD registered players http://mud.kharkov.org'
     echo 'graph_vlabel digits'
     echo 'graph_noscale true'
     echo 'graph_category MUD'
-    echo 'graph_info This graph shows various MUD digits';
+    echo 'graph_info This graph shows various MUD digits'
     echo 'plrs1.label VMUD registered players'
     echo 'plrs2.label Zerkalo registered players'
+    echo 'plrs1.colour COLOUR0'
+    echo 'plrs2.colour COLOUR7'
     exit 0
 fi
 

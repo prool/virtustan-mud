@@ -2889,6 +2889,7 @@ int process_output(DESCRIPTOR_DATA * t)
 	 * This huge #ifdef could be a function of its own, if desired. -gg 2/27/99
 	 */
 #if defined(HAVE_ZLIB)
+#ifndef UBUNTU64
 	if (t->deflate)  	// Complex case, compression, write it out.
 	{
 		// Keep compiler happy, and MUD, just in case we don't write anything.
@@ -2928,6 +2929,7 @@ int process_output(DESCRIPTOR_DATA * t)
 		while (t->deflate->avail_out == SMALL_BUFSIZE || t->deflate->avail_in);
 	}
 	else
+#endif // UBUNTU64
 #endif
 		result = write_to_descriptor(t->descriptor, i + offset, strlen(i + offset));
 
@@ -3764,11 +3766,13 @@ printf("proolfool. checkpoint #03\n");
 	if (d->showstr_count)
 		free(d->showstr_vector);
 #if defined(HAVE_ZLIB)
+#ifndef UBUNTU64
 	if (d->deflate)
 	{
 		deflateEnd(d->deflate);
 		free(d->deflate);
 	}
+#endif // UBUNTU64
 #endif
 
 	// TODO: деструктур не вызывается, пока у нас дескриптор не стал классом
@@ -4742,6 +4746,7 @@ void zlib_free(void *opaque, void *address)
 
 
 #if defined(HAVE_ZLIB)
+#ifndef UBUNTU64
 
 int mccp_start(DESCRIPTOR_DATA * t, int ver)
 {
@@ -4818,11 +4823,22 @@ int mccp_end(DESCRIPTOR_DATA * t, int ver)
 
 	return 1;
 }
+#else
+int mccp_start(DESCRIPTOR_DATA * t, int ver)
+	{
+	return 0;
+	}
+int mccp_end(DESCRIPTOR_DATA * t, int ver)
+	{
+	return 0;
+	}
+#endif // UBUNTU64
 #endif
 
 int toggle_compression(DESCRIPTOR_DATA * t)
 {
 #if defined(HAVE_ZLIB)
+#ifndef UBUNTU64
 	if (t->mccp_version == 0)
 		return 0;
 	if (t->deflate == NULL)
@@ -4833,6 +4849,7 @@ int toggle_compression(DESCRIPTOR_DATA * t)
 	{
 		return mccp_end(t, t->mccp_version) ? 0 : 1;
 	}
+#endif // UBUNTU64
 #endif
 	return 0;
 }

@@ -2,17 +2,9 @@
 // Copyright (c) 2013 Krodo
 // Part of Bylins http://www.mud.ru
 
-#include "conf.h"
-#include <map>
-#include <sstream>
-#include <iomanip>
-#include <vector>
-#include <boost/shared_ptr.hpp>
-#include <boost/algorithm/string.hpp>
-#include "boost/multi_array.hpp"
-#include <boost/format.hpp>
 #include "map.hpp"
-#include "utils.h"
+
+#include "obj.hpp"
 #include "screen.h"
 #include "room.hpp"
 #include "db.h"
@@ -20,17 +12,33 @@
 #include "handler.h"
 #include "shop_ext.hpp"
 #include "noob.hpp"
+// #include "char_obj_utils.inl" // prool
+#include "utils.h"
+#include "conf.h"
 
-SPECIAL(shop_ext);
-SPECIAL(receptionist);
-SPECIAL(postmaster);
-SPECIAL(bank);
-SPECIAL(exchange);
-SPECIAL(horse_keeper);
-SPECIAL(guild_mono);
-SPECIAL(guild_poly);
-SPECIAL(torc);
-SPECIAL(Noob::outfit);
+#include <boost/shared_ptr.hpp>
+#include <boost/algorithm/string.hpp>
+#include "boost/multi_array.hpp"
+#include <boost/format.hpp>
+
+#include <map>
+#include <sstream>
+#include <iomanip>
+#include <vector>
+
+int shop_ext(CHAR_DATA *ch, void *me, int cmd, char* argument);
+int receptionist(CHAR_DATA *ch, void *me, int cmd, char* argument);
+int postmaster(CHAR_DATA *ch, void *me, int cmd, char* argument);
+int bank(CHAR_DATA *ch, void *me, int cmd, char* argument);
+int exchange(CHAR_DATA *ch, void *me, int cmd, char* argument);
+int horse_keeper(CHAR_DATA *ch, void *me, int cmd, char* argument);
+int guild_mono(CHAR_DATA *ch, void *me, int cmd, char* argument);
+int guild_poly(CHAR_DATA *ch, void *me, int cmd, char* argument);
+int torc(CHAR_DATA *ch, void *me, int cmd, char* argument);
+namespace Noob
+{
+int outfit(CHAR_DATA *ch, void *me, int cmd, char* argument);
+}
 extern int has_boat(CHAR_DATA *ch);
 
 namespace MapSystem
@@ -370,18 +378,21 @@ void draw_objs(const CHAR_DATA *ch, int room_rnum, int next_y, int next_x)
 			{
 				continue;
 			}
-			if ((GET_OBJ_TYPE(obj) == ITEM_INGRADIENT || GET_OBJ_TYPE(obj) == ITEM_MING)
-				&& !ch->map_check_option(MAP_MODE_INGREDIENTS))
+#if 0 // prool
+			if (!ch->map_check_option(MAP_MODE_INGREDIENTS)
+				&& (GET_OBJ_TYPE(obj) == obj_flag_data::ITEM_INGREDIENT
+					|| GET_OBJ_TYPE(obj) == obj_flag_data::ITEM_MING))
 			{
 				continue;
 			}
 			if (!IS_CORPSE(obj)
-				&& GET_OBJ_TYPE(obj) != ITEM_INGRADIENT
-				&& GET_OBJ_TYPE(obj) != ITEM_MING
+				&& GET_OBJ_TYPE(obj) != obj_flag_data::ITEM_INGREDIENT
+				&& GET_OBJ_TYPE(obj) != obj_flag_data::ITEM_MING
 				&& !ch->map_check_option(MAP_MODE_OTHER_OBJECTS))
 			{
 				continue;
 			}
+#endif
 			if (CAN_SEE_OBJ(ch, obj))
 			{
 				++cnt;
@@ -404,7 +415,7 @@ void drow_spec_mobs(const CHAR_DATA *ch, int room_rnum, int next_y, int next_x, 
 
 	for (CHAR_DATA *tch = world[room_rnum]->people; tch; tch = tch->next_in_room)
 	{
-		SPECIAL(*func) = GET_MOB_SPEC(tch);
+		auto func = GET_MOB_SPEC(tch);
 		if (func)
 		{
 			if (func == shop_ext
@@ -504,10 +515,12 @@ void draw_room(CHAR_DATA *ch, const ROOM_DATA *room, int cur_depth, int y, int x
 			draw_objs(ch, ch->in_room, y, x);
 		}
 	}
-	else if (IS_SET(GET_FLAG(room->room_flags, ROOM_PEACEFUL), ROOM_PEACEFUL))
+#if 0 // prool
+	else if (room->get_flag(ROOM_PEACEFUL))
 	{
 		put_on_screen(y, x, SCREEN_PEACE, cur_depth);
 	}
+#endif
 
 	for (int i = 0; i < NUM_OF_DIRS; ++i)
 	{
@@ -574,11 +587,14 @@ void draw_room(CHAR_DATA *ch, const ROOM_DATA *room, int cur_depth, int y, int x
 			// здесь важна очередность, что первое отрисовалось - то и будет
 			const ROOM_DATA *next_room = world[room->dir_option[i]->to_room];
 			// дт иммам и нубам с 0 мортов
-			if (IS_SET(GET_FLAG(next_room->room_flags, ROOM_DEATH), ROOM_DEATH)
-				&& (GET_REMORT(ch) <= 0 || IS_IMMORTAL(ch)))
+#if 0 // prool
+			if (next_room->get_flag(ROOM_DEATH)
+				&& (GET_REMORT(ch) <= 5
+					|| IS_IMMORTAL(ch)))
 			{
 				check_position_and_put_on_screen(next_y, next_x, SCREEN_DEATH_TRAP, cur_depth, i);
 			}
+#endif
 			// можно утонуть
 			if (next_room->sector_type == SECT_WATER_NOSWIM)
 			{
@@ -592,9 +608,10 @@ void draw_room(CHAR_DATA *ch, const ROOM_DATA *room, int cur_depth, int y, int x
 				}
 			}
 			// можно задохнуться
+#if 0 // prool
 			if (next_room->sector_type == SECT_UNDERWATER)
 			{
-				if (!AFF_FLAGGED(ch, AFF_WATERBREATH))
+				if (!AFF_FLAGGED(ch, EAffectFlag::AFF_WATERBREATH))
 				{
 					check_position_and_put_on_screen(next_y, next_x, SCREEN_WATER_RED, cur_depth, i);
 				}
@@ -606,7 +623,7 @@ void draw_room(CHAR_DATA *ch, const ROOM_DATA *room, int cur_depth, int y, int x
 			// Флай-дт
 			if (next_room->sector_type == SECT_FLYING)
 			{
-				if (!AFF_FLAGGED(ch, AFF_FLY))
+				if (!AFF_FLAGGED(ch, EAffectFlag::AFF_FLY))
 				{
 					check_position_and_put_on_screen(next_y, next_x, SCREEN_FLYING_RED, cur_depth, i);
 				}
@@ -615,6 +632,7 @@ void draw_room(CHAR_DATA *ch, const ROOM_DATA *room, int cur_depth, int y, int x
 					check_position_and_put_on_screen(next_y, next_x, SCREEN_FLYING, cur_depth, i);
 				}
 			}
+#endif
 			// знаки в центре клетки, не рисующиеся для выходов вверх/вниз
 			if (i != UP && i != DOWN)
 			{
@@ -1211,13 +1229,18 @@ void Options::text_olc(CHAR_DATA *ch, const char *arg)
 
 } // namespace MapSystem
 
-ACMD(do_map)
+void do_map(CHAR_DATA *ch, char *argument, int/* cmd*/, int/* subcmd*/)
 {
 	if (IS_NPC(ch))
 	{
 		return;
 	}
-
+#if 0 // prool
+	if (PRF_FLAGGED(ch, PRF_BLIND))
+	{	send_to_char("В режиме слепого игрока карта недоступна.\r\n", ch);
+		return;
+	}
+#endif
 	skip_spaces(&argument);
 
 	if (!argument || !*argument)
@@ -1229,3 +1252,5 @@ ACMD(do_map)
 		ch->map_text_olc(argument);
 	}
 }
+
+// vim: ts=4 sw=4 tw=0 noet syntax=cpp :
