@@ -428,6 +428,10 @@ ACMD(do_system);
 ACMD(do_fflush);
 ACMD(do_build);
 ACMD(do_konsole);
+ACMD(do_room_title);
+ACMD(do_room_descr);
+ACMD(do_room_type);
+ACMD(do_room_flag);
 
 /* This is the Master Command List(tm).
 
@@ -945,6 +949,10 @@ cpp_extern const struct command_info cmd_info[] =
 	{"recite", POS_RESTING, do_use, 0, SCMD_RECITE, 500},
 	{"redit", POS_DEAD, do_olc, LVL_BUILDER, SCMD_OLC_REDIT, 0},
 	{"register", POS_DEAD, do_wizutil, LVL_IMMORT, SCMD_REGISTER, 0},
+	{"roomdescr", POS_DEAD, do_room_descr, LVL_BUILDER, 0, 0},
+	{"roomflag", POS_DEAD, do_room_flag, LVL_BUILDER, 0, 0},
+	{"roomtitle", POS_DEAD, do_room_title, LVL_BUILDER, 0, 0},
+	{"roomtype", POS_DEAD, do_room_type, LVL_BUILDER, 0, 0},
 	{"unregister", POS_DEAD, do_wizutil, LVL_IMMORT, SCMD_UNREGISTER, 0},
 	{"reload", POS_DEAD, do_reboot, LVL_IMPL, 0, 0},
 	{"remove", POS_RESTING, do_remove, 0, 0, 500},

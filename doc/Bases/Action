@@ -1,0 +1,51 @@
+*     Action 
+* ___________________________________________________________________
+a0	MOB_SPEC         	имеет спец процедуру
+b0	MOB_SENTINEL     	стоит на месте
+c0	MOB_SCAVENGER    	подбирает вещи
+d0	MOB_ISNPC        	это МОБ(устанавливается программой)
+e0	MOB_AWARE        	не может быть застаблен
+f0	MOB_AGGRESSIVE   	нападает на всех подряд
+g0	MOB_STAY_ZONE    	не покинет зону
+h0	MOB_WIMPY        	сбежит из боя при менее 1/4 хитов
+i0	MOB_AGGR_DAY     	нападает только днем
+j0	MOB_AGGR_NIGHT   	нападает только ночью
+k0	MOB_AGGR_FULLMOON	нападает в полнолуние
+l0	MOB_MEMORY       	запоминает напавших
+m0	MOB_HELPER       	помогает мобам при битве
+n0	MOB_NOCHARM      	нельзя зачармить
+o0	MOB_NOSUMMON     	нельзя призвать
+p0	MOB_NOSLEEP      	нельзя усыпить
+q0	MOB_NOBASH       	нельзя сбашить
+r0	MOB_NOBLIND      	нельзя ослепить
+s0	MOB_MOUNTING     	может быть оседлан
+t0	MOB_NOHOLD       	нельзя захолдить
+u0	MOB_NOSIELENCE   	нельзя замолчать
+v0	MOB_AGGROMONO    	нападает на христиан
+w0	MOB_AGGROPOLY    	нападает на язычников
+x0	MOB_NOFEAR       	не убежит при кастинге страха
+y0	MOB_NOGROUP	  	моб не будет группиться с другими мобами
+z0	MOB_CORPSE       	поднят из трупа и трупа не оставит
+A0	MOB_LOOTER       	моб лутит трупы
+B0	MOB_PROTECT      	моб под защитой - дамаджи не проходят
+a1	MOB_SWIMMING     	моб может плавать
+b1	MOB_FLYING       	моб может летать
+c1	MOB_ONLYSWIMMING 	моб только плавает
+d1	MOB_AGGR_WINTER  	моб агрессивен зимой
+e1	MOB_AGGR_SPRING  	моб агрессивен весной
+f1	MOB_AGGR_SUMMER  	моб агрессивен летом
+g1	MOB_AGGR_AUTUMN  	моб агрессивен осенью
+h1	MOB_LIKE_DAY     	моб появится в зоне только днем
+i1	MOB_LIKE_NIGHT   	моб появится в зоне только ночью
+j1	MOB_LIKE_FULLMOON	моб появится в зоне только в полнолуние
+k1	MOB_LIKE_WINTER  	моб появится только зимой
+l1	MOB_LIKE_SPRING  	моб появится только весной
+m1	MOB_LIKE_SUMMER  	моб появится только летом
+n1	MOB_LIKE_AUTUMN  	моб появится только осенью
+o1	MOB_NOFIGTING           никогда не ступает в бой
+p1	MOB_EADECREASE		у моба уменьшаются экстраатаки со временем
+a2	MOB_FIREBREATH		моб с огненным дыханием
+b2	MOB_GASBREATH		моб с зловонным дыханием
+c2	MOB_FROSTBREATH		моб с ледяным дыханием  
+d2	MOB_ACIDBREATH		моб с кислотным дыханием
+e2	MOB_LIGHTBREATH		моб с ослепляющим дыханием

@@ -1,0 +1,14 @@
+* TYPE 2 (room) TRIGGERS:
+a0	WTRIG_GLOBAL	выполнять даже если зона пуста
+b0	WTRIG_RANDOM	проверяется по случайному
+c0	WTRIG_COMMAND	персонаж ввел команду
+d0	WTRIG_SPEECH	персонаж сказал слово/фразу
+e0	WTRIG_ENTER_PC  ИГРОК вошел в комнату
+f0	WTRIG_RESET	выполняется при репопе зоны
+g0	WTRIG_ENTER	персонаж вошел в комнату
+h0	WTRIG_DROP	что-то выкинули в комнате
+i0	WTRIG_UNLOCK	замок отперли
+j0	WTRIG_OPEN	дверь открыли
+k0	WTRIG_LOCK	замок заперли
+l0	TRIG_CLOSE	дверь закрыли
+z0	WTRIG_AUTO	триггер вызывается из другого триггера

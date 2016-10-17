@@ -1,0 +1,10 @@
+* Position
+0	DEAD		умер
+1	MORTALLYW	при смерти
+2	INCAP		без сознани€
+3	STUNNED		в обмороке
+4	SLEEPING	спит.
+5	RESTING		отдыхает.
+6	SITTING		сидит.
+7	FIGHTING	сражаетс€ (не устанавливать!)
+8	STANDING	стоит.

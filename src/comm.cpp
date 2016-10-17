@@ -217,6 +217,10 @@ int total_players;
 int console_codetable;
 int log_codetable;
 int web_codetable;
+extern char room_title [PROOL_MAX_STRLEN];
+extern char room_descr [PROOL_MAX_STRLEN];
+extern int room_type;
+extern int room_flag;
 
 // local globals
 DESCRIPTOR_DATA *descriptor_list = NULL;	// master desc list
@@ -426,8 +430,12 @@ void gettimeofday(struct timeval *t, struct timezone *dummy)
 
 int main(int argc, char **argv)
 {
-printf("%sVirtustan MUD%s code by Prool, www.prool.kharkov.org, mud.kharkov.org, bitbucket.org/prool/proolmud, github.com/prool/virtustan-mud\n", ansi_lcyan, ansi_reset);
-total_players=0;
+int i;
+
+printf("%sVirtustan MUD%s code by Prool, mud.kharkov.org, bitbucket.org/prool/proolmud, github.com/prool/virtustan-mud\n",
+ansi_lcyan, ansi_reset);
+
+total_players=0; // prool
 
 #ifdef TEST_BUILD
 	// для нормального вывода русского текста под cygwin 1.7 и выше
@@ -449,6 +457,13 @@ extern int ports[10]; // prool
 	plant_magic(buf1);
 	plant_magic(buf2);
 	plant_magic(arg);
+
+// prool: room_descr initialization
+
+strcpy(room_title, "New room");
+strcpy(room_descr, "    Room descr\r\n");
+room_type=0;
+room_flag=0;
 
 // prool: config file processing
 

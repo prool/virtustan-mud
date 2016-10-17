@@ -52,8 +52,14 @@ extern room_rnum r_unreg_start_room;
 extern DESCRIPTOR_DATA *descriptor_list;
 
 //------------------------------------------------------------------------
-int planebit(const char *str, int *plane, int *bit);
+// static arrays and variables
+char room_descr [PROOL_MAX_STRLEN];
+char room_title [PROOL_MAX_STRLEN];
+int room_type;
+int room_flag;
+//------------------------------------------------------------------------
 // * Function Prototypes
+int planebit(const char *str, int *plane, int *bit);
 void redit_setup(DESCRIPTOR_DATA * d, int real_num);
 
 void room_copy(ROOM_DATA * dst, ROOM_DATA * src);
@@ -503,6 +509,7 @@ void redit_disp_sector_menu(DESCRIPTOR_DATA * d)
 #if defined(CLEAR_SCREEN)
 	send_to_char("[H[J", d->character);
 #endif
+// tyt byl prool
 	for (counter = 0; counter < NUM_ROOM_SECTORS; counter++)
 	{
 		sprintf(buf, "%s%2d%s) %-20.20s %s", grn, counter, nrm,
@@ -1000,6 +1007,97 @@ void redit_parse(DESCRIPTOR_DATA * d, char *arg)
 	redit_disp_menu(d);
 }
 /******************************************************************************************************************/
+ACMD(do_room_flag)
+{int counter, columns=0, plane=0, j=1;
+char c;
+
+if (IS_NPC(ch)) return;
+if (strlen(argument)<2)
+	{
+	snprintf(buf, PROOL_MAX_STRLEN, "room flag is %i\r\n",room_flag);
+	send_to_char(buf, ch);
+	}
+else
+	{
+	room_flag=atoi(argument+1);
+	snprintf(buf, PROOL_MAX_STRLEN, "room flag set to %i\r\n",room_flag);
+	send_to_char(buf, ch);
+	}
+
+	for (counter = 0, c = 'a' - 1; plane < NUM_PLANES; counter++)
+	{
+		if (*room_bits[counter] == '\n')
+		{
+			plane++;
+			c = 'a' - 1;
+			j=0;
+			continue;
+		}
+		else if (c == 'z')
+			c = 'A';
+		else
+			c++;
+
+		sprintf(buf, "%9i %-20.20s %s", j,
+				room_bits[counter], !(++columns % 2) ? "\r\n" : "");
+		j=j<<1;
+		send_to_char(buf, ch);
+	}
+}
+/******************************************************************************************************************/
+ACMD(do_room_type)
+{int counter, columns=0;
+if (IS_NPC(ch)) return;
+if (strlen(argument)<2)
+	{
+	snprintf(buf, PROOL_MAX_STRLEN, "room type is %i [%s]\r\n",room_type, sector_types[room_type]);
+	send_to_char(buf, ch);
+	}
+else
+	{
+	room_type=atoi(argument+1);
+	snprintf(buf, PROOL_MAX_STRLEN, "room type set to %i [%s]\r\n",room_type, sector_types[room_type]);
+	send_to_char(buf, ch);
+	}
+
+	for (counter = 0; counter < NUM_ROOM_SECTORS; counter++)
+	{
+		sprintf(buf, "%2d) %-20.20s %s", counter,
+				sector_types[counter], !(++columns % 2) ? "\r\n" : "");
+		send_to_char(buf, ch);
+	}
+}
+/******************************************************************************************************************/
+ACMD(do_room_title)
+{
+if (IS_NPC(ch)) return;
+if (strlen(argument)<2)
+	{
+	snprintf(buf, PROOL_MAX_STRLEN, "room title is '%s'\r\n",room_title);
+	send_to_char(buf, ch);
+	return;
+	}
+
+strcpy(room_title, argument+1);
+snprintf(buf, PROOL_MAX_STRLEN, "room title set to '%s'\r\n",room_title);
+send_to_char(buf, ch);
+}
+/******************************************************************************************************************/
+ACMD(do_room_descr)
+{
+if (IS_NPC(ch)) return;
+if (strlen(argument)<2)
+	{
+	snprintf(buf, PROOL_MAX_STRLEN, "room descr is '%s'\r\n",room_descr);
+	send_to_char(buf, ch);
+	return;
+	}
+
+strcpy(room_descr, argument+1);
+snprintf(buf, PROOL_MAX_STRLEN, "room descr set to '%s'\r\n",room_descr);
+send_to_char(buf, ch);
+}
+/******************************************************************************************************************/
 ACMD(do_build) //prool: build new room
 {char buf [PROOL_MAX_STRLEN];
 int i, vnum, rnum, new_vnum, new_rnum, zone, dir, build_dir, number;
@@ -1106,9 +1204,10 @@ if (EXIT(ch, build_dir))
 	OLC_NUM(d) = number;
 
 	// redit_setup
-	room->name = str_dup("Created room");
-	room->temp_description = str_dup("d e s c r\r\n");
-	room->sector_type=1;
+	room->name = str_dup(room_title);
+	room->temp_description = str_dup(room_descr);
+	room->sector_type=room_type;
+	room->room_flags.flags[0]=room_flag; // set room flags!
 	OLC_ROOM(d) = room;
 	OLC_ITEM_TYPE(d) = WLD_TRIGGER;
 

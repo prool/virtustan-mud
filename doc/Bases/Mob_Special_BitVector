@@ -1,0 +1,26 @@
+* FILL THIS LIST
+* ------------------------------------------------------------------------
+a0	NPC_NORTH	моб не пускает на север
+b0	NPC_EAST	моб не пускает на восток
+c0	NPC_SOUTH	моб не пускает на юг
+d0	NPC_WEST	моб не пускает на запад
+e0	NPC_UP	        моб не пускает вверх
+f0	NPC_DOWN	моб не пускает вниз
+g0	NPC_POISON	моб травит при битве
+h0	NPC_INVIS	моб невидим вне битвы
+i0	NPC_SNEAK	моб подкрадывается
+j0	NPC_CAMOUFLAGE	моб маскируется
+l0	NPC_FLY         моб прилетает
+m0	NPC_MOVECREEP	моб приползает
+n0	NPC_MOVEJUMP	моб припрыгивает
+o0	NPC_MOVESWIM	моб приплывает
+p0      NPS_RUNNING	моб прибегает
+u0	NPC_AIRCREATURE	моб - порождение воздуха
+v0	NPC_WATERCREATURE	моб - порождение воды
+w0	NPC_EARTHCREATURE	моб - порождение земли
+x0	NPC_FIRECREATURE	моб - порождение огня
+y0	NPC_HELPED      моба можно нанять
+a1	NPC_STEALING	моб ворует
+b1	NPC_WIELDING	моб вооружается шмотками из инвентаря
+c1	NPC_ARMORING	моб одевает доспехи
+d1	NPC_USELIGHT	моб может брать лампу

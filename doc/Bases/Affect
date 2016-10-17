@@ -1,0 +1,45 @@
+* Affect
+*   Битвектор аффектов
+*      Битвектор может принимать следующие значения:
+*      (что будет с монстром/игроком если одеть предмет)
+* ___________________________________________________________________
+a0	AFF_BLIND             	слепота
+b0	AFF_INVISIBLE         	невидимость
+c0	AFF_DETECT_ALIGN      	определение наклонностей
+d0	AFF_DETECT_INVIS      	определение невидимости
+e0	AFF_DETECT_MAGIC      	определение магии
+f0	AFF_SENSE_LIFE        	чувствовать жизнь
+g0	AFF_WATERWALK         	хождение по воде
+h0	AFF_SANCTUARY         	освящение
+i0	AFF_CURSE             	проклят
+j0	AFF_INFRAVISION       	видение ночью
+k0	AFF_POISON          	отравлен
+l0	AFF_PROTECT_GOOD      	защищен от тьмы
+m0	AFF_PROTECT_EVIL      	защищен от света
+n0	AFF_SLEEP		сон
+o0	AFF_NOTRACK           	нельзя выследить и отсенсить
+p0	AFF_BLESS             	доблесть
+q0	AFF_SNEAK             	подкрадывается
+r0	AFF_HIDE              	прячется
+s0	AFF_HOLD		оцепенение
+t0	AFF_FLY               	в полете
+u0	AFF_SIELENCE          	помолчан
+v0	AFF_AWARNESS          	насторожен
+w0	AFF_BLINK             	мигает (уходит из-под удара)
+x0	AFF_NOFLEE            	не сбежит
+y0	AFF_HOLYLIGHT         	источник света глобального (магия)
+z0	AFF_SINGLELIGHT       	есть источник света (не лампа ! Браслеты и т.п.)
+A0	AFF_HOLYDARK          	источник тьмя глобальной (магия)
+B0	AFF_DETECT_POISON     	определение яда
+C0	AFF_SLOW        	медлительность
+D0	AFF_HASTE             	передвижение в бою ускорено
+a1	AFF_WATERBREATH       	дышит водой
+*d1	AFF_GODPROTECT		щит (защита богов) 
+*i1	AFF_MAGICSHIELD         щит (магический)
+*f1	AFF_FIRESHIELD          щит (огненный)
+*g1	AFF_ICESHIELD           щит (ледяной)
+*h1	AFF_MAGICGLASS          зеркало магии
+*i1	AFF_STAIRS              звезды
+*j1	AFF_STONEHAND           каменная рука
+*k1	AFF_PRISMATICAURA     	призматическая аура
+*l1	AFF_HELPER              нанят

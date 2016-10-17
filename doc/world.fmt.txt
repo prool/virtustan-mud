@@ -1,0 +1,101 @@
+ФОРМАТ ФАЙЛА КОМНАТ
+
+1) #число - vnum комнаты
+2) строка~ - название комнаты
+3) список строк, разделенных CR(CRLF)~ - полное описание комнаты
+внутри могут быть теги
+<night>текст<night>
+<day>...<day>
+<winternight>...<winternight>
+<winterday>...<winterday>
+<springnight>...<springnight>
+<springday>...<springday> 
+<summernight>...<summernight>
+<summerday>...<summerday>
+<autumnnight>...<autumnnight>
+<autumnday>...<autumnday> 
+внутри которых вводится описание в указанное время дня и года
+4) число флаги число
+   - номер зоны
+   - флаги комнаты (см. ниже)
+   - тип сектора
+5) 0-6 конструкций типа 
+    / Dчисло0-5
+   |  строка~
+   |  строка~
+    \ число1 число2 число3
+   число0-5 означает направление (север восток юг запад вверх вниз)
+   строка - описание входа (по команде см или оглядеться)
+   строка - ключевое слово(название) входа - дверь ворота решетка и тп
+   число1 - флаг входа
+          бит 0 уст - это дверь
+          бит 1 уст - невзламываемая дверь
+          бит 2 уст - скрытый выход
+   число2 - vnum ключа или -1 если нет ключа
+   число3 - vnum комнаты куда ведет
+7) 0 и более конструкций типа
+    / E
+   |  строка~
+    \ строка~
+   строка - ключевое слово осматриваемой вещи
+   строка - ее описание
+8) S - конец комнаты
+   
+после этого может следовать несколько конструкций типа
+T number
+- привязывающих тригера к комнате
+
+
+Направления
+#define NORTH          0
+#define EAST           1
+#define SOUTH          2
+#define WEST           3
+#define UP             4
+#define DOWN           5
+
+
+Фдаги комнат
+#define ROOM_DARK		a0 Dark
+#define ROOM_DEATH		b0 Death trap
+#define ROOM_NOMOB		c0 MOBs not allowed
+#define ROOM_INDOORS		d0 Indoors
+#define ROOM_PEACEFUL		e0 Violence not allowed
+#define ROOM_SOUNDPROOF		f0 Shouts, gossip blocked
+#define ROOM_NOTRACK		g0 Track won't go through
+#define ROOM_NOMAGIC		h0 Magic not allowed
+#define ROOM_TUNNEL		i0 room for only 1 pers
+#define ROOM_PRIVATE		j0 Can't teleport in
+#define ROOM_GODROOM		k0 LVL_GOD+ only allowed
+#define ROOM_HOUSE		l0 (R) Room is a house
+#define ROOM_HOUSE_CRASH	m0 (R) House needs saving
+#define ROOM_ATRIUM		n0 (R) The door to a house
+#define ROOM_OLC		o0 (R) Modifyable/!compress
+#define ROOM_BFS_MARK		p0 (R) breath-first srch mrk
+#define ROOM_MAGE               q0 mages privelege
+#define ROOM_CLERIC             r0 cleric priv
+#define ROOM_THIEF              s0 thief priv
+#define ROOM_WARRIOR            t0 warrior priv
+#define ROOM_ASSASINE           u0 ass priv
+#define ROOM_GUARD              v0
+#define ROOM_PALADINE           w0
+#define ROOM_RANGER             x0
+#define ROOM_POLY               y0
+#define ROOM_MONO               z0
+#define ROOM_ARENA              D0
+
+#define ROOM_NOSUMMON           a1
+#define ROOM_NOTELEPORT         b1
+#define ROOM_NOHORSE            c1
+
+#define SECT_INSIDE          0		   /* Indoors			*/
+#define SECT_CITY            1		   /* In a city			*/
+#define SECT_FIELD           2		   /* In a field		*/
+#define SECT_FOREST          3		   /* In a forest		*/
+#define SECT_HILLS           4		   /* In the hills		*/
+#define SECT_MOUNTAIN        5		   /* On a mountain		*/
+#define SECT_WATER_SWIM      6		   /* Swimmable water		*/
+#define SECT_WATER_NOSWIM    7		   /* Water - need a boat	*/
+#define SECT_FLYING	     8		   /* Wheee!			*/
+#define SECT_UNDERWATER	     9		   /* Underwater		*/
+#define SECT_SECRET          10

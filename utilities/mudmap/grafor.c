@@ -24,6 +24,20 @@ int zerodir[6]={0,0,0,0,0,0};
 
 int STARTZONE=99;
 
+char *ptime(void) // Возвращаемое значение: ссылка на текстовую строку с текущим временем
+	{
+	char *tmstr;
+	time_t mytime;
+
+	mytime = time(0);
+
+	tmstr = (char *) asctime(localtime(&mytime));
+	*(tmstr + strlen(tmstr) - 1) = '\0';
+
+	return tmstr;
+
+	}
+
 void square (int type, int dir[6])
 {
 printf("<rect x=\"%i\" y=\"%i\" width=\"10\" height=\"10\" fill=\"%s\" stroke=\"black\" stroke-width=\"0\"/>\n",
@@ -98,6 +112,7 @@ int main (int argc, char *argv[], char **env)
 
 {FILE *f1, *html;
 char str[STRLEN];
+char string[STRLEN];
 int r, i, j, k;
 int count;
 int direct, i1, i2, i3;
@@ -136,6 +151,36 @@ struct rooms
 struct rooms room[MAXROOM];
 
 int index [MAXINDEX];
+FILE *fconfig;
+
+// process config file
+
+fconfig=fopen("grafor.cfg","r");
+if (fconfig)
+	{
+	while (!feof(fconfig))
+		{char *pp;
+		string[0]=0;
+		fgets(string,STRLEN,fconfig);
+		pp=strchr(string,'\n');
+		if (pp) *pp=0;
+		// printf("`%s'\n", string); // debug print
+		if (!strcmp(string,"test")) printf("TEST OK!\n");
+		else if (!memcmp(string,"startzone ",strlen("startzone ")))
+			{
+			int i; char *cc;
+			cc=string;
+			i=atoi(cc+strlen("startzone "));
+			if (i) STARTZONE=i;
+			}
+		}
+	fclose(fconfig);
+	}
+else
+	{
+	//printf("grafor.cfg not found\n");
+	}
+// end of process config file
 
 #if 1 // BIG IF
 count=-1;
@@ -160,10 +205,10 @@ for (i=0;i<MAXROOM;i++)
 	}
 
 z0=0; 
-x0=-38;          
-y0=-28;   
-dx=99; //dx=38+58+1;
-dy=64; //dy=32+34+1;
+x0=-41;          
+y0=-33;   
+dx=101; //dx=38+58+1;
+dy=67; //dy=32+34+1;
         
 cursor_x=0;
 cursor_y=0;
@@ -456,7 +501,7 @@ printf("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=koi8-r\">
 
 #if 1 // BIG IF 2
 
-printf("startzone=%i\n", STARTZONE);
+printf("map generated %s startzone=%i\n", ptime(), STARTZONE);
 
 #if 0
 printf("startzone=%i X=%03i \

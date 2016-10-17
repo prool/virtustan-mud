@@ -1,0 +1,1169 @@
+* Шаблоны для мобов
+* Первая строка - название шаблона.
+* Любые параметры могут отсутствовать, тогда они будут заполнены 0 или пустой строкой.
+* Параметров Destination, Spells, Skills, Helper и Triggers может быть несколько.
+* Если какой-то параметр пустой, то не указывайте его вообще! (как, например, Destination)
+* Строки обязательно должны оканчиваться тильдой (~).
+* Битвекторы считаются как строки, поэтому тоже должны оканчиваться тильдой.
+#По умолчанию~
+Alias: новый~
+Imen: новый~
+Rod: ~
+Dat: ~
+Vin: ~
+Tvor: ~
+Pred: ~
+Desc: ~
+Look: ~
+*Look: Строка 2~
+*Look: Строка 3...~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 1
+Hitroll: 0
+AC: 0
+Hits: 0 0 0
+Damage: 0 0 0
+Money: 0 0 0
+Exp: 0
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+*Destination: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 0
+Model: 100
+Size: 0
+Height: 0
+Weight: 0
+Special: ~
+*Spells: 0
+*Skills: 0 0
+*Helper: 0
+*Triggers: 0
+MaxInWorld: 0
+#Моб 1 уровня~
+Alias: моб первого уровня~
+Imen: моб первого уровня~
+Rod: моба первого уровня~
+Dat: мобу первого уровня~
+Vin: моба первого уровня~
+Tvor: мобом первого уровня~
+Pred: мобе первого уровня~
+Desc: Моб первого уровня прохаживается здесь~
+Look: Приглядевшись повнимательнее, Вы заметили, что это существо всего лишь~
+Look: первого уровня~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 1
+Hitroll: 20
+AC: 10
+Hits: 5 3 5
+Damage: 1 3 0
+Money: 0 0 0
+Exp: 30
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 0
+Model: 100
+Size: 31
+Height: 0
+Weight: 0
+Special: ~
+#Моб 2 уровня~
+Alias: моб второго уровня~
+Imen: моб второго уровня~
+Rod: моба второго уровня~
+Dat: мобу второго уровня~
+Vin: моба второго уровня~
+Tvor: мобом второго уровня~
+Pred: мобе второго уровня~
+Desc: Маленький моб стоит и размышляет о жизни~
+Look: Странно, подумали Вы, взглянув на это создание, что такое умное на вид~
+Look: существо всего лишь второго уровня~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 2
+Hitroll: 19
+AC: 10
+Hits: 5 5 15
+Damage: 1 4 1
+Money: 0 0 0
+Exp: 50
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 0
+Model: 100
+Size: 32
+Height: 0
+Weight: 0
+Special: ~
+#Моб 3 уровня~
+Alias: моб третьего уровня~
+Imen: моб третьего уровня~
+Rod: моба третьего уровня~
+Dat: мобу третьего уровня~
+Vin: моба третьего уровня~
+Tvor: мобом третьего уровня~
+Pred: мобе третьего уровня~
+Desc: Пузатая мелочь шныряет под ногами~
+Look: Приглядевшись внимательнее, Вы заметили, что эта пузатая мелочь~
+Look: третьего уровня~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 3
+Hitroll: 18
+AC: 9
+Hits: 10 4 20
+Damage: 1 4 2
+Money: 0 0 0
+Exp: 90
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 0
+Model: 100
+Size: 33
+Height: 0
+Weight: 0
+#Моб 4 уровня~
+Alias: моб четвертого уровня~
+Imen: моб четвертого уровня~
+Rod: моба четвертого уровня~
+Dat: мобу четвертого уровня~
+Vin: моба четвертого уровня~
+Tvor: мобом четвертого уровня~
+Pred: мобе четвертого уровня~
+Desc: Пузатая немелочь расхаживает взад вперед~
+Look: Странно, подумали Вы, взглянув на это создание, что такое умное на вид~
+Look: существо всего лишь четвертого уровня~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 4
+Hitroll: 17
+AC: 9
+Hits: 20 3 20
+Damage: 1 4 3
+Money: 0 0 0
+Exp: 180
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 0
+Model: 100
+Size: 34
+Height: 0
+Weight: 0
+#Моб 5 уровня~
+Alias: моб пятого уровня~
+Imen: моб пятого уровня~
+Rod: моба пятого уровня~
+Dat: мобу пятого уровня~
+Vin: моба пятого уровня~
+Tvor: мобом пятого уровня~
+Pred: мобе пятого уровня~
+Desc: Это просто моб пятого уровня~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 5
+Hitroll: 16
+AC: 9
+Hits: 5 9 50
+Damage: 1 4 3
+Money: 0 0 0
+Exp: 360
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 0
+Model: 100
+Size: 35
+Height: 0
+Weight: 0
+#Моб 6 уровня~
+Alias: моб шестого уровня~
+Imen: моб шестого уровня~
+Rod: моба шестого уровня~
+Dat: мобу шестого уровня~
+Vin: моба шестого уровня~
+Tvor: мобом шестого уровня~
+Pred: мобе шестого уровня~
+Desc: Моб шестого уровня стоит тут~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 6
+Hitroll: 15
+AC: 8
+Hits: 10 8 50
+Damage: 2 2 2
+Money: 0 0 0
+Exp: 720
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 0
+Model: 100
+Size: 36
+Height: 0
+Weight: 0
+#Моб 7 уровня~
+Alias: моб седьмого уровня~
+Imen: моб седьмого уровня~
+Rod: моба седьмого уровня~
+Dat: мобу седьмого уровня~
+Vin: моба седьмого уровня~
+Tvor: мобом седьмого уровня~
+Pred: мобе седьмого уровня~
+Desc: Моб седьмого уровня расположился тут~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 7
+Hitroll: 14
+AC: 8
+Hits: 10 8 80
+Damage: 2 2 2
+Money: 0 0 0
+Exp: 1500
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 0
+Model: 100
+Size: 37
+Height: 0
+Weight: 0
+#Моб 8 уровня~
+Alias: моб восьмого уровня~
+Imen: моб восьмого уровня~
+Rod: моба восьмого уровня~
+Dat: мобу восьмого уровня~
+Vin: моба восьмого уровня~
+Tvor: мобом восьмого уровня~
+Pred: мобе восьмого уровня~
+Desc: Несколько раздобревший вширь моб стоит здесь~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 8
+Hitroll: 13
+AC: 8
+Hits: 15 7 90
+Damage: 2 3 2
+Money: 0 0 0
+Exp: 2000
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 0
+Model: 100
+Size: 38
+Height: 0
+Weight: 0
+#Моб 9 уровня~
+Alias: моб девятого уровня~
+Imen: моб девятого уровня~
+Rod: моба девятого уровня~
+Dat: мобу девятого уровня~
+Vin: моба девятого уровня~
+Tvor: мобом девятого уровня~
+Pred: мобе девятого уровня~
+Desc: Несколько раздобревший вширь и ввысь моб стоит туточки~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 9
+Hitroll: 12
+AC: 7
+Hits: 25 5 100
+Damage: 2 3 3
+Money: 0 0 0
+Exp: 2500
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 1
+Model: 100
+Size: 39
+Height: 0
+Weight: 0
+#Моб 10 уровня~
+Alias: моб десятого уровня~
+Imen: моб десятого уровня~
+Rod: моба десятого уровня~
+Dat: мобу десятого уровня~
+Vin: моба десятого уровня~
+Tvor: мобом десятого уровня~
+Pred: мобе десятого уровня~
+Desc: Несколько обнаглевший моб смотрит на Вас не отрываясь~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 10
+Hitroll: 11
+AC: 7
+Hits: 40 4 100
+Damage: 2 4 2
+Money: 0 0 0
+Exp: 3000
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 1
+Model: 100
+Size: 40
+Height: 0
+Weight: 0
+#Моб 11 уровня~
+Alias: моб одиннадцатого уровня~
+Imen: моб одиннадцатого уровня~
+Rod: моба одиннадцатого уровня~
+Dat: мобу одиннадцатого уровня~
+Vin: моба одиннадцатого уровня~
+Tvor: мобом одиннадцатого уровня~
+Pred: мобе одиннадцатого уровня~
+Desc: Моб средних размеров глазеет на окружающих~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 11
+Hitroll: 10
+AC: 6
+Hits: 25 7 150
+Damage: 2 4 3
+Money: 0 0 0
+Exp: 4000
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 1
+Model: 100
+Size: 41
+Height: 0
+Weight: 0
+#Моб 12 уровня~
+Alias: моб двенадцатого уровня~
+Imen: моб двенадцатого уровня~
+Rod: моба двенадцатого уровня~
+Dat: мобу двенадцатого уровня~
+Vin: моба двенадцатого уровня~
+Tvor: мобом двенадцатого уровня~
+Pred: мобе двенадцатого уровня~
+Desc: Моб средних размеров обозревает окрестности~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 12
+Hitroll: 10
+AC: 6
+Hits: 20 10 190
+Damage: 2 4 4
+Money: 0 0 0
+Exp: 5000
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 1
+Model: 100
+Size: 42
+Height: 0
+Weight: 0
+#Моб 13 уровня~
+Alias: моб тринадцатого уровня~
+Imen: моб тринадцатого уровня~
+Rod: моба тринадцатого уровня~
+Dat: мобу тринадцатого уровня~
+Vin: моба тринадцатого уровня~
+Tvor: мобом тринадцатого уровня~
+Pred: мобе тринадцатого уровня~
+Desc: Маленький чертенок считает до дюжины~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 13
+Hitroll: 9
+AC: 5
+Hits: 20 11 210
+Damage: 2 4 5
+Money: 0 0 0
+Exp: 10000
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 1
+Model: 100
+Size: 43
+Height: 0
+Weight: 0
+#Моб 14 уровня~
+Alias: моб четырнадцтого уровня~
+Imen: моб четырнадцтого уровня~
+Rod: моба четырнадцтого уровня~
+Dat: мобу четырнадцтого уровня~
+Vin: моба четырнадцтого уровня~
+Tvor: мобом четырнадцтого уровня~
+Pred: мобе четырнадцтого уровня~
+Desc: Высокий дылда опирается на сучковатую дубину~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 14
+Hitroll: 8
+AC: 5
+Hits: 20 12 230
+Damage: 3 4 2
+Money: 0 0 0
+Exp: 13000
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 1
+Model: 100
+Size: 44
+Height: 0
+Weight: 0
+#Моб 15 уровня~
+Alias: моб пятнадцтого уровня~
+Imen: моб пятнадцтого уровня~
+Rod: моба пятнадцтого уровня~
+Dat: мобу пятнадцтого уровня~
+Vin: моба пятнадцтого уровня~
+Tvor: мобом пятнадцтого уровня~
+Pred: мобе пятнадцтого уровня~
+Desc: Просто моб просто пятнадцтого уровня~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 15
+Hitroll: 8
+AC: 5
+Hits: 10 25 270
+Damage: 3 4 3
+Money: 0 0 0
+Exp: 14000
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 1
+Model: 100
+Size: 45
+Height: 0
+Weight: 0
+#Моб 16 уровня~
+Alias: моб шестнадцтого уровня~
+Imen: моб шестнадцтого уровня~
+Rod: моба шестнадцтого уровня~
+Dat: мобу шестнадцтого уровня~
+Vin: моба шестнадцтого уровня~
+Tvor: мобом шестнадцтого уровня~
+Pred: мобе шестнадцтого уровня~
+Desc: Просто моб шестнадцтого уровня~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 16
+Hitroll: 7
+AC: 4
+Hits: 10 25 290
+Damage: 3 4 4
+Money: 0 0 0
+Exp: 15000
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 1
+Model: 100
+Size: 46
+Height: 0
+Weight: 0
+#Моб 17 уровня~
+Alias: моб семнадцтого уровня~
+Imen: моб семнадцтого уровня~
+Rod: моба семнадцтого уровня~
+Dat: мобу семнадцтого уровня~
+Vin: моба семнадцтого уровня~
+Tvor: мобом семнадцтого уровня~
+Pred: мобе семнадцтого уровня~
+Desc: Моб семнадцтого уровня мается дурью~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 17
+Hitroll: 7
+AC: 4
+Hits: 20 14 290
+Damage: 3 4 5
+Money: 0 0 0
+Exp: 16300
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 1
+Model: 100
+Size: 47
+Height: 0
+Weight: 0
+#Моб 18 уровня~
+Alias: моб восемнадцтого уровня~
+Imen: моб восемнадцтого уровня~
+Rod: моба восемнадцтого уровня~
+Dat: мобу восемнадцтого уровня~
+Vin: моба восемнадцтого уровня~
+Tvor: мобом восемнадцтого уровня~
+Pred: мобе восемнадцтого уровня~
+Desc: Моб восемнадцтого уровня просто стоит тут~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 18
+Hitroll: 6
+AC: 4
+Hits: 20 15 300
+Damage: 4 4 2
+Money: 0 0 0
+Exp: 175000
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 1
+Model: 100
+Size: 48
+Height: 0
+Weight: 0
+#Моб 19 уровня~
+Alias: моб девятнадцтого уровня~
+Imen: моб девятнадцтого уровня~
+Rod: моба девятнадцтого уровня~
+Dat: мобу девятнадцтого уровня~
+Vin: моба девятнадцтого уровня~
+Tvor: мобом девятнадцтого уровня~
+Pred: мобе девятнадцтого уровня~
+Desc: Девятнадцатиуровневый монстр рычит на Вас~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 19
+Hitroll: 6
+AC: 3
+Hits: 40 8 300
+Damage: 4 4 3
+Money: 0 0 0
+Exp: 18800
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 1
+Model: 100
+Size: 49
+Height: 0
+Weight: 0
+#Моб 20 уровня~
+Alias: моб двадцатого уровня~
+Imen: моб двадцатого уровня~
+Rod: моба двадцатого уровня~
+Dat: мобу двадцатого уровня~
+Vin: моба двадцатого уровня~
+Tvor: мобом двадцатого уровня~
+Pred: мобе двадцатого уровня~
+Desc: Моб двадцатого уровня стоит здесь и мается со скуки~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 20
+Hitroll: 5
+AC: 3
+Hits: 50 7 300
+Damage: 4 4 4
+Money: 0 0 0
+Exp: 20000
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 1
+Model: 100
+Size: 50
+Height: 0
+Weight: 0
+#Моб 21 уровня~
+Alias: моб двадцать первого уровня~
+Imen: моб двадцать первого уровня~
+Rod: моба двадцать первого уровня~
+Dat: мобу двадцать первого уровня~
+Vin: моба двадцать первого уровня~
+Tvor: мобом двадцать первого уровня~
+Pred: мобе двадцать первого уровня~
+Desc: Моб двадцать первого уровня стоит здесь и мается со скуки~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 21
+Hitroll: 4
+AC: 3
+Hits: 20 17 350
+Damage: 4 5 2
+Money: 0 0 0
+Exp: 20000
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 1
+Model: 100
+Size: 51
+Height: 0
+Weight: 0
+#Моб 22 уровня~
+Alias: моб двадцать второго уровня~
+Imen: моб двадцать второго уровня~
+Rod: моба двадцать второго уровня~
+Dat: мобу двадцать второго уровня~
+Vin: моба двадцать второго уровня~
+Tvor: мобом двадцать второго уровня~
+Pred: мобе двадцать второго уровня~
+Desc: Моб двадцать второго уровня стоит здесь и мается со скуки~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 22
+Hitroll: 3
+AC: 2
+Hits: 20 18 380
+Damage: 4 5 4
+Money: 0 0 0
+Exp: 22500
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 1
+Model: 100
+Size: 52
+Height: 0
+Weight: 0
+#Моб 23 уровня~
+Alias: моб двадцать третьего уровня~
+Imen: моб двадцать третьего уровня~
+Rod: моба двадцать третьего уровня~
+Dat: мобу двадцать третьего уровня~
+Vin: моба двадцать третьего уровня~
+Tvor: мобом двадцать третьего уровня~
+Pred: мобе двадцать третьего уровня~
+Desc: Моб двадцать третьего уровня стоит здесь и мается со скуки~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 23
+Hitroll: 3
+AC: 2
+Hits: 40 10 400
+Damage: 5 5 1
+Money: 0 0 0
+Exp: 22500
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 1
+Model: 100
+Size: 53
+Height: 0
+Weight: 0
+#Моб 24 уровня~
+Alias: моб двадцать четвертого уровня~
+Imen: моб двадцать четвертого уровня~
+Rod: моба двадцать четвертого уровня~
+Dat: мобу двадцать четвертого уровня~
+Vin: моба двадцать четвертого уровня~
+Tvor: мобом двадцать четвертого уровня~
+Pred: мобе двадцать четвертого уровня~
+Desc: Моб двадцать четвертого уровня стоит здесь и мается со скуки~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 24
+Hitroll: 2
+AC: 2
+Hits: 100 5 380
+Damage: 5 5 3
+Money: 0 0 0
+Exp: 25000
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 1
+Model: 100
+Size: 54
+Height: 0
+Weight: 0
+#Моб 25 уровня~
+Alias: моб двадцать пятого уровня~
+Imen: моб двадцать пятого уровня~
+Rod: моба двадцать пятого уровня~
+Dat: мобу двадцать пятого уровня~
+Vin: моба двадцать пятого уровня~
+Tvor: мобом двадцать пятого уровня~
+Pred: мобе двадцать пятого уровня~
+Desc: Моб двадцать пятого уровня стоит здесь и мается со скуки~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 25
+Hitroll: 2
+AC: 1
+Hits: 40 12 490
+Damage: 5 5 5
+Money: 0 0 0
+Exp: 25000
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 2
+Model: 100
+Size: 55
+Height: 0
+Weight: 0
+#Моб 26 уровня~
+Alias: моб двадцать шестого уровня~
+Imen: моб двадцать шестого уровня~
+Rod: моба двадцать шестого уровня~
+Dat: мобу двадцать шестого уровня~
+Vin: моба двадцать шестого уровня~
+Tvor: мобом двадцать шестого уровня~
+Pred: мобе двадцать шестого уровня~
+Desc: Моб двадцать шестого уровня стоит здесь и мается со скуки~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 26
+Hitroll: 2
+AC: 1
+Hits: 100 6 480
+Damage: 6 5 3
+Money: 0 0 0
+Exp: 30000
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 2
+Model: 100
+Size: 56
+Height: 0
+Weight: 0
+#Моб 27 уровня~
+Alias: моб двадцать седьмого уровня~
+Imen: моб двадцать седьмого уровня~
+Rod: моба двадцать седьмого уровня~
+Dat: мобу двадцать седьмого уровня~
+Vin: моба двадцать седьмого уровня~
+Tvor: мобом двадцать седьмого уровня~
+Pred: мобе двадцать седьмого уровня~
+Desc: Моб двадцать седьмого уровня стоит здесь и мается со скуки~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 27
+Hitroll: 1
+AC: 0
+Hits: 40 15 620
+Damage: 6 5 6
+Money: 0 0 0
+Exp: 40000
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 2
+Model: 100
+Size: 57
+Height: 0
+Weight: 0
+#Моб 28 уровня~
+Alias: моб двадцать восьмого уровня~
+Imen: моб двадцать восьмого уровня~
+Rod: моба двадцать восьмого уровня~
+Dat: мобу двадцать восьмого уровня~
+Vin: моба двадцать восьмого уровня~
+Tvor: мобом двадцать восьмого уровня~
+Pred: мобе двадцать восьмого уровня~
+Desc: Моб двадцать восьмого уровня стоит здесь и мается со скуки~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 28
+Hitroll: 1
+AC: -1
+Hits: 20 30 660
+Damage: 7 5 4
+Money: 0 0 0
+Exp: 50000
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 2
+Model: 100
+Size: 58
+Height: 0
+Weight: 0
+#Моб 29 уровня~
+Alias: моб двадцать девятого уровня~
+Imen: моб двадцать девятого уровня~
+Rod: моба двадцать девятого уровня~
+Dat: мобу двадцать девятого уровня~
+Vin: моба двадцать девятого уровня~
+Tvor: мобом двадцать девятого уровня~
+Pred: мобе двадцать девятого уровня~
+Desc: Моб двадцать девятого уровня стоит здесь и мается со скуки~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 29
+Hitroll: 0
+AC: -2
+Hits: 100 7 600
+Damage: 6 6 9
+Money: 0 0 0
+Exp: 100000
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 3
+Model: 100
+Size: 59
+Height: 0
+Weight: 0
+#Моб 30 уровня~
+Alias: моб тридцатого уровня~
+Imen: моб тридцатого уровня~
+Rod: моба тридцатого уровня~
+Dat: мобу тридцатого уровня~
+Vin: моба тридцатого уровня~
+Tvor: мобом тридцатого уровня~
+Pred: мобе тридцатого уровня~
+Desc: Моб тридцатого уровня стоит здесь и мается со скуки~
+Look: ~
+Flags: g0~
+Affects: ~
+Align: 0
+Level: 30
+Hitroll: 0
+AC: -3
+Hits: 100 7 600
+Damage: 7 6 8
+Money: 0 0 0
+Exp: 200000
+PosLoad: 8
+PosDefault: 8
+Pol: 1
+BareHandAttack: 0
+Str: 11
+Int: 11
+Wis: 11
+Dex: 11
+Con: 11
+Cha: 11
+LikeWork: 0
+MaxFactor: 0
+ExtraAttack: 3
+Model: 100
+Size: 60
+Height: 0
+Weight: 0

@@ -1,0 +1,43 @@
+* Шаблоны для объектов
+* Первая строка - название шаблона.
+* Любые параметры могут отсутствовать, тогда они будут заполнены 0 или пустой строкой.
+* Параметров AddParam и Triggers может быть несколько.
+* Если какой-то параметр пустой, то не указывайте его вообще! (как, например, Triggers)
+* Строки обязательно должны оканчиваться тильдой (~).
+* Битвекторы считаются как строки, поэтому тоже должны оканчиваться тильдой.
+#По умолчанию~
+Alias: новый~
+Imen: новый~
+Rod: ~
+Dat: ~
+Vin: ~
+Tvor: ~
+Pred: ~
+Desc: ~
+Action: ~
+TrenSkill: 0
+MagicVector: ~
+MaxDurab: 0
+CurrDurab: 0
+Material: 0
+Pol: 0
+Timer: 0
+Spell: 0
+SpellLevel: 0
+Effects: ~
+Discomfort: ~
+Bans: ~
+Kind: 0
+Flags: ~
+WearFlags: ~
+Param1: ~
+Param2: 0
+Param3: 0
+Param4: 0
+Weight: 0
+Price: 0
+RentInv: 0
+RentWear: 0
+MaxInWorld: 0
+*AddParam: 0 0
+*Triggers: 0

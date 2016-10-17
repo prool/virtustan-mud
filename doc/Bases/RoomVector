@@ -1,0 +1,36 @@
+*   Битвектор комнаты
+*
+a0	DARK		В комнате темно.
+b0	DEATH		Комната death trap; игрок умирает (не теряет xp).
+c0	NOMOB		МОБы (монстры) не могут зайти сюда.
+d0	INDOORS		Комната внутри помещения. (нет дождя и т.д.)
+e0	PEACEFUL	Комната мирная (запрещены агрессивные команды).
+f0	SOUNDPROOF	Крики, tell'ы и прочее нельзя здесь услышать.
+g0	NOTRACK		"track" не сможет найти путь через эту комнату.
+h0	NOMAGIC		Любая попытка колдовать здесь провалится.
+i0	TUNNEL		Только один человек может быть здесь одновременно.
+j0	PRIVATE		Нельзя сюда попасть если здесь беседуют 2 человека.
+*k0	GODROOM		Только LVL_GOD (богам) разрешено сюда входить.
+*l0	HOUSE		(R) Room is a house
+*m0	CRASH		(R) House needs saving
+*n0	ATRIUM		(R) The door to a house
+*o0	OLC		(R) Modifyable/!compress
+*p0	BFS_MARK	(R) breath-first srch mrk
+q0	MAGE1		Для магов (кол,вол,чар,черн)
+r0	CLERIC		Для лекарей
+s0	THIEF		Для воров
+t0	WARRIOR		Для воинов
+u0	ASSASINE	Для наемников
+v0	GUARD		Для дружинников
+w0	PALADINE	Для витязей
+x0	RANGER		Для охотников
+y0	ORACLE		Жертвенник
+z0	TEMPLE		Молельня
+A0	SMITH		Для кузнецов
+B0	MERCHANT	Для купцов
+C0	DRUID		Для волхвов 
+D0	ARENA		Комната является частью арены.
+a1	NOSUMMON        Нельзя призвать
+b1	NOTELEPORT      Нельзя телепортироваться/среколиться(сюда)
+c1	NOHORSE         Скакун сюда не проедет
+d1	NOWEATHER	Hа комнату не влияют погодные условия.

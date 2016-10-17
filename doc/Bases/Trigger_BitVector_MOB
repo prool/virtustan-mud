@@ -1,0 +1,20 @@
+* TYPE 0 (mobile) TRIGGERS:
+a0	MTRIG_GLOBAL	проверяется даже если зона пуста
+b0	MTRIG_RANDOM	проверяется по случайному
+c0	MTRIG_COMMAND	когда персонаж ввел команду
+d0	MTRIG_SPEECH	когда персонаж сказал фразу
+e0	MTRIG_ACT	слово или строка через act
+f0	MTRIG_DEATH	персонаж умер
+g0	MTRIG_GREET	что-то видимое зашло в комнату
+h0	MTRIG_GREET_ALL	что-то зашло в комнату
+i0	MTRIG_ENTRY	монстр зашел в комнату
+j0	MTRIG_RECEIVE	персонажу дали предмет
+k0	MTRIG_FIGHT	каждый пульс во время боя
+l0	MTRIG_HITPRCNT	бой и hp меньше некоторого числа
+m0	MTRIG_BRIBE	монстру дали деньги
+n0	MTRIG_Load	выполняется при загрузке моба 
+o0	MTRIG_Memory	выполняется когда моб встречает персонажа из 'памяти' (mremember) 
+p0	MTRIG_Damage    выполняется при нанесении по мобу повреждения
+q0	MTRIG_GREAT_PC  видимый ИГРОК зашел в комнату
+r0	MTRIG_GREAT_PC_ALL любой ИГРОК зашел в комнату
+z0	MTRIG_AUTO	триггер вызывается из другого триггера

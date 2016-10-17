@@ -1,0 +1,17 @@
+* NoTake
+* Ѕитвектор запретов
+*------------------------------------------------------------------------
+a0	ITEM_ANTI_MONO	   Ќе могут вз€ть христиане
+b0	ITEM_ANTI_POLY     - €зычники.
+*c0	ITEM_ANTI_NEUTRAL  - !не определено
+d0	ITEM_ANTI_MAGIC    - маги (кол,вол,чар,черно)
+e0	ITEM_ANTI_CLERIC   - лекари
+f0	ITEM_ANTI_THIEF	   - воры
+g0	ITEM_ANTI_WARRIOR  - воины
+h0	ITEM_ANTI_ASSASINE - наемники
+i0	ITEM_ANTI_GUARD	   - дружинники
+j0	ITEM_ANTI_PALADINE - вит€зи
+k0	ITEM_ANTI_RANGER   - охотники
+l0	ITEM_ANTI_SMITH	   - кузнецы
+m0	ITEM_ANTI_MERCHANT - купцы
+n0	ITEM_ANTI_DRUID    - волхвы

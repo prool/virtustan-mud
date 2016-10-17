@@ -1,0 +1,57 @@
+* Affect
+*   Битвектор аффектов
+*      Битвектор может принимать следующие значения:
+*      (что будет с монстром/игроком если одеть предмет)
+* ___________________________________________________________________
+a0	AFF_BLIND             	слепота
+b0	AFF_INVISIBLE         	невидимость
+c0	AFF_DETECT_ALIGN      	определение наклонностей
+d0	AFF_DETECT_INVIS      	определение невидимости
+e0	AFF_DETECT_MAGIC      	определение магии
+f0	AFF_SENSE_LIFE        	чувствовать жизнь
+g0	AFF_WATERWALK         	хождение по воде
+h0	AFF_SANCTUARY         	освящение
+*i0	AFF_GROUP             	член группы (не вставлять !)
+j0	AFF_CURSE             	проклят
+k0	AFF_INFRAVISION       	видение ночью
+*l0	AFF_POISON            	отравлен (не вставлять)
+n0	AFF_PROTECT_EVIL      	защищен от света
+m0	AFF_PROTECT_GOOD      	защищен от тьмы
+*o0	AFF_SLEEP             	магический сон (не вставлять !)
+p0	AFF_NOTRACK           	нельзя выследить и отсенсить
+*q0	AFF_TETHERED          	привязан (не вставлять !)
+r0	AFF_BLESS             	доблесть
+s0	AFF_SNEAK             	подкрадывается
+t0	AFF_HIDE              	прячется
+*u0	AFF_COURAGE           	ярость    (не вставлять !)
+*v0	AFF_CHARM             	зачармлен (не вставлять !)
+*w0	AFF_HOLD              	похолжен (не вставлять)
+x0	AFF_FLY               	в полете
+y0	AFF_SIELENCE          	помолчан
+z0	AFF_AWARNESS          	насторожен
+A0	AFF_BLINK             	мигает (уходит из-под удара)
+*B0	AFF_HORSE             	лошадь (после оседлания - не вставлять !)
+C0	AFF_NOFLEE            	не сбежит
+D0	AFF_SINGLELIGHT       	есть источник света (не лампа ! Браслеты и т.п.)
+a1	AFF_HOLYLIGHT         	источник света глобального (магия)
+b1	AFF_HOLYDARK          	источник тьмя глобальной (магия)
+c1	AFF_DETECT_POISON     	определение яда
+*d1	AFF_DRUNKED           	пьяный угар  (не вставлять !)
+*e1	AFF_ABSTINENT         	похмелье (не вставлять !)
+*f1	AFF_STOPRIGHT         	правая рука поражена (не вставлять !)
+*g1	AFF_STOPLEFT          	левая рука поражена (не вставлять !)
+*h1	AFF_STOPFIGHT         	не может драться (не вставлять !)
+*i1	AFF_HAEMORRAGIA       	кровотечение
+j1	AFF_CAMOUFLAGE        	маскируется
+k1	AFF_WATERBREATH       	дышит водой
+l1	AFF_SLOW              	передвижение в бою замедлено
+m1	AFF_HASTE             	передвижение в бою ускорено
+n1	AFF_GODPROTECT		щит (защита богов) 
+o1	AFF_MAGICSHIELD         щит (магический)
+p1	AFF_FIRESHIELD          щит (огненный)
+q1	AFF_ICESHIELD           щит (ледяной)
+r1	AFF_MAGICGLASS          зеркало магии
+s1	AFF_STAIRS              звезды
+t1	AFF_STONEHAND           каменная рука
+u1	AFF_PRISMATICAURA     	призматическая аура
+v1	AFF_HELPER              нанят

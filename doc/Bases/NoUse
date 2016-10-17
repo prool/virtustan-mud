@@ -1,0 +1,17 @@
+* NoUse
+* Битвектор неудобств
+*------------------------------------------------------------------------
+a0	ITEM_NO_MONO	 Не могут использовать христиане
+b0	ITEM_NO_POLY    - язычники.
+*c0	ITEM_NO_NEUTRAL	 - !не определено
+d0	ITEM_NO_MAGIC	 - маги (кол,вол,чар,черно)
+e0	ITEM_NO_CLERIC	 - лекари
+f0	ITEM_NO_THIEF	 - воры
+g0	ITEM_NO_WARRIOR	 - воины
+h0	ITEM_NO_ASSASINE - наемники
+i0	ITEM_NO_GUARD	 - дружинники
+j0	ITEM_NO_PALADINE - витязи
+k0	ITEM_NO_RANGER   - охотники
+l0	ITEM_NO_SMITH	 - кузнецы
+m0	ITEM_NO_MERCHANT - купцы
+n0	ITEM_NO_DRUID    - волхвы

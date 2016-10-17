@@ -1,0 +1,16 @@
+* TYPE 1 (object) TRIGGERS:
+*a	OTRIG_GLOBAL     not implemented yet
+b0	OTRIG_RANDOM	проверяется по случайному
+c0	OTRIG_COMMAND	персонаж ввел команду
+g0	OTRIG_GET	предмет подобрали
+h0	OTRIG_DROP	персонаж попытался выкинуть предмет
+i0	OTRIG_GIVE	персонаж попытался отдать предмет
+j0	OTRIG_WEAR	персонаж попытался надеть предмет
+l0	OTRIG_REMOVE	пресонаж попытался снять предмет
+n0	OTRIG_LOAD	предмет загрузился в игру
+o0	OTRIG_UNLOCK	контейнер отперли
+p0	OTRIG_OPEN	контейнер открыли
+q0	OTRIG_LOCK	контейнер заперли
+r0	OTRIG_CLOSE	контейнер заперли
+s0	OTRIG_PICK      контейнер взломали
+z0	OTRIG_AUTO	триггер вызывается из другого триггера
