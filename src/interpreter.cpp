@@ -2931,7 +2931,7 @@ void nanny(DESCRIPTOR_DATA * d, char *arg)
 		{
 		case 0:	// Auto - agree
 			sprintf(buf,
-					"Введите пароль для %s (не вводите пароли типа '123' или 'qwe', иначе ваших персонажев могут украсть) : ",
+					"Введите пароль для %s (не вводите пароли типа '123' или 'qwe', иначе ваших персонажей могут украсть) : ",
 					GET_PAD(d->character, 1));
 			SEND_TO_Q(buf, d);
 			STATE(d) = CON_NEWPASSWD;
@@ -3653,7 +3653,7 @@ Sventovit
 			CREATE(GET_PAD(d->character, 5), char, strlen(tmp_name) + 1);
 			strcpy(GET_PAD(d->character, 5), CAP(tmp_name));
 			sprintf(buf,
-					"Введите пароль для %s (не вводите пароли типа '123' или 'qwe', иначе ваших персонажев могут украсть) : ",
+					"Введите пароль для %s (не вводите пароли типа '12345' или 'qwe', иначе ваших персонажей могут украсть) : ",
 					GET_PAD(d->character, 1));
 			SEND_TO_Q(buf, d);
 			STATE(d) = CON_NEWPASSWD;

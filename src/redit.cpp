@@ -1094,6 +1094,7 @@ if (strlen(argument)<2)
 	}
 
 strcpy(room_descr, argument+1);
+strcat(room_descr,"\r\n");
 snprintf(buf, PROOL_MAX_STRLEN, "room descr set to '%s'\r\n",room_descr);
 send_to_char(buf, ch);
 }

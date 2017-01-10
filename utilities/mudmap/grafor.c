@@ -182,6 +182,15 @@ else
 	}
 // end of process config file
 
+// process command line
+//printf("<!-- argc = %i -->", argc);
+if (argc==2)
+	{
+	//printf("<!-- argv[1]=%s -->",argv[1]);
+	i=atoi(argv[1]);
+	if (i!=0) STARTZONE=i;
+	}
+
 #if 1 // BIG IF
 count=-1;
 
@@ -501,7 +510,7 @@ printf("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=koi8-r\">
 
 #if 1 // BIG IF 2
 
-printf("map generated %s startzone=%i\n", ptime(), STARTZONE);
+printf("Virtustan MUD map. Generated %s. Start zone=%i\n", ptime(), STARTZONE);
 
 #if 0
 printf("startzone=%i X=%03i \

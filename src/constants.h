@@ -95,7 +95,7 @@ extern struct zone_type * zone_types;
 #define DG_CASTER_PROXY 113
 
 #define FIRST_ROOM       1
-#define STRANGE_ROOM     20 // 3 // prool
+#define STRANGE_ROOM     14 // prool: idle room rnum
 
 #define FIRE_MOVES       20
 #define LOOKING_MOVES    5
