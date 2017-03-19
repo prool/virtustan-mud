@@ -2359,8 +2359,8 @@ void index_boot(int mode)
 		sprintf(buf2, "%s%s", prefix, buf1);
 		if (!(db_file = fopen(buf2, "r")))
 		{
-			log("SYSERR: %s: %s", buf2, strerror(errno));
-			exit(1);
+			log("SYSERR: error #1 %s: %s", buf2, strerror(errno));
+			//exit(1); // prool
 		}
 		switch (mode)
 		{
@@ -2386,7 +2386,7 @@ void index_boot(int mode)
 		}
 		if (mode == DB_BOOT_WLD)
 			parse_room(db_file, 0, TRUE);
-		fclose(db_file);
+		if (db_file) fclose(db_file); // prool
 		fscanf(index, "%s\n", buf1);
 	}
 	fclose(index);
@@ -2419,7 +2419,7 @@ void discrete_load(FILE * fl, int mode, char *filename)
 			{
 				if (nr == -1)
 				{
-					log("SYSERR: %s file %s is empty!", modes[mode], filename);
+					log("SYSERR: %s file %s is empty...", modes[mode], filename);
 				}
 				else
 				{
@@ -2428,7 +2428,7 @@ void discrete_load(FILE * fl, int mode, char *filename)
 						"(maybe the file is not terminated with '$'?)", filename,
 						modes[mode], nr, modes[mode]);
 				}
-				exit(1);
+				return; // exit(1); // prool
 			}
 
 		if (*line == '$')
@@ -4087,6 +4087,8 @@ void load_zones(FILE * fl, char *zonename)
 	int cmd_no, num_of_cmds = 0, line_num = 0, tmp, error, a_number = 0, b_number = 0;
 	char *ptr, buf[256], zname[256];
 	char t1[80], t2[80];
+
+	if (fl==NULL) return; // prool
 //MZ.load
 	Z.level = 1;
 	Z.type = 0;
@@ -4125,7 +4127,7 @@ void load_zones(FILE * fl, char *zonename)
 
 	if (num_of_cmds == 0)
 	{
-		log("SYSERR: %s is empty!", zname);
+		log("SYSERR: %s is empty!!", zname);
 		exit(1);
 	}
 	else

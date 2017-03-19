@@ -1127,6 +1127,8 @@ int get_line(FILE * fl, char *buf)
 	char temp[256];
 	int lines = 0;
 
+	if (fl==NULL) return (0); // prool
+
 	do
 	{
 		fgets(temp, 256, fl);

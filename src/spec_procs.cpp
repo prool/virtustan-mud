@@ -12,6 +12,8 @@
 *  $Revision$                                                      *
 ************************************************************************ */
 
+//#define DEBUG 1 // prool's debug
+
 #include <string>
 #include "conf.h"
 #include <boost/algorithm/string.hpp>
@@ -82,7 +84,6 @@ SPECIAL(janitor);
 SPECIAL(cityguard);
 SPECIAL(pet_shops);
 SPECIAL(bank);
-
 
 // ********************************************************************
 // *  Special procedures for mobiles                                  *
@@ -2244,20 +2245,40 @@ int do_npc_steal(CHAR_DATA * ch, CHAR_DATA * victim)
 	int gold;
 	int max = 0;
 
+#if DEBUG
+printf("do_npc_steal() lbl 1\n");
+#endif
+
 	if (!NPC_FLAGGED(ch, NPC_STEALING))
 		return (FALSE);
 
+#if DEBUG
+printf("do_npc_steal() lbl 2\n");
+#endif
 	if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_PEACEFUL))
 		return (FALSE);
 
+#if DEBUG
+printf("do_npc_steal() lbl 3\n");
+#endif
 	if (IS_NPC(victim) || IS_SHOPKEEPER(ch) || victim->get_fighting())
 		return (FALSE);
 
+#if DEBUG
+printf("do_npc_steal() lbl 4\n");
+#endif
 	if (GET_LEVEL(victim) >= LVL_IMMORT)
 		return (FALSE);
 
+#if DEBUG
+printf("do_npc_steal() lbl 5\n");
+#endif
 	if (!CAN_SEE(ch, victim))
 		return (FALSE);
+
+#if DEBUG
+printf("do_npc_steal() lbl 10\n");
+#endif
 
 	if (AWAKE(victim) && (number(0, MAX(0, GET_LEVEL(ch) - int_app[GET_REAL_INT(victim)].observation)) == 0))
 	{
@@ -2441,7 +2462,7 @@ SPECIAL(dump)
 	return (1);
 }
 
-#if 0
+#if 0 // prool
 SPECIAL(mayor)
 {
 	const char open_path[] = "W3a3003b33000c111d0d111Oe333333Oe22c222112212111a1S.";
@@ -2550,8 +2571,8 @@ SPECIAL(snake)
 
 	if (ch->get_fighting() && (ch->get_fighting()->in_room == ch->in_room) && (number(0, 42 - GET_LEVEL(ch)) == 0))
 	{
-		act("$n bites $N!", 1, ch, 0, ch->get_fighting(), TO_NOTVICT);
-		act("$n bites you!", 1, ch, 0, ch->get_fighting(), TO_VICT);
+		act("$n укусила $N!", 1, ch, 0, ch->get_fighting(), TO_NOTVICT);
+		act("$n укусила вас!", 1, ch, 0, ch->get_fighting(), TO_VICT);
 		call_magic(ch, ch->get_fighting(), NULL, world[IN_ROOM(ch)], SPELL_POISON, GET_LEVEL(ch), CAST_SPELL);
 		return (TRUE);
 	}
@@ -2568,6 +2589,10 @@ SPECIAL(thief)
 
 	if (GET_POS(ch) != POS_STANDING)
 		return (FALSE);
+
+#if DEBUG
+printf("thief() lbl 0\n");
+#endif
 
 	for (cons = world[ch->in_room]->people; cons; cons = cons->next_in_room)
 		if (!IS_NPC(cons) && (GET_LEVEL(cons) < LVL_IMMORT) && (!number(0, 4)))
@@ -2684,14 +2709,10 @@ SPECIAL(guild_guard)
 	return (FALSE);
 }
 
-
-// TODO: повырезать все это
-SPECIAL(puff)
+SPECIAL(puff) // панк. потом доделать его. Пруль
 {
 	return 0;
 }
-
-
 
 SPECIAL(fido)
 {
@@ -2705,7 +2726,7 @@ SPECIAL(fido)
 	{
 		if (IS_CORPSE(i))
 		{
-			act("$n savagely devours a corpse.", FALSE, ch, 0, 0, TO_ROOM);
+			act("$n урча зохавала труп", FALSE, ch, 0, 0, TO_ROOM);
 			for (temp = i->contains; temp; temp = next_obj)
 			{
 				next_obj = temp->next_content;
@@ -2734,7 +2755,7 @@ SPECIAL(janitor)
 			continue;
 		if (GET_OBJ_TYPE(i) != ITEM_DRINKCON && GET_OBJ_COST(i) >= 15)
 			continue;
-		act("$n picks up some trash.", FALSE, ch, 0, 0, TO_ROOM);
+		act("$n убрал мусор", FALSE, ch, 0, 0, TO_ROOM);
 		obj_from_room(i);
 		obj_to_char(i, ch);
 		return (TRUE);
@@ -2759,7 +2780,7 @@ SPECIAL(cityguard)
 	{
 		if (!IS_NPC(tch) && CAN_SEE(ch, tch) && PLR_FLAGGED(tch, PLR_KILLER))
 		{
-			act("$n screams 'HEY!!!  You're one of those PLAYER KILLERS!!!!!!'", FALSE, ch, 0, 0, TO_ROOM);
+			act("$n закричал: Эй, все сюда, вот он, убивец!", FALSE, ch, 0, 0, TO_ROOM);
 			hit(ch, tch, TYPE_UNDEFINED, 1);
 			return (TRUE);
 		}
@@ -2769,7 +2790,7 @@ SPECIAL(cityguard)
 	{
 		if (!IS_NPC(tch) && CAN_SEE(ch, tch) && PLR_FLAGGED(tch, PLR_THIEF))
 		{
-			act("$n screams 'HEY!!!  You're one of those PLAYER THIEVES!!!!!!'", FALSE, ch, 0, 0, TO_ROOM);
+			act("$n закричал: Эй, все сюда, бей вора!", FALSE, ch, 0, 0, TO_ROOM);
 			hit(ch, tch, TYPE_UNDEFINED, 1);
 			return (TRUE);
 		}
@@ -2789,7 +2810,7 @@ SPECIAL(cityguard)
 
 	if (evil && (GET_ALIGNMENT(evil->get_fighting()) >= 0))
 	{
-		act("$n screams 'PROTECT THE INNOCENT!  BANZAI!  CHARGE!  ARARARAGGGHH!'", FALSE, ch, 0, 0, TO_ROOM);
+		act("$n закричал: На защиту законопослушных граждан!", FALSE, ch, 0, 0, TO_ROOM);
 		hit(ch, evil, TYPE_UNDEFINED, 1);
 		return (TRUE);
 	}
@@ -2809,7 +2830,7 @@ SPECIAL(pet_shops)
 
 	if (CMD_IS("list"))
 	{
-		send_to_char("Available pets are:\r\n", ch);
+		send_to_char("Продаются следующие фантастические твари:\r\n", ch);
 		for (pet = world[pet_room]->people; pet; pet = pet->next_in_room)
 		{
 			sprintf(buf, "%8d - %s\r\n", PET_PRICE(pet), GET_NAME(pet));
@@ -2823,12 +2844,12 @@ SPECIAL(pet_shops)
 
 		if (!(pet = get_char_room(buf, pet_room)))
 		{
-			send_to_char("There is no such pet!\r\n", ch);
+			send_to_char("Этой твари нет!\r\n", ch);
 			return (TRUE);
 		}
 		if (ch->get_gold() < PET_PRICE(pet))
 		{
-			send_to_char("You don't have enough gold!\r\n", ch);
+			send_to_char("Простите, сэр/мадам, у вас немножко не хватает денег!\r\n", ch);
 			return (TRUE);
 		}
 		ch->remove_gold(PET_PRICE(pet));
@@ -2844,7 +2865,7 @@ SPECIAL(pet_shops)
 			pet->set_pc_name(buf);
 
 			sprintf(buf,
-					"%sA small sign on a chain around the neck says 'My name is %s'\r\n",
+					"%s На ошейнике написано имя зверя: %s'\r\n",
 					pet->player_data.description, pet_name);
 			// free(pet->player_data.description); don't free the prototype!
 			pet->player_data.description = str_dup(buf);
@@ -2857,8 +2878,8 @@ SPECIAL(pet_shops)
 		IS_CARRYING_W(pet) = 1000;
 		IS_CARRYING_N(pet) = 100;
 
-		send_to_char("May you enjoy your pet.\r\n", ch);
-		act("$n buys $N as a pet.", FALSE, ch, 0, pet, TO_ROOM);
+		send_to_char("Пусть эта тварюка радует вас!\r\n", ch);
+		act("$n купил зверя по имени $N", FALSE, ch, 0, pet, TO_ROOM);
 
 		return (1);
 	}

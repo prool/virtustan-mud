@@ -3383,7 +3383,7 @@ Sventovit
 		{
 		case '0':
 
-			SEND_TO_Q("\r\nДо встречи на земле Киевской.\r\n", d);
+			SEND_TO_Q("\r\n\r\nДо встречи на земле Киевской.\r\n\r\nMUDQUIT\r\n\r\n", d);
 
 			if (GET_REMORT(d->character) == 0 && GET_LEVEL(d->character) <= 25
 					&& !IS_SET(PLR_FLAGS(d->character, PLR_NODELETE), PLR_NODELETE))

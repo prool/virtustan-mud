@@ -2801,7 +2801,7 @@ bool Clan::PutChest(CHAR_DATA * ch, OBJ_DATA * obj, OBJ_DATA * chest)
 	if (GET_OBJ_TYPE(obj) == ITEM_MONEY)
 	{
 		long gold = GET_OBJ_VAL(obj, 0);
-		if (IS_IMMORTAL(ch))
+		if (0/*IS_IMMORTAL(ch)*/) // пусть иммы тоже могут вкладывать в кланы. так надо. prool
 		{
 			obj_from_char(obj);
 			extract_obj(obj);

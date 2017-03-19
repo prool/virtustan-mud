@@ -12,9 +12,12 @@
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -24,6 +27,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -44,9 +48,12 @@ E
 Не надо будить спящего дракона!
 ~
 d0f0 u1 -600 E
-30 0 -10 15d15+20000 5d10+50
+39 0 -10 15d15+20000 5d10+50
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 50
 Dex: 50
@@ -56,6 +63,7 @@ Con: 50
 Cha: 50
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 100
 Special_Bitvector: a1b1c1d1 
@@ -76,9 +84,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -88,6 +99,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -108,9 +120,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -120,6 +135,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -140,9 +156,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -152,6 +171,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -172,9 +192,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -184,6 +207,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -204,9 +228,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -216,6 +243,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -236,9 +264,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -248,6 +279,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -268,9 +300,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -280,6 +315,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -300,9 +336,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -312,6 +351,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -332,9 +372,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -344,6 +387,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -364,9 +408,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -376,6 +423,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -396,9 +444,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -408,6 +459,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -428,9 +480,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -440,6 +495,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -460,9 +516,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -472,6 +531,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -492,9 +552,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -504,6 +567,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -524,9 +588,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -536,6 +603,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -556,9 +624,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -568,6 +639,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -588,9 +660,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -600,6 +675,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -620,9 +696,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -632,6 +711,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -652,9 +732,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -664,6 +747,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -684,9 +768,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -696,6 +783,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -716,9 +804,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
-2d2+1 2000000
+39 0 -10 15d15+50000 5d10+-36
+2d2+10000 99999999
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -728,6 +819,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -748,9 +840,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -760,6 +855,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -780,9 +876,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -792,6 +891,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -812,9 +912,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -824,6 +927,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -844,9 +948,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -856,6 +963,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -876,9 +984,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -888,6 +999,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -908,9 +1020,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -920,6 +1035,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -940,9 +1056,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -952,6 +1071,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -972,9 +1092,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -984,6 +1107,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1004,9 +1128,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1016,6 +1143,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1036,9 +1164,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1048,6 +1179,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1068,9 +1200,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1080,6 +1215,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1100,9 +1236,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1112,6 +1251,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1132,9 +1272,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1144,6 +1287,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1164,9 +1308,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1176,6 +1323,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1196,9 +1344,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1208,6 +1359,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1228,9 +1380,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1240,6 +1395,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1260,9 +1416,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1272,6 +1431,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1292,9 +1452,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1304,6 +1467,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1324,9 +1488,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1336,6 +1503,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1356,9 +1524,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1368,6 +1539,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1388,9 +1560,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1400,6 +1575,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1420,9 +1596,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1432,6 +1611,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1452,9 +1632,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1464,6 +1647,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1484,9 +1668,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1496,6 +1683,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1516,9 +1704,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1528,6 +1719,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1548,9 +1740,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1560,6 +1755,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1580,9 +1776,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1592,6 +1791,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1612,9 +1812,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1624,6 +1827,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1644,9 +1848,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1656,6 +1863,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1676,9 +1884,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1688,6 +1899,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1708,9 +1920,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1720,6 +1935,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1740,9 +1956,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1752,6 +1971,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1772,9 +1992,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1784,6 +2007,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1804,9 +2028,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1816,6 +2043,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1836,9 +2064,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1848,6 +2079,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1868,9 +2100,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1880,6 +2115,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1900,9 +2136,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1912,6 +2151,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1932,9 +2172,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1944,6 +2187,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1964,9 +2208,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -1976,6 +2223,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -1996,9 +2244,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2008,6 +2259,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2028,9 +2280,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2040,6 +2295,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2060,9 +2316,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2072,6 +2331,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2092,9 +2352,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2104,6 +2367,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2124,9 +2388,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2136,6 +2403,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2156,9 +2424,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2168,6 +2439,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2188,9 +2460,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2200,6 +2475,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2220,9 +2496,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2232,6 +2511,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2252,9 +2532,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2264,6 +2547,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2284,9 +2568,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2296,6 +2583,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2316,9 +2604,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2328,6 +2619,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2348,9 +2640,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2360,6 +2655,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2380,9 +2676,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2392,6 +2691,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2412,9 +2712,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2424,6 +2727,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2444,9 +2748,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2456,6 +2763,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2476,9 +2784,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2488,6 +2799,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2508,9 +2820,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2520,6 +2835,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2540,9 +2856,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2552,6 +2871,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2572,9 +2892,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2584,6 +2907,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2604,9 +2928,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2616,6 +2943,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2636,9 +2964,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2648,6 +2979,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2668,9 +3000,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2680,6 +3015,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2700,9 +3036,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2712,6 +3051,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2732,9 +3072,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2744,6 +3087,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2764,9 +3108,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2776,6 +3123,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2796,9 +3144,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2808,6 +3159,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2828,9 +3180,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2840,6 +3195,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 
@@ -2860,9 +3216,12 @@ E
 Не надо будить спящего дракона!
 ~
 b0d0f0 u1 0 E
-50 0 -10 15d15+20000 5d10+-36
+39 0 -10 15d15+20000 5d10+-36
 2d2+1 2000000
 8 8 1
+Saves: -42 -42 -42 -42
+CastSuccess: 44
+Absorbe: 39
 BareHandAttack: 5
 Str: 15
 Dex: 14
@@ -2872,6 +3231,7 @@ Con: 15
 Cha: 18
 Size: 60
 Class: 103
+Race: 100
 Height: 150
 Weight: 10
 Special_Bitvector: a1b1c1d1 

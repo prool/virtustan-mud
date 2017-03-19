@@ -15,6 +15,8 @@
 #define MEGA_Y 1000 // 100 // 780
 #define MEGA_Z 110 // 102 // 15
 
+// собирать под Ubuntu 64 bit с флагом gcc -m32 иначе почему-то падает в корку на функции ptime()
+
 int megamap [MEGA_X] [MEGA_Y] [MEGA_Z];
 
 int square_x=0;
@@ -137,7 +139,6 @@ char var[STRLEN];
 int value;
 char *pp, *pp2;
 
-
 struct rooms
 	{
 	int vnum;
@@ -152,6 +153,10 @@ struct rooms room[MAXROOM];
 
 int index [MAXINDEX];
 FILE *fconfig;
+
+z0=0;
+x0=-41;
+y0=-33;
 
 // process config file
 
@@ -184,11 +189,25 @@ else
 
 // process command line
 //printf("<!-- argc = %i -->", argc);
-if (argc==2)
+if (argc>=2)
 	{
 	//printf("<!-- argv[1]=%s -->",argv[1]);
 	i=atoi(argv[1]);
 	if (i!=0) STARTZONE=i;
+	}
+
+for(i=1;i<argc;i++)
+	{
+	printf("<!-- argv[i]=%s -->\r\n",argv[i]);
+	j=atoi(argv[i]);
+	if (j!=0)
+		switch (i)
+		{
+		case 1: STARTZONE=j; break;
+		case 2: x0=j; break;
+		case 3: y0=j; break;
+		case 4: z0=j; break;
+		}
 	}
 
 #if 1 // BIG IF
@@ -213,9 +232,6 @@ for (i=0;i<MAXROOM;i++)
 	for (j=0; j<NAMELEN; j++) room[i].name[j]=0;
 	}
 
-z0=0; 
-x0=-41;          
-y0=-33;   
 dx=101; //dx=38+58+1;
 dy=67; //dy=32+34+1;
         
@@ -510,7 +526,7 @@ printf("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=koi8-r\">
 
 #if 1 // BIG IF 2
 
-printf("Virtustan MUD map. Generated %s. Start zone=%i\n", ptime(), STARTZONE);
+printf("Virtustan MUD map. Generated %s. Start zone=%i x0=%i y0=%i z0=%i\n", ptime(), STARTZONE, x0, y0, z0);
 
 #if 0
 printf("startzone=%i X=%03i \

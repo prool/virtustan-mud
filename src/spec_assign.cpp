@@ -79,8 +79,10 @@ void ASSIGNMOB(mob_vnum mob, SPECIAL(fname))
 			clear_mob_charm(&mob_proto[rnum]);
 		}
 	}
-	else if (!mini_mud)
+	else if (!mini_mud) {
 		log("SYSERR: Attempt to assign spec to non-existant mob #%d", mob);
+		printf("prool: Attempt to assign spec to non-existant mob #%d\r\n", mob);
+		}
 }
 
 void ASSIGNOBJ(obj_vnum obj, SPECIAL(fname))
@@ -89,8 +91,10 @@ void ASSIGNOBJ(obj_vnum obj, SPECIAL(fname))
 
 	if ((rnum = real_object(obj)) >= 0)
 		obj_index[rnum].func = fname;
-	else if (!mini_mud)
+	else if (!mini_mud) {
 		log("SYSERR: Attempt to assign spec to non-existant obj #%d", obj);
+		printf("prool: Attempt to assign spec to non-existant obj #%d\r\n", obj);
+		}
 }
 
 void ASSIGNROOM(room_vnum room, SPECIAL(fname))
@@ -99,8 +103,10 @@ void ASSIGNROOM(room_vnum room, SPECIAL(fname))
 
 	if ((rnum = real_room(room)) != NOWHERE)
 		world[rnum]->func = fname;
-	else if (!mini_mud)
+	else if (!mini_mud) {
 		log("SYSERR: Attempt to assign spec to non-existant room #%d", room);
+		printf("prool: Attempt to assign spec to non-existant room #%d\r\n", room);
+		}
 }
 
 void ASSIGNMASTER(mob_vnum mob, SPECIAL(fname), int learn_info)
@@ -112,8 +118,10 @@ void ASSIGNMASTER(mob_vnum mob, SPECIAL(fname), int learn_info)
 		mob_index[rnum].func = fname;
 		mob_index[rnum].stored = learn_info;
 	}
-	else if (!mini_mud)
+	else if (!mini_mud) {
 		log("SYSERR: Attempt to assign spec to non-existant mob #%d", mob);
+		printf("prool: Attempt to assign spec to non-existant mob #%d\r\n", mob);
+		}
 }
 
 
@@ -129,32 +137,30 @@ void ASSIGNMASTER(mob_vnum mob, SPECIAL(fname), int learn_info)
 void assign_mobiles(void)
 {
 	// HOTEL //
-	ASSIGNMOB(106, receptionist);
-	ASSIGNMOB(4022, receptionist);
+//	ASSIGNMOB(106, receptionist);
+//	ASSIGNMOB(4022, receptionist);
 
 	// POSTMASTER //
-	ASSIGNMOB(4002, postmaster);
+//	ASSIGNMOB(4002, postmaster);
 
 	// BANK //
-	ASSIGNMOB(4001, bank);
+//	ASSIGNMOB(4001, bank);
 
 	// HORSEKEEPER //
-	ASSIGNMOB(4023, horse_keeper);
+//	ASSIGNMOB(4023, horse_keeper);
 }
-
-
 
 // assign special procedures to objects //
 void assign_objects(void)
 {
+#if 0 // prool
 	ASSIGNOBJ(Boards::GODGENERAL_BOARD_OBJ, Board::Special);
 	ASSIGNOBJ(Boards::GENERAL_BOARD_OBJ, Board::Special);
 	ASSIGNOBJ(Boards::GODCODE_BOARD_OBJ, Board::Special);
 	ASSIGNOBJ(Boards::GODPUNISH_BOARD_OBJ, Board::Special);
 	ASSIGNOBJ(Boards::GODBUILD_BOARD_OBJ, Board::Special);
+#endif
 }
-
-
 
 // assign special procedures to rooms //
 void assign_rooms(void)
@@ -167,8 +173,6 @@ void assign_rooms(void)
 				world[i]->func = dump;
 }
 
-
-
 void init_spec_procs(void)
 {
 	FILE *magic;
@@ -177,7 +181,8 @@ void init_spec_procs(void)
 
 	if (!(magic = fopen(LIB_MISC "specials.lst", "r")))
 	{
-		log("Cann't open specials list file...");
+		log("Can't open specials list file...");
+		printf("prool: Can't open specials list file!!!111\r\n");
 		assign_mobiles();
 		assign_objects();
 		return;
@@ -198,6 +203,7 @@ void init_spec_procs(void)
 			if (real_mobile(i) < 0)
 			{
 				log("Unknown mobile %d in specials assignment...", i);
+				printf("prool: Unknown mobile %d in specials assignment\r\n", i);
 				continue;
 			}
 			if (!str_cmp(line2, "puff"))
@@ -214,16 +220,37 @@ void init_spec_procs(void)
 				ASSIGNMOB(i, exchange);
 			else if (!str_cmp(line2, "torc"))
 				ASSIGNMOB(i, torc);
+			else if (!str_cmp(line2, "cryo")) // prool
+				ASSIGNMOB(i, cryogenicist);
+			else if (!str_cmp(line2, "fido")) // prool
+				ASSIGNMOB(i, fido);
+			else if (!str_cmp(line2, "snake")) // prool
+				ASSIGNMOB(i, snake);
+			else if (!str_cmp(line2, "janitor")) // prool
+				ASSIGNMOB(i, janitor);
+			else if (!str_cmp(line2, "guild_guard")) // prool
+				ASSIGNMOB(i, guild_guard);
+			else if (!str_cmp(line2, "cityguard")) // prool
+				ASSIGNMOB(i, cityguard);
+			else if (!str_cmp(line2, "thief")) // prool
+				ASSIGNMOB(i, thief);
+#if 0 // prool
+			else if (!str_cmp(line2, "mayor")) // prool
+				ASSIGNMOB(i, mayor);
+#endif
 			else if (!str_cmp(line2, "outfit"))
 				ASSIGNMOB(i, Noob::outfit);
-			else
+			else	{
 				log("Unknown mobile %d assignment type - %s...", i, line2);
+				printf("prool: Unknown mobile %d assignment type - %s\r\n", i, line2);
+				}
 		}
 		else if (!str_cmp(line1, "obj"))
 		{
 			if (real_object(i) < 0)
 			{
 				log("Unknown object %d in specials assignment...", i);
+				printf("prool: Unknown object %d in specials assignment\r\n", i);
 				continue;
 			}
 		}

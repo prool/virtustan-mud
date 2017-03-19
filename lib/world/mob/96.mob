@@ -11,11 +11,13 @@
 Курица-пеструшка бегает, кудахчет, роется в земле, ищет зернышки и клюет их
 ~
 d0g0 0 0 E
-3 18 9 10d4+20 1d4+2
+1 18 9 10d4+20 1d4+2
 0d0+0 90
 8 8 2
+Absorbe: 1
 Size: 33
 Class: 103
+Race: 100
 Height: 198
 Weight: 5
 Special_Bitvector: 0 
@@ -34,12 +36,14 @@ E
 птицу (кур, цыплят, уток, цесарок)
 ~
 b0d0g0 0 -600 E
-10 11 7 40d4+100 2d4+2
+8 11 7 40d4+100 2d4+2
 0d0+0 3000
 8 8 1
+Absorbe: 8
 Size: 40
 ExtraAttack: 1
 Class: 103
+Race: 100
 Height: 198
 Weight: 200
 Special_Bitvector: l0 
@@ -57,13 +61,15 @@ E
 Злой дух полупрозрачен, злобен, зубаст и опасен
 ~
 b0d0f0g0 0 -600 E
-15 11 7 40d4+100 2d4+2
+8 11 7 40d4+100 2d4+2
 0d0+0 3000
 8 8 1
+Absorbe: 8
 BareHandAttack: 4
 Size: 40
 ExtraAttack: 1
 Class: 101
+Race: 100
 Height: 198
 Weight: 10
 Special_Bitvector: 0 
@@ -84,12 +90,14 @@ E
 камешки
 ~
 d0g0 0 0 E
-20 5 3 50d7+300 4d4+4
+16 5 3 50d7+300 4d4+4
 0d0+0 20000
 8 8 2
+Absorbe: 16
 Size: 50
 ExtraAttack: 1
 Class: 100
+Race: 100
 Height: 198
 Weight: 200
 Special_Bitvector: 0 
@@ -109,12 +117,14 @@ E
 собрана сзади в хвост
 ~
 a0b0d0g0 0 600 E
-50 0 -3 100d7+600 7d6+8
+29 0 -3 100d7+600 7d6+8
 0d0+100 200000
 8 8 1
+Absorbe: 29
 Size: 60
 ExtraAttack: 3
 Class: 102
+Race: 100
 Height: 198
 Weight: 200
 Special_Bitvector: 0 
@@ -133,14 +143,16 @@ E
 Вор должен сидеть в тюрьме! (Г.Жеглов)
 ~
 a0d0 0 -600 E
-5 0 0 3d9+200 0d0+0
+9 0 0 3d9+200 0d0+0
 0d0+10 5000
 8 8 1
+Absorbe: 9
 BareHandAttack: 11
 Class: 102
+Race: 100
 Height: 198
 Weight: 200
-Special_Bitvector: 0 
+Special_Bitvector: a1 
 E
 #9606
 хедкраб hedcrab headcrab~
@@ -161,13 +173,15 @@ E
 Клешни окрашены в красный цвет.
 ~
 d0 0 -600 E
-15 8 5 10d25+270 3d4+3
+14 8 5 10d25+270 3d4+3
 0d0+0 14000
 8 8 1
+Absorbe: 14
 BareHandAttack: 8
 Size: 45
 ExtraAttack: 1
 Class: 103
+Race: 100
 Height: 198
 Weight: 5
 Special_Bitvector: 0 
@@ -186,15 +200,17 @@ E
 Облако ртути опасно для всего живого, ололо и пыщ-пыщ-пыщ
 ~
 d0g0z0 0 -600 E
-30 0 -10 1d2+32700 7d6+8
+29 0 -10 1d2+32700 7d6+8
 0d0+0 200000
 8 8 0
+Absorbe: 29
 BareHandAttack: 6
 Str: 36
 Con: 36
 Size: 100
 ExtraAttack: 1
 Class: 101
+Race: 100
 Height: 198
 Weight: 200
 Special_Bitvector: l0 
@@ -213,13 +229,15 @@ E
 У орка зеленая кожа, клыки, кровоточащие десны. Орк агрессивен
 ~
 d0 0 -600 E
-20 5 3 50d7+300 4d4+4
+16 5 3 50d7+300 4d4+4
 1d3+5 20000
 8 8 1
+Absorbe: 16
 BareHandAttack: 5
 Size: 50
 ExtraAttack: 1
 Class: 102
+Race: 100
 Height: 198
 Weight: 50
 Special_Bitvector: 0 
