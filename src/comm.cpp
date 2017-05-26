@@ -10,6 +10,7 @@
 ************************************************************************ */
 
 //#define PROOLDEBUG
+//#define I3
 
 /*
  * Compression support.  Currently could be used with:
@@ -74,6 +75,10 @@
 #include "help.hpp"
 #include "mail.h"
 #include "mob_stat.hpp"
+
+#ifdef I3
+#include "i3.h"
+#endif
 
 #include "virtustan.h"
 
@@ -737,6 +742,12 @@ void init_game(int ports[])
 
 	log("Entering game loop.");
 
+#ifdef I3
+//printf("i3 label #1\n");
+i3_startup(FALSE, 3000, FALSE);
+//printf("i3 label #2\n");
+#endif
+
 #ifdef HAS_EPOLL
 	log("Polling using epoll.");
 	epoll = epoll_create1(0);
@@ -806,6 +817,11 @@ void init_game(int ports[])
 	mail::save();
 	char_stat::log_class_exp();
 
+#ifdef I3
+//printf("i3 shutdown label #1\n");
+    i3_shutdown(0, NULL);
+printf("i3 shutdown\n");
+#endif
 	log("Closing all sockets.");
 #ifdef HAS_EPOLL
 	while (descriptor_list)
@@ -1547,6 +1563,12 @@ int i; // prool
 #ifdef CIRCLE_UNIX
 		// Update tics for deadlock protection (UNIX only)
 		tics++;
+#endif
+	// i3 loop
+#ifdef I3
+	//printf("i3 loop label #1\n");
+	i3_loop();
+	//printf("i3 loop label #2\n");
 #endif
 	}
 #ifdef HAS_EPOLL

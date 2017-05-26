@@ -1,0 +1,533 @@
+#HELP
+Name I3
+Perm Mort
+Text See these general commands: I3TELL, I3FINGER, I3EMOTE, I3LOCATE, I3WHO, I3IGNORE
+
+See these administrative commands: I3UCACHE, I3USER, I3BAN,
+I3SETUP, I3CHANEDIT, I3CHANLAYOUT, I3ADDCHAN, I3REMOVECHAN, I3CHANADMIN,
+I3CONNECT, I3DISCONNECT, I3PACKETDEBUG, I3CONFIG
+~
+End
+
+#HELP
+Name i3deny
+Perm Imm
+Text Syntax: i3deny <person> <local channel name>
+Syntax: i3deny <person> [tell/beep/finger]
+
+This command allows you to selectively ban certain users from using channels,
+tells, beeps, and finger commands. Multiple denials can be imposed, but if you
+should find you need to deny all of these options, it might well be worth looking
+at setting their permissions to None instead.
+~
+End
+
+#HELP
+Name i3listen
+Perm Mort
+Text Syntax: i3listen <local channel>
+
+This command toggles your listening state for a configured I3 channel.
+~
+End
+
+#HELP
+Name i3chanlist
+Perm Mort
+Text Syntax: i3chanlist [filter|all]
+
+Displays a listing of configured channels the mud is currently tuned into.
+
+If a filter is specified, it will display all channels which contain the
+filter value in their names or host muds.
+
+Specifying all will show you every I3 channel available on the router the
+mud is connected to.
+~
+End
+
+#HELP
+Name i3mudlist
+Perm Mort
+Text Syntax: i3mudlist [filter|all]
+
+Displays a listing of muds currently connected to the network.
+
+If a filter value is specified, all muds who's names, types, or mudlibs which
+contain the filter value will be shown.
+
+If all is specified, then all connections whether up or down will be shown.
+This can be a very spammy listing.
+~
+End
+
+#HELP
+Name i3chanwho
+Perm Mort
+Text Syntax: i3chanwho <local channel> <mud>
+
+Displays a list of users who are listening to a particular channel on the
+specified mud. This command will not display such a listing for the entire
+network due to the sheer number of connected muds. Such a display would
+constitute screens full of scrolling.
+~
+End
+
+#HELP
+Name i3mudinfo
+Perm Mort
+Text Syntax: i3mudinfo <mudname>
+
+Displays information about a mud on the network. They do not need to be
+connected for this to work.
+~
+End
+
+#HELP
+Name i3invis
+Perm Mort
+Text Syntax: i3invis
+
+Toggles your invisibility state on I3. While invisible, you will not be seen
+on who listings, be unable to send or receive tells, be unable to send or
+receive beeps, and be unable to send or receive finger requests. This
+invisibility state will not conceal you from channel messages you initiate.
+
+This toggle is also unrelated to your local invisibility flags as a player.
+
+As an immortal, this state acts separately from your wizinvis state. If you
+are also wizinvis, that will take priority over i3invis.
+~
+End
+
+#HELP
+Name i3color
+Perm Mort
+Text Syntax: i3color
+
+Toggles your ability to see color on I3. This acts apart from your mud's
+ANSI state, so if your mud has no inbuilt color system, you will still be
+able to see colors on I3 if this has been enabled.
+~
+End
+
+#HELP
+Name i3mudlisten
+Perm Admin
+Text Syntax: i3mudlisten [all/none]
+Syntax: i3mudlisten <localchannel> [on/off]
+
+This command will toggle the listening state of the entire mud for a selected
+channel, or for all channels. For a specific channel, you need to specify on
+or off when issuing the command.
+~
+End
+
+#HELP
+Name i3stats
+Perm Admin
+Text Syntax: i3stats
+
+Displays statistical information about the mud and the network connection.
+Information includes how many bytes have been sent and received, what descriptor
+the connection is using, how many muds are known, how many channels are known,
+and which router the mud is connected to.
+~
+End
+
+#HELP
+Name i3hedit
+Perm Admin
+Text Syntax: i3hedit <topic> <option> <field>
+
+Allows minor editing of helps.
+Option can be either "name" or "perm".
+
+Editing the text of the topic itself is not possible - yet.
+~
+End
+
+#HELP
+Name i3cedit
+Perm Imp
+Text Syntax: i3cedit <command> <create|delete|rename|code|permission|connected> <field>
+
+This command allows you to edit the data contained in other commands, create new commands,
+and delete commands.
+
+When creating, you can optionally specify the name of the function the command will use.
+If the function named does not exist, the command will not work.
+~
+End
+
+#HELP
+Name i3router
+Perm Imp
+Text Syntax: i3router add <router_name> <router_ip> <router_port>
+Syntax: i3router remove <router_name>
+Syntax: i3router list
+
+This command allows you to add new routers to your connection choices,
+delete existing routers, or just see which ones are already configured.
+~
+End
+
+#HELP
+Name i3help
+Perm Mort
+Text Syntax: imchelp <topic>
+
+The command used to get help about other commands. Assuming the command has help information.
+~
+End
+
+#HELP
+Name i3addchan
+Perm Admin
+Text Syntax: i3addchan <channelname> <localname> <type>
+
+The channelname should be what shows up on the router's list and is displayed
+on the 'i3chanlist all' command.
+
+Localname should be the local name you want it listed as on the mud.
+
+Type can be one of the following:
+
+0: selectively banned
+1: selectively admitted
+2: filtered - valid for selectively admitted ONLY
+
+Selectively banned channels are public channels, open to all.
+Selectively admitted channels are private channels, by invite only.
+
+Filtering is not yet implemented in this client code, but is used to scrub
+the content of a private channel by its host before it is sent out to those who are
+subscribed. As noted, this CANNOT be done on a public channel ( yet ).
+
+New channels default to "Mort" permission.
+
+See I3PERMSET for more information on what permissions do.
+~
+End
+
+#HELP
+Name i3adminchan
+Perm Admin
+Text Syntax: i3adminchan <localchannel> <add|remove> <mudname>
+
+This command is used to administer the list of muds authorized to use a channel.
+
+When used with a public channel, "add" bans them from using it, and "remove" unbans them.
+When used with a private channel, "add" allows them to use it, and "remove" disallows them.
+
+This is all handled on a per mud basis.
+~
+End
+
+#HELP
+Name i3ban
+Perm Admin
+Text Syntax: i3ban <target>
+Syntax: i3ban IP:Port
+
+This is the mud-wide version of an I3IGNORE command. Best used in elevated cases
+where indivudual users have been unable to effectively block traffic from another
+user or mud who is harassing them, or harassing multiple users on your mud.
+This is a somewhat drastic measure and all traffic from the individual user or
+mud will be dropped silently. It is usually best to have documented cases of
+individual abuse before proceeding to this level. If blocking at this level fails
+to stop the problem, you may wish to proceed to the administrator of the channel
+if the problem is channel related, or directly to the router administration for
+the router you are connected to if it's something else. Be prepared to provide
+any necessary documentation of incidents if the administrator you contact should
+request them.
+~
+End
+
+#HELP
+Name i3beep
+Perm Mort
+Text Syntax: i3beep <person@mud>
+Syntax: i3beep [on]/[off]
+
+i3beep sends a quick message to a person on another mud.
+If the target mud supports the beep tone, then the person
+on that mud will hear the standard beep tone used by whatever
+client software they are using. Works in the same manner as
+the local beep command.
+
+Using on or off as an argument will enable or disable your ability
+to send and receive i3beeps.
+~
+End
+
+#HELP
+Name i3chanlayout
+Perm Admin
+Text Syntax: i3chanlayout <localchannel> <layout> <format...>
+Layout can be one of these: layout_e layout_m
+
+Format can be any way you want it to look, provided you have the proper number of %s tags in it.
+
+layout_e designs require 2 %s tags, one for the channel localname, and one for the message itself.
+
+layout_m designs require 4 %s tags. One for the channel localname, one for the username, one for
+the mudname, and one for the message itself.
+
+Formats with incorrect amounts of tags will be rejected.
+~
+End
+
+#HELP
+Name i3config
+Perm Admin
+Text Syntax: i3config <options>
+
+The interface to changing your configuration while in the mud.
+Most options listed by typing in the command cannot be changed if you are currently
+connected to I3 and they will inform you of this.
+
+'i3config show' will list the details of what you can currently change with this
+command. If something is not listed, then the only means to change it is to edit it
+in shell. The output of the command should be fairly self explainitory.
+~
+End
+
+#HELP
+Name i3connect
+Perm Imm
+Text Syntax: i3connect [router]
+
+Does more or less what it implies: Connects the mud to the I3 network.
+
+If a router is specified, then that router will be the one connected to.
+If no router is specified, then the router listed first in the mud's router
+configuration will be used.
+~
+End
+
+#HELP
+Name i3disconnect
+Perm Imm
+Text Syntax: i3disconnect
+
+Does more or less what it implies: Disconnects the mud from the I3 network.
+~
+End
+
+#HELP
+Name i3debug
+Perm Imp
+Text Syntax: i3debug
+
+When this option is on, all packets entering and leaving the mud are logged so
+that they can be inspected later. This is really only of any value in the
+deployment of new packet types that have not been tested, or in the addition of
+new features that have yet to be implemented. It is not to be used lightly, for
+it spams and is a gross invasion of privacy for anyone on the mud who may be
+using tells. Responsible admins should either inform their users ahead of time or
+use this option on a development port.
+~
+End
+
+#HELP
+Name i3editchan
+Perm Admin
+Text Syntax: i3editchan <localname> localname <new localname>
+Syntax: i3editchan <localname> level <permission>
+
+This allows you to change the local name of a channel, or to change the permission
+level at which players can begin using it.
+
+Available permissions are: None, Mort, Imm, Admin, and Imp. See I3PERMSET for more
+information on what permissions do.
+~
+End
+
+#HELP
+Name i3emote
+Perm Mort
+Text Syntax: i3emote <person@mud> <message>
+
+Sends a private emote to a person on another mud.
+~
+End
+
+#HELP
+Name i3finger
+Perm Mort
+Text Syntax: i3finger <person@mud>
+Syntax: i3finger privacy
+
+Request for information regarding a player on another mud.
+Operates in a similar manner to the local 'finger' command.
+Will only reveal information the target mud feels is appropriate.
+
+Using the privacy argument will disable your information from being
+sent to a requesting user on another mud. You will not be told anyone
+has tried.
+~
+End
+
+#HELP
+Name i3ignore
+Perm Mort
+Text Syntax: i3ignore <target>
+Syntax: i3ignore IP:Port
+
+The I3IGNORE command blocks incoming traffic directed at a specific user on the mud.
+It also prevents them from being displayed on such lists as who, and channel who.
+This is your first line of defense against an annoying pest.
+You can specify ignores either specifically or with wildcards, like so:
+
+i3ignore pest@mud
+i3ignore *@mud
+i3ignore pest@*
+i3ignore IP:Port
+
+The IP type of ignore can only be specified as an IP and port, taken from the mud's
+current mudinfo data. This will block anyone current and future who logs into that
+mud IP and port from ever sending you traffic.
+
+Before going to the mud's administration with a complain, you should attempt to make
+an ignore work for you. If the particular person is still causing problems or is
+making a nuisance of themselves to several people, advise your mud administration
+that they may need to pursue an I3BAN against the person or mud in question.
+Be prepared to show proper documentation of any incidents to support your case.
+~
+End
+
+#HELP
+Name i3locate
+Perm Mort
+Text Syntax: i3locate <name>
+
+Asks all the muds on the Intermud-3 network if a person
+known by the name is there. Be patient when using this command,
+there are a lot of muds on the network to search through, so
+a response may take some time to come back.
+~
+End
+
+#HELP
+Name i3perms
+Perm Imm
+Text Syntax: i3perms <user>
+
+Displays the permission level for the target user on the mud.
+~
+End
+
+#HELP
+Name i3permset
+Perm Admin
+Text Syntax: i3permset <user> <permission>
+
+This command sets the permission level for a particular user on your mud.
+The following permissions are available:
+
+Notset - Default value. Causes subsequent logins to reset perms based on level.
+None   - No access.
+Mort   - Allows access to channels and commands for non-staff players.
+Imm    - Allows access to additional channels and commands for regular staff.
+Admin  - Allows access to additional channels and commands for administrative staff.
+Imp    - Allows access to additional channels and commands for implementors.
+
+These permission values are also used when setting channels up for access.
+~
+End
+
+#HELP
+Name i3removechan
+Perm Admin
+Text Syntax: i3removechan <channel>
+
+Channelname should be the name seen on 'i3chanlist all'
+
+Removed the indicated channel from the router, and deletes the local copy from the
+mud as well. This does NOT send a broadcast to subscribed muds to delete their local
+copies, so they will need to do that themselves upon noticing the channel is gone.
+~
+End
+
+#HELP
+Name i3setchan
+Perm Admin
+Text Syntax: i3setchan <i3channelname> <localname> [permission]
+
+This creates a local copy of an existing I3 channel for the mud to subscribe to.
+You must use the I3 name of the channel so that your mud will know which one you
+want. This is obtained from the 'i3chanlist all' command. You must then supply
+a local channel name to use with it. Then you can optionally set a permission level
+at which players can start using the channel. Channels with no permission level
+supplied will default to "Mort".
+
+An example:
+
+i3setchan diku_chat dchat mort
+
+Available permissions are: None, Mort, Imm, Admin, and Imp. See I3PERMSET for more
+information on what permissions do.
+~
+End
+
+#HELP
+Name i3tell
+Perm Mort
+Text Syntax: i3tell <person@mud> <message>
+Syntax: i3tell [on]/[off]
+
+i3tell sends a private message to a person on another mud.
+To send a tell to someone on a mud with a multi-word name, you need to
+enlcose person@mud in quotes, like so: i3tell 'person@mud with long name'
+Otherwise this command operates in much the same way as the local tell command.
+
+Using the on or off arguments will enable or disable your ability to send
+and receive i3tells.
+~
+End
+
+#HELP
+Name i3reply
+Perm Mort
+Text Syntax: i3reply <message>
+
+To reply to the last i3tell you received, simply type 'i3reply'
+followed by your message and it will be sent back to the last
+person on I3 who sent a tell to you. Works in the same manner
+as the local reply command.
+~
+End
+
+#HELP
+Name i3ucache
+Perm Imm
+Text Syntax: i3ucache
+
+Displays the current content of the mud's ucache data. This is a very spammy list
+since multiple muds support this information and send packets out regularly.
+Ucache data is used for gender targetting of socials.
+~
+End
+
+#HELP
+Name i3user
+Perm Imm
+Text Syntax: i3user@mud
+
+Sends out a specific request for the target user's ucache data and updates the
+data tables accordingly.
+~
+End
+
+#HELP
+Name i3who
+Perm Mort
+Text Syntax: i3who <mud>
+
+Requests an overview of players on a different mud.
+Operates similarly to the local who command.
+~
+End
+
+#END

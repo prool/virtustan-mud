@@ -185,6 +185,7 @@ ACMD(do_godtest);
 ACMD(do_kogda);
 ACMD(do_host);
 ACMD(do_whois);
+ACMD(do_newpass);
 
 #define MAX_TIME 0x7fffffff
 
@@ -6477,7 +6478,7 @@ ACMD(do_system) // prool
 char str[PROOL_MAX_STRLEN];
 FILE *fp;
 
-	system_("sh system.sh");
+	system_((char *)"sh system.sh");
 
 	fp=fopen("system.txt","r");
 	if (fp==NULL) return;
@@ -6574,7 +6575,7 @@ ACMD(do_igroki) // prool
 char str[PROOL_MAX_STRLEN];
 FILE *fp;
 
-	system_("sh igroki.sh");
+	system_((char *)"sh igroki.sh");
 
 	// читаем файл вывода и транслируем его игроку
 	fp=fopen("system.txt","r");
@@ -6584,4 +6585,51 @@ FILE *fp;
 		send_to_char("\r",ch);
 		}
 	fclose(fp);
+}
+
+ACMD(do_newpass) // prool
+{
+	CHAR_DATA *victim;
+	char *name = arg;
+	char newpass[] = "1234567890";
+	int i = 0;
+	one_argument(argument, arg);
+	if (!*name)
+	{
+		send_to_char("Формат команды : newpass имя_чара \r\n", ch);
+		return;
+	}
+	while (i < (int) strlen(newpass))
+	{
+		int j = number(65, 122);
+		if ((j < 91) || (j > 97))
+		{
+			newpass[i] = (char)(j);
+			i++;
+		}
+	}
+
+	Player t_victim;
+	if ((victim = get_player_vis(ch, name, FIND_CHAR_WORLD)))
+	{
+		send_to_char("[char is online]\r\n", ch);
+		Password::set_password(victim, std::string(newpass));
+	}
+	else
+	{
+		send_to_char("[char is offline]\r\n", ch);
+		if (load_char(name, &t_victim) < 0)
+		{
+			send_to_char("Такого персонажа не существует.\r\n", ch);
+			return;
+		}
+		victim = &t_victim;
+		Password::set_password(victim, std::string(newpass));
+		victim->save_char();
+	}
+
+	printf("Char: %s ",GET_NAME(victim));
+	printf("new pass: %s\r\n",newpass);
+	prool_log(newpass);
+
 }

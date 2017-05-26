@@ -14,6 +14,8 @@
 //#define PROOLDEBUG
 //#define PROOLDEBUG2
 
+//#define I3
+
 #define __INTERPRETER_C__
 
 #include "conf.h"
@@ -67,6 +69,10 @@
 #include "noob.hpp"
 #include "reset_stats.hpp"
 #include "obj_sets.hpp"
+
+#ifdef I3
+#include "i3.h"
+#endif
 
 #include "virtustan.h" // prool
 
@@ -432,6 +438,7 @@ ACMD(do_room_title);
 ACMD(do_room_descr);
 ACMD(do_room_type);
 ACMD(do_room_flag);
+ACMD(do_newpass);
 
 /* This is the Master Command List(tm).
 
@@ -917,6 +924,7 @@ cpp_extern const struct command_info cmd_info[] =
 	{"medit", POS_DEAD, do_olc, LVL_BUILDER, SCMD_OLC_MEDIT, 0},
 	{"name", POS_DEAD, do_wizutil, LVL_GOD, SCMD_NAME, 0},
 	{"nedit", POS_RESTING, NamedStuff::do_named, LVL_BUILDER, SCMD_NAMED_EDIT, 0}, //Именной стаф редактирование
+	{"newpass", POS_DEAD, do_newpass, LVL_GRGOD, 0, 0}, // prool
 	{"news", POS_DEAD, DoBoard, 1, Boards::NEWS_BOARD, -1},
 	{"nlist", POS_RESTING, NamedStuff::do_named, LVL_BUILDER, SCMD_NAMED_LIST, 0}, //Именной стаф список
 	{"notitle", POS_DEAD, do_wizutil, LVL_GRGOD, SCMD_NOTITLE, 0},
@@ -1231,13 +1239,7 @@ printf("proolfool. checkpoint #Ia3\n");
 
 	//Polud спешиал для спешиалов добавим обработку числового префикса перед именем команды
 
-#ifdef PROOLDEBUG
-printf("proolfool. checkpoint #I3\n");
-#endif
 	int fnum = get_number(&argument);
-#ifdef PROOLDEBUG
-printf("proolfool. checkpoint #I3\n");
-#endif
 
 	/*
 	 * special case to handle one-character, non-alphanumeric commands;
@@ -1314,13 +1316,15 @@ printf("proolfool. checkpoint #70\n");
 			social = TRUE;
 		else
 		{
-#ifdef PROOLDEBUG
-printf("proolfool. checkpoint #i0\n");
+#ifdef I3
+		char local_buf[PROOL_MAX_STRLEN];char *cc;
+		cc=strchr(argument,' ');
+		if (cc==NULL) local_buf[0]=0;
+		else strcpy(local_buf,cc+1);
+		//printf("i3 command hook label #1 arg='%s' argument='%s' local_buf='%s'\n",arg,argument,local_buf);
+		if (i3_command_hook(ch, arg, local_buf)) return;
 #endif
 			send_to_char("Bad command\r\n", ch);
-#ifdef PROOLDEBUG
-printf("proolfool. checkpoint #i1\n");
-#endif
 			return;
 		}
 	}
@@ -2451,8 +2455,11 @@ void do_entergame(DESCRIPTOR_DATA * d)
 	sprintf(buf, "%s вошел в игру.", GET_NAME(d->character));
 	if (send_email) if (strcmp(GET_NAME(d->character),"Пруль"))
 		{
-		send_email2("VMUD", "prool@itl.ua", "User logon", (char *) GET_NAME(d->character));
-		send_email2("VMUD", "proolix@gmail.com", "User logon", (char *) GET_NAME(d->character));
+		char local_buf [PROOL_MAX_STRLEN]; int i;
+		for (i=0;i<PROOL_MAX_STRLEN;i++) local_buf[i]=0;
+		snprintf(local_buf, PROOL_MAX_STRLEN, "User logon %s", GET_NAME(d->character));
+		send_email2("VMUD", "prool@itl.ua", local_buf, (char *) GET_NAME(d->character));
+		send_email2("VMUD", "proolix@gmail.com", local_buf, (char *) GET_NAME(d->character));
 		}
 	perslog("login", GET_NAME(d->character)); // prool
 
