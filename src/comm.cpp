@@ -2674,6 +2674,9 @@ int new_descriptor(socket_t s)
 		*(newd->host + HOST_LENGTH) = '\0';
 	}
 
+	printf("vmud %s new connection %s\n", ptime(), newd->host); // prool fool
+	log("vmud new connection %s", newd->host); // prool fool
+
 	// ип в виде числа
 	newd->ip = TxtToIp(newd->host);
 
