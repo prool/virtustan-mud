@@ -2174,19 +2174,20 @@ ACMD(do_ident)
 	struct timed_type timed;
 	int k, level = 0;
 
-	if (IS_NPC(ch) || ch->get_skill(SKILL_IDENTIFY) <= 0)
+	if (IS_NPC(ch) /*|| ch->get_skill(SKILL_IDENTIFY) <= 0*/) // prool: опознавать могут все!
 	{
 		send_to_char("Вам стоит сначала этому научиться.\r\n", ch);
 		return;
 	}
 
 	one_argument(argument, arg);
-
+#if 0 // prool: нет таймаута в использовании опознавания!
 	if (timed_by_skill(ch, SKILL_IDENTIFY))
 	{
 		send_to_char("Вы же недавно опознавали - подождите чуток.\r\n", ch);
 		return;
 	}
+#endif
 
 	k = generic_find(arg, FIND_CHAR_ROOM | FIND_OBJ_INV | FIND_OBJ_ROOM | FIND_OBJ_EQUIP, caster, &cvict, &ovict);
 	if (!k)

@@ -18,6 +18,7 @@
 #include <boost/format.hpp>
 #include <boost/algorithm/string.hpp>
 #include <boost/lexical_cast.hpp>
+#include <string.h> // prool
 #include "sysdep.h"
 #include "structs.h"
 #include "utils.h"
@@ -6561,13 +6562,22 @@ int i, counter, tail;
 }
 
 ACMD(do_host) // prool
-{
+{int i;
 char str[PROOL_MAX_STRLEN];
 if (*argument)
 	{
+	for (i=0;i<strlen(argument);i++)
+		{
+		if ((*(argument+i)>='a')&&(*(argument+i)<='z'))
+			{
+			send_to_char("Usage: host <ip address>\r\n", ch);
+			return;
+			}
+		}
 	sprintf(str,"argument=`%s' hostname = %s\r\n", argument, nslookup (argument+1));
 	send_to_char(str,ch);
 	}
+else send_to_char("Usage: host <ip address>\r\n", ch);
 }
 
 ACMD(do_igroki) // prool

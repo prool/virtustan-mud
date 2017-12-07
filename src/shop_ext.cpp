@@ -28,6 +28,8 @@
 #include "utils.h"
 #include "parse.hpp"
 
+#include "virtustan.h" // prool
+
 /*
 Пример конфига (plrstuff/shop/test.xml):
 <?xml version="1.0"?>
@@ -1141,6 +1143,33 @@ void do_shop_cmd(CHAR_DATA* ch, CHAR_DATA *keeper, OBJ_DATA* obj, ShopListType::
 			return;
 		}else
 		{
+		char prool_buf[512];
+		char prool_buf_utf[512];
+		int ii, predmet, cena;
+		// prool: вычисление для справки суммы, за которую этот предмет продается в этом магазине
+		strcpy(prool_buf, GET_OBJ_PNAME(obj,0));
+		ii=0;
+		while (prool_buf[ii])
+			{
+			if (prool_buf[ii]==' ') prool_buf[ii]='_';
+			ii++;
+			}
+		koi_to_utf8(prool_buf,prool_buf_utf);
+		printf("prool debug: sell obj %s\n", prool_buf_utf);
+		std::string prool_string(prool_buf);
+		predmet = get_item_num(shop, prool_string, GET_MOB_VNUM(keeper));
+		printf("prool debug: predmet # %i\n", predmet);
+		cena = (*shop)->item_list[predmet-1]->price;
+		printf("prool debug: cena pokupki %i; cena prodazhi %li\n", cena, buy_price);
+		if (buy_price>cena)
+			{// prool: ошибка: цена покупки предмета магазином больше, чем цена его продажи!
+			buy_price=cena/2;
+			if (buy_price==0) buy_price=1;
+			price_to_show = boost::lexical_cast<string>(buy_price) + " " +
+			string(desc_count(buy_price, WHAT_MONEYu)) + " ;-) ";
+			log("prool: trade error with item '%s'", prool_buf);
+			printf("TRADE ERROR LOGGED. ITEM %s\n", prool_buf_utf);
+			}
 			obj_from_char(obj);
 			tell_to_char(keeper, ch, string("Получи за " + string(GET_OBJ_PNAME(obj, 3)) + " " + price_to_show + ".").c_str());
 			ch->add_gold(buy_price);

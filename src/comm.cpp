@@ -2674,8 +2674,8 @@ int new_descriptor(socket_t s)
 		*(newd->host + HOST_LENGTH) = '\0';
 	}
 
-	printf("vmud %s new connection %s\n", ptime(), newd->host); // prool fool
-	log("vmud new connection %s", newd->host); // prool fool
+	//printf("vmud %s new connection %s [%s]\n", ptime(), newd->host, nslookup(newd->host)); // prool
+	log("vmud new connection %s", newd->host); // prool
 
 	// ип в виде числа
 	newd->ip = TxtToIp(newd->host);
@@ -3307,7 +3307,7 @@ int process_input(DESCRIPTOR_DATA * t)
                              else if (ptr[2] == (char) MSSP) // prool
                                         {char buf0[100];
                                         mssp_start(t);
-                                        printf("%s MSSP start %s. Online %i\n", ptime(), t->host, total_players);
+                                        //printf("VMUD %s MSSP start %s. Online %i\n", ptime(), t->host, total_players);
                                         sprintf(buf0,"MSSP start %s. Online %i", t->host, total_players);
                                         log(buf0);
                                         }

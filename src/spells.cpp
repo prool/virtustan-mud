@@ -2261,7 +2261,7 @@ void imm_show_char_values(CHAR_DATA * victim, CHAR_DATA * ch)
 ASPELL(skill_identify)
 {
 	if (obj)
-		if (IS_IMMORTAL(ch))
+		if (1/*IS_IMMORTAL(ch)*/) // prool: временно (?) опознание работает для всех как для иммов
 			imm_show_obj_values(obj, ch);
 		else
 			mort_show_obj_values(obj, ch,
@@ -2269,7 +2269,7 @@ ASPELL(skill_identify)
 											 skill_info[SKILL_IDENTIFY].max_percent, 0));
 	else if (victim)
 	{
-		if (IS_IMMORTAL(ch))
+		if (1/*IS_IMMORTAL(ch)*/)
 			imm_show_char_values(victim, ch);
 		else if (GET_LEVEL(victim) < 3)
 		{
