@@ -8,7 +8,7 @@
 
 #define STRLEN 500
 #define NAMELEN 50
-#define MAXROOM 100000 // 66401 // 8000
+#define MAXROOM 66401 // 8000
 #define ESC 0x1B
 #define MAXINDEX 340000
 #define MEGA_X 600 // 100 // 505

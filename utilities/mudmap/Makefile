@@ -1,8 +1,8 @@
-# собирать под Ubuntu 64 bit с флагом gcc -m32 иначе почему-то падает в корку на функции ptime()
+# собирать под Linux 64 bit (Ubuntu, Centos) с флагом gcc -m32 иначе почему-то падает в корку на функции ptime(). prool
 
 
 grafor: grafor.c
-	gcc -ggdb3 grafor.c -o grafor
+	gcc -m32 -ggdb3 grafor.c -o grafor
 #	gcc -ggdb3 grafor.c -lncurses -o script.cgi
 map:	grafor
 	cat ../../lib/world/wld/*.wld > rooms.lst

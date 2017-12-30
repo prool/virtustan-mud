@@ -3143,7 +3143,8 @@ int write_to_descriptor(socket_t desc, const char *txt, size_t total)
 		{
 			// Fatal error.  Disconnect the player_data.
 			//perror("SYSERR: write_to_descriptor");
-			printf("vmud %s SYSERR: write_to_descriptor\n", ptime()); // prool
+			//printf("vmud %s SYSERR: write_to_descriptor\n", ptime()); // prool
+			log("SYSERR: write_to_descriptor (prool)"); // prool
 			return (0);
 		}
 		else if (bytes_written == 0)
