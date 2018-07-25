@@ -2382,6 +2382,7 @@ void load_skills_definitions()
 //Polud Читает данные из файла хранения параметров умений
 void load_skills()
 {
+
 	const char *CLASS_SKILLS_FILE = LIB_MISC"classskills.xml";
 
 	pugi::xml_document doc;
@@ -2679,13 +2680,17 @@ void init_spell_levels(void)
 	// End of changed
 
 //	Polud новый файл описания умений Skills.xml, если его нет - читаются старые
+
+//	printf("prool fool debug label 1\n");
 	load_skills();
 
+//	printf("prool fool debug label 2\n");
 	if (!(magic = fopen(LIB_MISC "skillvariables.lst", "r")))
 	{
 		log("Cann't open skillvariables list file...");
 		_exit(1);
 	}
+//	printf("prool fool debug label 3\n");
 
 	// Загружаем переменные скилов из файла
 
@@ -2730,6 +2735,7 @@ void init_spell_levels(void)
 	insgem_vars.timer_plus_percent = INSGEM_DFLT_TIMER_PLUS_PERCENT;
 	insgem_vars.timer_minus_percent = INSGEM_DFLT_TIMER_MINUS_PERCENT;
 
+//	printf("prool fool debug label 4\n");
 
 
 	while (get_line(magic, name))
@@ -2776,6 +2782,7 @@ void init_spell_levels(void)
 	}
 	fclose(magic);
 
+//	printf("prool fool debug label 5\n");
 
 	/* Remove to init_im::im.cpp - Gorrah
 	// +newbook.patch (Alisher)
@@ -2811,6 +2818,7 @@ void init_spell_levels(void)
 		fclose(magic);
 	// -newbook.patch (Alisher)
 	*/
+//	printf("prool fool debug label 6\n");
 	return;
 }
 

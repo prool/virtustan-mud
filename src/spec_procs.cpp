@@ -39,6 +39,8 @@
 #include "magic.h"
 #include "fight.h"
 
+#include "virtustan.h" // prool
+
 //   external vars
 
 extern CHAR_DATA *character_list;
@@ -76,6 +78,7 @@ SPECIAL(dump);
 SPECIAL(mayor);
 SPECIAL(snake);
 SPECIAL(thief);
+SPECIAL(gatekeeper);
 SPECIAL(magic_user);
 SPECIAL(guild_guard);
 SPECIAL(puff);
@@ -2432,6 +2435,15 @@ SPECIAL(dump)
 	OBJ_DATA *k;
 	int value = 0;
 
+#if 0 // prool
+	char buffer [200];
+	printf("dump cmd='%i'\n",cmd);
+	printf("argument '%s'\n",argument);
+	if (cmd) printf("cmd name '%s' = ",cmd_info[cmd].command);
+	koi_to_utf8((char *) cmd_info[cmd].command, buffer);
+	printf("'%s'\n", buffer);
+#endif
+
 	for (k = world[ch->in_room]->contents; k; k = world[ch->in_room]->contents)
 	{
 		act("$p рассыпал$U в прах!", FALSE, 0, k, 0, TO_ROOM);
@@ -2579,20 +2591,109 @@ SPECIAL(snake)
 	return (FALSE);
 }
 
+SPECIAL(artefakt) // prool
+{
+printf("artefakt\n");
+return FALSE;
+}
+
+SPECIAL(vending) // prool
+{
+	mob_rnum r_num;
+	OBJ_DATA *obj;
+
+//printf("Vending automata argument '%s'\n",argument);
+//	if (cmd==0) return (FALSE);
+	if (CMD_IS("нажать"))
+		{
+		//printf("Vending automata: pressed anykey\n");
+{r_num = real_object(802 /*печенье*/); if (r_num==-1) {send_to_char("&RИз автомата раздался механический голос: Этого предмета почему-то не существует в мире и я не могу его найти!&n :(\r\n",ch); return TRUE;} obj = read_object(r_num, REAL); GET_OBJ_MAKER(obj) = GET_UNIQUE(ch); obj_to_char(obj, ch); act("$n получил$g от автомата $o3!", FALSE, ch, obj, 0, TO_ROOM); act("Вы получили от автомата $o3.", FALSE, ch, obj, 0, TO_CHAR); olc_log("Vending automata: %s load obj %s", GET_NAME(ch), GET_OBJ_ALIAS(obj));}
+		return (TRUE);
+		}
+return (FALSE);
+}
+
+SPECIAL(gatekeeper) // prool
+{int dir;
+
+//	if (cmd==0) return (FALSE);
+
+#if 0
+	char buffer [200];
+	printf("gatekeeper cmd='%i'\n",cmd);
+	printf("argument '%s'\n",argument);
+	if (cmd) printf("cmd name '%s' = ",cmd_info[cmd].command);
+	koi_to_utf8((char *) cmd_info[cmd].command, buffer);
+	printf("'%s'\n", buffer);
+#endif
+
+if (CMD_IS("говорить"))
+	{
+	dir=0;
+	//printf("someone saying...\n");
+	if (!strcmp(argument," помоги"))
+		{
+		send_to_char("Я гейткипер, я могу тебя телепортировать, ты только говори направление, куда.\r\n\
+Сейчас доступны такие направления 'в начало', 'на остров', 'на небеса'\r\n",ch);
+		}
+	else if (!strcmp(argument," в начало")) dir=9900;
+	else if (!strcmp(argument," на небеса")) dir=100;
+	else if (!strcmp(argument," на остров")) dir=21000;
+	else send_to_char("Говори помоги и гейткипер тебе поможет\r\n",ch);
+
+	if (dir)
+	{//teleporting begin
+	room_rnum location;
+
+	location=real_room(dir);
+
+	if (POOFOUT(ch))
+		sprintf(buf, "$n %s", POOFOUT(ch));
+	else
+		strcpy(buf, "$n растворил$u в клубах дыма.");
+
+	act(buf, TRUE, ch, 0, 0, TO_ROOM);
+	char_from_room(ch);
+
+	char_to_room(ch, location);
+	check_horse(ch);
+
+	if (POOFIN(ch))
+		sprintf(buf, "$n %s", POOFIN(ch));
+	else
+		strcpy(buf, "$n возник$q посреди комнаты.");
+	act(buf, TRUE, ch, 0, 0, TO_ROOM);
+	look_at_room(ch, 0);
+	}// teleporting end
+	return (TRUE);
+	}
+	else
+		{
+		//printf("other command...\n");
+		return (FALSE);
+		}
+
+return (FALSE);
+}
+
 
 SPECIAL(thief)
 {
 	CHAR_DATA *cons;
 
-	if (cmd)
-		return (FALSE);
-
-	if (GET_POS(ch) != POS_STANDING)
-		return (FALSE);
-
 #if DEBUG
 printf("thief() lbl 0\n");
 #endif
+
+	if (cmd)
+		return (FALSE);
+
+#if DEBUG
+printf("thief() lbl 1\n");
+#endif
+
+	if (GET_POS(ch) != POS_STANDING)
+		return (FALSE);
 
 	for (cons = world[ch->in_room]->people; cons; cons = cons->next_in_room)
 		if (!IS_NPC(cons) && (GET_LEVEL(cons) < LVL_IMMORT) && (!number(0, 4)))

@@ -351,7 +351,7 @@ int legal_dir(CHAR_DATA * ch, int dir, int need_specials_check, int show_msg)
 	{
 		if (show_msg)
 		{
-			send_to_char("В связи с боевыми действиями эвакуация временно прекращена.\r\n", ch);
+			send_to_char("Error 3. В связи с боевыми действиями эвакуация временно прекращена.\r\n", ch);
 		}
 		return (FALSE);
 	}
@@ -1502,7 +1502,7 @@ ACMD(do_enter)
 				// не пускать в ванрумы после пк, если его там прибьет сразу
 				if (DeathTrap::check_tunnel_death(ch, door))
 				{
-					send_to_char("В связи с боевыми действиями эвакуация временно прекращена.\r\n", ch);
+					send_to_char("Error 4. В связи с боевыми действиями эвакуация временно прекращена.\r\n", ch);
 					return;
 				}
 				// Если чар под местью, и портал односторонний, то не пускать

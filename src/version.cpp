@@ -14,7 +14,7 @@ extern char mudname[];
 
 void show_code_date(CHAR_DATA *ch)
 {
-	send_to_char(ch, "Virtustan MUD, ver %s %s\r\n", __DATE__, __TIME__);
+	send_to_char(ch, "Virtustan MUD, ver %s %s\r\nBy Prool http://mud.kharkov.org\r\n", __DATE__, __TIME__);
 	if (mudname[0])
 		send_to_char(ch, "&R%s&n\r\n",mudname);
 }

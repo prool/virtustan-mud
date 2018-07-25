@@ -673,6 +673,8 @@ public:
 
 	int *ing_list;		//загружаемые в труп ингредиенты
 	load_list *dl_list;	// загружаемые в труп предметы
+
+	int	virtustan; // prool: test parameter
 };
 
 void change_fighting(CHAR_DATA * ch, int need_stop);

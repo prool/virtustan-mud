@@ -1941,11 +1941,9 @@ int Crash_load(CHAR_DATA * ch)
 	mudlog(buf, LGH, MAX(LVL_GOD, GET_INVIS_LEV(ch)), SYSLOG, TRUE);
 	cost = (int)(SAVEINFO(index)->rent.net_cost_per_diem * num_of_days);
 	
-#if 1 // prool: 1 - free rent, 0 - not free
-	cost=0;
-#else
 	cost = MAX(0, cost);
-#endif
+
+	if (free_rent) cost=0; // prool fool
 
 	// added by WorM (Видолюб) 2010.06.04 сумма потраченная на найм(возвращается при креше)
 	if(RENTCODE(index) == RENT_CRASH)
@@ -2967,7 +2965,7 @@ int gen_receptionist(CHAR_DATA * ch, CHAR_DATA * recep, int cmd, char *arg, int 
 	}
 	if (RENTABLE(ch))
 	{
-		send_to_char("В связи с боевыми действиями эвакуация временно прекращена.\r\n", ch);
+		send_to_char("Error 1. В связи с боевыми действиями эвакуация временно прекращена.\r\n", ch);
 		return (TRUE);
 	}
 	if (ch->get_fighting())

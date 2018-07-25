@@ -14,7 +14,9 @@
 #include <boost/bind.hpp>
 #include <boost/algorithm/string.hpp>
 // GCC 4.4
+#ifndef CYGWIN // Этот файл отсутствует в последних версиях boost, напр. в версии 1.66.0. Я пока наткнулся на этот только при сборке в среде Цигвин и закоментировал этот файл только для него, а там видно будет. /prool
 #include <boost/tr1/unordered_map.hpp>
+#endif
 
 #include "obj_sets.hpp"
 #include "obj_sets_stuff.hpp"

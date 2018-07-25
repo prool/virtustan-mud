@@ -897,7 +897,7 @@ void gain_exp(CHAR_DATA * ch, int gain)
 			ch->set_level(ch->get_level() - 1);
 			num_levels++;
 			sprintf(buf,
-					"%sВы потеряли уровень. Вам должно быть стыдно!%s\r\n",
+					"%sВы потеряли уровень!%s\r\n",
 					CCIRED(ch, C_NRM), CCNRM(ch, C_NRM));
 			send_to_char(buf, ch);
 			decrease_level(ch);

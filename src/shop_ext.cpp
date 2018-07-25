@@ -1143,6 +1143,7 @@ void do_shop_cmd(CHAR_DATA* ch, CHAR_DATA *keeper, OBJ_DATA* obj, ShopListType::
 			return;
 		}else
 		{
+#if 0 // убрал тестовый кусок кода, он крешает. но тем не менее надо проверить базу предметов и магазинов: есть предметы, к-и дешевле купить, чем продать!
 		char prool_buf[512];
 		char prool_buf_utf[512];
 		int ii, predmet, cena;
@@ -1159,7 +1160,7 @@ void do_shop_cmd(CHAR_DATA* ch, CHAR_DATA *keeper, OBJ_DATA* obj, ShopListType::
 		std::string prool_string(prool_buf);
 		predmet = get_item_num(shop, prool_string, GET_MOB_VNUM(keeper));
 		printf("prool debug: predmet # %i\n", predmet);
-		cena = (*shop)->item_list[predmet-1]->price;
+		if (*shop) cena = (*shop)->item_list[predmet-1]->price; else {cena=0; printf("prooldebug shop==0\n");}
 		printf("prool debug: cena pokupki %i; cena prodazhi %li\n", cena, buy_price);
 		if (buy_price>cena)
 			{// prool: ошибка: цена покупки предмета магазином больше, чем цена его продажи!
@@ -1170,6 +1171,7 @@ void do_shop_cmd(CHAR_DATA* ch, CHAR_DATA *keeper, OBJ_DATA* obj, ShopListType::
 			log("prool: trade error with item '%s'", prool_buf);
 			printf("TRADE ERROR LOGGED. ITEM %s\n", prool_buf_utf);
 			}
+#endif
 			obj_from_char(obj);
 			tell_to_char(keeper, ch, string("Получи за " + string(GET_OBJ_PNAME(obj, 3)) + " " + price_to_show + ".").c_str());
 			ch->add_gold(buy_price);

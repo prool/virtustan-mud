@@ -1854,7 +1854,9 @@ void boot_db(void)
 	}
 
 	log("Assigning spell and skill levels.");
+//	printf("prool fool debug label A\n");
 	init_spell_levels();
+//	printf("prool fool debug label B\n");
 
 	log("Sorting command list.");
 	sort_commands();

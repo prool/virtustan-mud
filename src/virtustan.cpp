@@ -331,3 +331,26 @@ void utf8_to_koi(char *str_i, char *str_o)
 	}
 }
 #endif // HAVE_ICONV
+
+ACMD (do_virtustan)
+{
+int i;
+char buf [PROOL_MAX_STRLEN];
+
+//printf("do_virtustan: parameter=%i\n", ch->virtustan);
+
+
+if (argument==0) goto l_fin;
+if (*argument==0) goto l_fin;
+if (*argument==' ') argument++;
+if (*argument==0) goto l_fin;
+i=atoi(argument);
+snprintf(buf, PROOL_MAX_STRLEN, "do_virtustan: i=%i\r\n", i);
+send_to_char(buf,ch);
+ch->virtustan=i;
+return;
+
+l_fin: ;
+snprintf(buf, PROOL_MAX_STRLEN, "do_virtustan: virtustan=%i\r\n", ch->virtustan);
+send_to_char(buf,ch);
+}

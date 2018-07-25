@@ -229,7 +229,7 @@ redit.o: redit.cpp conf.h sysdep.h structs.h comm.h utils.h features.hpp \
  dg_scripts.h constants.h im.h description.h deathtrap.hpp char.hpp \
  player_i.hpp reset_stats.hpp boards.h interpreter.h morph.hpp \
  obj_sets.hpp char_player.hpp quested.hpp mobmax.hpp remember.hpp dps.hpp \
- map.hpp room.hpp house.h house_exp.hpp
+ map.hpp room.hpp house.h house_exp.hpp virtustan.h
 oedit.o: oedit.cpp conf.h sysdep.h structs.h comm.h spells.h utils.h \
  features.hpp obj.hpp obj_enchant.hpp pugixml.hpp pugiconfig.hpp db.h \
  olc.h dg_olc.h dg_scripts.h im.h depot.hpp char.hpp player_i.hpp \
@@ -483,7 +483,8 @@ shop_ext.o: shop_ext.cpp pugixml.hpp pugiconfig.hpp shop_ext.hpp conf.h \
  obj_enchant.hpp dictionary.hpp char.hpp player_i.hpp reset_stats.hpp \
  boards.h db.h morph.hpp comm.h obj_sets.hpp handler.h constants.h \
  dg_scripts.h room.hpp glory.hpp glory_const.hpp named_stuff.hpp screen.h \
- house.h house_exp.hpp remember.hpp modify.h liquid.hpp parse.hpp
+ house.h house_exp.hpp remember.hpp modify.h liquid.hpp parse.hpp \
+ virtustan.h
 named_stuff.o: named_stuff.cpp pugixml.hpp pugiconfig.hpp named_stuff.hpp \
  conf.h sysdep.h interpreter.h utils.h features.hpp obj.hpp structs.h \
  obj_enchant.hpp screen.h char.hpp player_i.hpp reset_stats.hpp boards.h \
@@ -537,7 +538,7 @@ help.o: help.cpp help.hpp conf.h sysdep.h interpreter.h utils.h \
  char.hpp player_i.hpp reset_stats.hpp boards.h db.h morph.hpp comm.h \
  obj_sets.hpp dps.hpp map.hpp modify.h house.h house_exp.hpp \
  sets_drop.hpp handler.h screen.h spells.h
-map.o: map.cpp conf.h map.hpp sysdep.h structs.h char.hpp player_i.hpp \
+map.o: map.cpp map.hpp conf.h sysdep.h structs.h char.hpp player_i.hpp \
  reset_stats.hpp boards.h utils.h features.hpp obj.hpp obj_enchant.hpp \
  pugixml.hpp pugiconfig.hpp db.h interpreter.h morph.hpp comm.h \
  obj_sets.hpp screen.h room.hpp char_player.hpp quested.hpp mobmax.hpp \
@@ -578,3 +579,7 @@ obj_enchant.o: obj_enchant.cpp conf.h obj_enchant.hpp sysdep.h structs.h \
  comm.h obj_sets.hpp constants.h spells.h
 version.o: version.cpp conf.h sysdep.h structs.h comm.h utils.h \
  features.hpp obj.hpp obj_enchant.hpp pugixml.hpp pugiconfig.hpp
+i3.o: i3.c utils.h conf.h features.hpp obj.hpp sysdep.h structs.h \
+ obj_enchant.hpp pugixml.hpp pugiconfig.hpp comm.h constants.h modify.h \
+ interpreter.h i3.h i3_2.h virtustan.h char.hpp player_i.hpp \
+ reset_stats.hpp boards.h db.h morph.hpp obj_sets.hpp

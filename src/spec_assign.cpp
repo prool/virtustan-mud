@@ -48,6 +48,9 @@ SPECIAL(janitor);
 SPECIAL(mayor);
 SPECIAL(snake);
 SPECIAL(thief);
+SPECIAL(gatekeeper);
+SPECIAL(artefakt);
+SPECIAL(vending);
 SPECIAL(magic_user);
 SPECIAL(bank);
 SPECIAL(torc);
@@ -234,6 +237,10 @@ void init_spec_procs(void)
 				ASSIGNMOB(i, cityguard);
 			else if (!str_cmp(line2, "thief")) // prool
 				ASSIGNMOB(i, thief);
+			else if (!str_cmp(line2, "mage")) // prool
+				ASSIGNMOB(i, magic_user);
+			else if (!str_cmp(line2, "gatekeeper")) // prool
+				ASSIGNMOB(i, gatekeeper);
 #if 0 // prool
 			else if (!str_cmp(line2, "mayor")) // prool
 				ASSIGNMOB(i, mayor);
@@ -253,13 +260,26 @@ void init_spec_procs(void)
 				printf("prool: Unknown object %d in specials assignment\r\n", i);
 				continue;
 			}
+			if (!str_cmp(line2, "artefakt")) // prool
+				ASSIGNOBJ(i, artefakt);
+			else if (!str_cmp(line2, "vending")) // prool
+				ASSIGNOBJ(i, vending);
 		}
 		else if (!str_cmp(line1, "room"))
 		{
+			if (real_room(i) < 0)
+			{
+				log("Unknown room %d in specials assignment...", i);
+				printf("prool: Unknown room %d in specials assignment\r\n", i);
+				continue;
+			}
+			if (!str_cmp(line2, "dump")) // prool
+				ASSIGNROOM(i, dump);
 		}
 		else
 		{
 			log("Error in specials file!\r\n" "May be : mob, obj or room...");
+			printf("Error in specials file!\r\n" "May be : mob, obj or room...\r\n"); // prool
 			_exit(1);
 		}
 	}

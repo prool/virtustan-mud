@@ -160,9 +160,9 @@ ACMD(do_quit)
 	else
 	{
 //		int loadroom = ch->in_room;
-		if (RENTABLE(ch))
+		if (RENTABLE(ch) && (GET_LEVEL(ch)!=LVL_IMPL)) // prool: богу можно выходить из игры в состоянии боевых действий
 		{
-			send_to_char("В связи с боевыми действиями эвакуация временно прекращена.\r\n", ch);
+			send_to_char("Error 2. В связи с боевыми действиями эвакуация временно прекращена.\r\n", ch);
 			return;
 		}
 		if (!GET_INVIS_LEV(ch))

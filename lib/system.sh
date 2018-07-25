@@ -11,7 +11,7 @@ df -h >> system.txt
 echo >> system.txt
 
 echo "&Wfree&n" >> system.txt
-free >> system.txt
+free -h >> system.txt
 echo >> system.txt
 
 echo "&Wps aux | grep circle&n" >> system.txt

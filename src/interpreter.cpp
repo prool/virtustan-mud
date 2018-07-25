@@ -440,6 +440,8 @@ ACMD(do_room_type);
 ACMD(do_room_flag);
 ACMD(do_newpass);
 
+ACMD(do_virtustan);
+
 /* This is the Master Command List(tm).
 
  * You can put new commands in, take commands out, change the order
@@ -616,6 +618,7 @@ cpp_extern const struct command_info cmd_info[] =
 	{"мысл", POS_DEAD, do_quit, 0, 0, 0},
 	{"мысль", POS_DEAD, report_on_board, 0, Boards::SUGGEST_BOARD, 0},
 
+	{"нажать", POS_STANDING, do_not_here, 1, 0, -1},
 	{"наказания", POS_DEAD, DoBoard, 1, Boards::GODPUNISH_BOARD, -1},
 	{"налить", POS_STANDING, do_pour, 0, SCMD_FILL, 500},
 	{"наполнить", POS_STANDING, do_pour, 0, SCMD_FILL, 500},
@@ -1032,6 +1035,7 @@ cpp_extern const struct command_info cmd_info[] =
 	{"users", POS_DEAD, do_users, LVL_IMMORT, 0, 0},
 	{"value", POS_STANDING, do_not_here, 0, 0, -1},
 	{"version", POS_DEAD, do_gen_ps, 0, SCMD_VERSION, 0},
+	{"virtustan", POS_DEAD, do_virtustan, 1, 0, -1},
 	{"visible", POS_RESTING, do_visible, 1, 0, -1},
 	{"vnum", POS_DEAD, do_vnum, LVL_GRGOD, 0, 0},
 	{"vstat", POS_DEAD, do_vstat, LVL_GRGOD, 0, 0},
@@ -2472,7 +2476,7 @@ void do_entergame(DESCRIPTOR_DATA * d)
 	if (new_char)
 	{
 		send_to_char(
-			"\r\nВоспользуйтесь командой НОВИЧОК для получения вводной информации игроку.\r\n",
+			"\r\nВоспользуйтесь командой НОВИЧОК для получения вводной информации игроку.\r\nКоманда ПОМОЩЬ ПРУЛЬ даст вам пару советов от Пруля, создателя этого мада\r\n",
 			d->character);
 		send_to_char(
 			"Включен режим автоматического показа карты, наберите 'справка карта' для ознакомления.\r\n"

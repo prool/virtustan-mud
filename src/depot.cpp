@@ -1114,7 +1114,7 @@ bool put_depot(CHAR_DATA *ch, OBJ_DATA *obj)
 		return 0;
 	}
 
-	if (!ch->get_bank() && !ch->get_gold())
+	if (0/*!ch->get_bank() && !ch->get_gold()*/) // prool: коммунизм
 	{
 		send_to_char(ch,
 			"У вас ведь совсем нет денег, чем вы собираетесь расплачиваться за хранение вещей?\r\n",
