@@ -6622,12 +6622,12 @@ ACMD(do_newpass) // prool
 	Player t_victim;
 	if ((victim = get_player_vis(ch, name, FIND_CHAR_WORLD)))
 	{
-		send_to_char("[char is online, newpass in proollog]\r\n", ch);
+		send_to_char("[char is online, newpass in lib/*log]\r\n", ch);
 		Password::set_password(victim, std::string(newpass));
 	}
 	else
 	{
-		send_to_char("[char is offline, newpass in proollog]\r\n", ch);
+		send_to_char("[char is offline, newpass in lib/*log]\r\n", ch);
 		if (load_char(name, &t_victim) < 0)
 		{
 			send_to_char("Такого персонажа не существует.\r\n", ch);

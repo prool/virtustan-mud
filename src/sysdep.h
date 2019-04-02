@@ -296,6 +296,7 @@ typedef int socket_t;
 #define cpp_extern		// Nothing
 #endif
 
+#ifndef OSX // prool
 // Guess if we have the getrlimit()/setrlimit() functions
 #if defined(RLIMIT_NOFILE) || defined (RLIMIT_OFILE)
 #define HAS_RLIMIT
@@ -303,6 +304,7 @@ typedef int socket_t;
 # define RLIMIT_NOFILE RLIMIT_OFILE
 #endif
 #endif
+#endif // OSX
 
 
 // Make sure we have STDERR_FILENO

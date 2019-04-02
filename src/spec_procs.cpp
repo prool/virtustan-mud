@@ -78,7 +78,6 @@ SPECIAL(dump);
 SPECIAL(mayor);
 SPECIAL(snake);
 SPECIAL(thief);
-SPECIAL(gatekeeper);
 SPECIAL(magic_user);
 SPECIAL(guild_guard);
 SPECIAL(puff);
@@ -87,6 +86,10 @@ SPECIAL(janitor);
 SPECIAL(cityguard);
 SPECIAL(pet_shops);
 SPECIAL(bank);
+
+// prool's:
+SPECIAL(gatekeeper);
+SPECIAL(quiz);
 
 // ********************************************************************
 // *  Special procedures for mobiles                                  *
@@ -2676,6 +2679,94 @@ if (CMD_IS("говорить"))
 return (FALSE);
 }
 
+#define BUFLEN 256
+SPECIAL(quiz) // prool
+{FILE *f;
+int i,j;
+char buf[BUFLEN];
+
+//	if (cmd==0) return (FALSE);
+
+if (CMD_IS("говорить"))
+	{
+	//printf("someone saying...\n");
+	f=ch->quiz_file;
+	if (!strcmp(argument," начать"))
+		{// начать
+		if (ch->quiz_file==0)
+			{
+			send_to_char("Начинаем викторину\r\n",ch);
+			f=fopen("quiz.txt","r");
+			if (!f) 
+				send_to_char("Викторина, к сожалению, не получится: вопросы не привезли. Сообщите Прулю.\r\n",ch);
+			else
+				{
+				ch->quiz_file=f;
+				while(!feof(f))
+					{
+					buf[0]=0;
+					fgets(buf,BUFLEN,f);
+					if (buf[0]==0) break;
+					if (buf[0]==']') break;
+					if (buf[0]=='#') {ch->quiz_file=0;break;}
+					send_to_char(buf,ch);
+					}
+				}
+			}
+		else
+			{
+			send_to_char("Вы уже начали викторину, надо говорить ответ на вопрос\r\n",ch);
+			}
+		}
+	else
+		{
+		if (ch->quiz_file)
+			{
+			buf[0]=0;
+			fgets(buf,BUFLEN,f);
+			if (buf[0]==0)
+				{
+				send_to_char("Викторина внезапно прервалась. Сообщите Прулю.\r\n",ch);
+				ch->quiz_file=0;
+				return (TRUE);
+				}
+			//printf("buf=%s arg=%s\n", buf, argument);
+			i=atoi(buf);
+			if (i==0) i=-1;
+			j=atoi(argument+1);
+			if (j==0) j=-2;
+			if (i==j)
+				send_to_char("Вы ответили правильно\r\n",ch);
+			else
+				send_to_char("Вы ответили неверно\r\n",ch);
+				while(!feof(f)) // вывод правильного ответа
+					{
+					buf[0]=0;
+					fgets(buf,BUFLEN,f);
+					if (buf[0]==0) break;
+					if (buf[0]==']') break;
+					if (i!=j) send_to_char(buf,ch);
+					}
+				while(!feof(f)) // вывод следующего вопроса
+					{
+					buf[0]=0;
+					fgets(buf,BUFLEN,f);
+					if (buf[0]==0) break;
+					if (buf[0]==']') break;
+					if (buf[0]=='#') {ch->quiz_file=0;break;}
+					send_to_char(buf,ch);
+					}
+			}
+		else
+			{
+			send_to_char("Чтобы начать викторину говори начать.\r\n",ch);
+			}
+		}
+	return (TRUE);
+	}
+
+return (FALSE);
+}
 
 SPECIAL(thief)
 {

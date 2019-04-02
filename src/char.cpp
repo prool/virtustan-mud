@@ -173,7 +173,9 @@ void Character::zero_init()
 	ing_list = 0;
 	dl_list = 0;
 
-	virtustan=0; // prool: test parameter
+	// prool's parameters:
+	virtustan=0; // test parameter
+	quiz_file=0;
 
 	memset(&extra_attack_, 0, sizeof(extra_attack_type));
 	memset(&cast_attack_, 0, sizeof(cast_attack_type));

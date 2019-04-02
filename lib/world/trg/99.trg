@@ -27,7 +27,7 @@ if %object.vnum% == 9986
       give кираса .%actor.name%
     break
     case 2
-      say Получи свою награду.
+      say В награду я дам тебе 150 монет, если найду в своих карманах
       %self.gold(+150)%
       give 150 вирт %actor.name%
     break

@@ -1658,7 +1658,7 @@ void find_replacement(void *go, SCRIPT_DATA * sc, TRIG_DATA * trig,
 
 	if (!subfield)
 	{
-		subfield = '\0';	// Чтобы проверок меньше было
+		subfield = 0/*'\0'*/;	// Чтобы проверок меньше было // prool: adaptation for osx/clang
 	}
 
 	// X.global() will have a NULL trig

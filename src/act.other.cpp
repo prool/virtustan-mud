@@ -2957,6 +2957,20 @@ int check_for_dig(CHAR_DATA *ch)
 	return 0;
 }
 
+int check_for_fish(CHAR_DATA *ch)
+{
+	int i;
+
+	for (i = WEAR_WIELD; i <= WEAR_BOTHS; i++)
+	{
+		if (GET_EQ(ch, i) && (strstr(GET_EQ(ch, i)->aliases, "удочка") ))
+		{
+			return 1;
+		}
+	}
+	return 0;
+}
+
 void dig_obj(CHAR_DATA *ch, struct obj_data *obj)
 {
 	char textbuf[300];
@@ -2967,6 +2981,32 @@ void dig_obj(CHAR_DATA *ch, struct obj_data *obj)
 		sprintf(textbuf, "Вы нашли %s!\r\n", obj->PNames[3]);
 		send_to_char(textbuf, ch);
 		sprintf(textbuf, "$n выкопал$g %s!\r\n", obj->PNames[3]);
+		act(textbuf, FALSE, ch, 0, 0, TO_ROOM);
+		if (IS_CARRYING_N(ch) >= CAN_CARRY_N(ch))
+		{
+			send_to_char("Вы не смогли унести столько предметов.\r\n", ch);
+			obj_to_room(obj, ch->in_room);
+		}
+		else if (IS_CARRYING_W(ch) + GET_OBJ_WEIGHT(obj) > CAN_CARRY_W(ch))
+		{
+			send_to_char("Вы не смогли унести такой веc.\r\n", ch);
+			obj_to_room(obj, ch->in_room);
+		}
+		else
+			obj_to_char(obj, ch);
+	}
+}
+
+void fish_obj(CHAR_DATA *ch, struct obj_data *obj) // by prool, from text of dig_obj()
+{
+	char textbuf[300];
+
+	if (GET_OBJ_MIW(obj) >=
+			obj_index[GET_OBJ_RNUM(obj)].stored + obj_index[GET_OBJ_RNUM(obj)].number || GET_OBJ_MIW(obj) == -1)
+	{
+		sprintf(textbuf, "Вы поймали %s!\r\n", obj->PNames[3]);
+		send_to_char(textbuf, ch);
+		sprintf(textbuf, "$n поймал$g %s!\r\n", obj->PNames[3]);
 		act(textbuf, FALSE, ch, 0, 0, TO_ROOM);
 		if (IS_CARRYING_N(ch) >= CAN_CARRY_N(ch))
 		{
@@ -3166,6 +3206,86 @@ ACMD(do_dig)
 	}
 	else
 		send_to_char("Не найден прототип обжекта!", ch);
+}
+
+#define FISH 410
+
+ACMD(do_fish) // by prool
+{
+struct obj_data *obj;
+CHAR_DATA *mob;
+char textbuf[300];
+int i;
+
+	if (!check_for_fish(ch) /*&& !IS_IMMORTAL(ch)*/)
+	{
+		send_to_char("Ловить рыбу можно только в воде! Кроме того нужна удочка в руках!\r\n", ch);
+		return;
+	}
+
+	if (world[IN_ROOM(ch)]->sector_type != SECT_WATER_SWIM &&
+			world[IN_ROOM(ch)]->sector_type != SECT_WATER_NOSWIM /*&& !IS_IMMORTAL(ch)*/)
+	{
+		send_to_char("Ловить рыбу можно только в воде! Кроме того нужна удочка в руках!\r\n", ch);
+		return;
+	}
+
+send_to_char("Вы забросили удочку.\r\n", ch);
+
+#define WATER_SPIRIT 400
+if (number(1,20)==1)
+	{
+	send_to_char("Но очень неудачно и поранились крючком.\r\n", ch);
+	GET_HIT(ch)=GET_HIT(ch)-1;
+	return;
+	}
+
+	if (number(1, 30) == 1)	// потревожили водного духа
+	{
+	send_to_char("Но очень неудачно: вы потревожили покой водяного духа, отхраняющего здешние воды\r\n", ch);
+		mob = read_mobile(real_mobile(WATER_SPIRIT), REAL);
+		if (mob)
+		{
+			if (GET_LEVEL(mob) <= GET_LEVEL(ch))
+			{
+				SET_BIT(MOB_FLAGS(mob, MOB_AGGRESSIVE), MOB_AGGRESSIVE);
+				sprintf(textbuf, "Вы вызвали %s!\r\n", mob->player_data.PNames[3]);
+				send_to_char(textbuf, ch);
+				sprintf(textbuf, "$n вызвал$g %s!\r\n", mob->player_data.PNames[3]);
+				act(textbuf, FALSE, ch, 0, 0, TO_ROOM);
+				char_to_room(mob, ch->in_room);
+				return;
+			}
+		}
+		else
+			send_to_char("Mob error: Не найден прототип", ch);
+	} // end of потревожили водного духа
+
+if (number(1,30)==1)
+	{
+	send_to_char("Но неудачно и слегка поцарапали удочку\r\n",ch);
+	for (i = WEAR_WIELD; i <= WEAR_BOTHS; i++)
+		{
+		if (GET_EQ(ch, i) && (strstr(GET_EQ(ch, i)->aliases, "удочка") ))
+			{
+			GET_OBJ_CUR(GET_EQ(ch,i))--; // $$$
+			}
+		}
+	return;
+	}
+
+if (number(1,10)!=1)
+	{
+	send_to_char("Но ничего не поймали!\r\n", ch);
+	return;
+	}
+obj = read_object(real_object(FISH), REAL);
+if (obj)
+	{
+	fish_obj(ch, obj);
+	}
+else
+		send_to_char("Object error: Не найден прототип!", ch);
 }
 
 void set_obj_aff(struct obj_data *itemobj, int bitv)

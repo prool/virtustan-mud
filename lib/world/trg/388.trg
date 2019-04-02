@@ -278,7 +278,7 @@ switch %random.15%
       mechoaround %target%  Огненный шар, посланный Кащеем, опалил %target.rname% с ног до головы!
       mdamage %target% 250
     done
-  done
+done
 ~
 #38812
 помочь старушке~
@@ -624,5 +624,12 @@ attach 38809 %drakrom.id%
 ~
 calcuid dra1krom 38852 room
 attach 38809 %dra1krom.id% 
+~
+#38897
+new trigger~
+0 fg 100
+~
+mload mob 38897
+mload mob 38897
 ~
 $~

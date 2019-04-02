@@ -48,13 +48,16 @@ SPECIAL(janitor);
 SPECIAL(mayor);
 SPECIAL(snake);
 SPECIAL(thief);
-SPECIAL(gatekeeper);
-SPECIAL(artefakt);
-SPECIAL(vending);
 SPECIAL(magic_user);
 SPECIAL(bank);
 SPECIAL(torc);
 SPECIAL(Noob::outfit);
+
+// prool's:
+SPECIAL(artefakt);
+SPECIAL(vending);
+SPECIAL(gatekeeper);
+SPECIAL(quiz);
 
 void assign_kings_castle(void);
 
@@ -241,6 +244,8 @@ void init_spec_procs(void)
 				ASSIGNMOB(i, magic_user);
 			else if (!str_cmp(line2, "gatekeeper")) // prool
 				ASSIGNMOB(i, gatekeeper);
+			else if (!str_cmp(line2, "quiz")) // prool
+				ASSIGNMOB(i, quiz);
 #if 0 // prool
 			else if (!str_cmp(line2, "mayor")) // prool
 				ASSIGNMOB(i, mayor);

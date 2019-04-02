@@ -439,8 +439,8 @@ ACMD(do_room_descr);
 ACMD(do_room_type);
 ACMD(do_room_flag);
 ACMD(do_newpass);
-
 ACMD(do_virtustan);
+ACMD(do_fish);
 
 /* This is the Master Command List(tm).
 
@@ -730,6 +730,7 @@ cpp_extern const struct command_info cmd_info[] =
 	{"рецепты", POS_RESTING, do_recipes, 0, 0, 0},
 	{"рекорды", POS_DEAD, DoBest, 0, 0, 0},
 	{"руны", POS_FIGHTING, do_mixture, 0, SCMD_RUNES, -1},
+	{"рыбачить", POS_SITTING, do_fish, 0, 0, -1}, // prool
 
 	{"сбить", POS_FIGHTING, do_bash, 1, 0, -1},
 	{"свойства", POS_STANDING, do_not_here, 0, 0, -1},

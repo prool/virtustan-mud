@@ -927,7 +927,7 @@ void destroy_I3_channel(I3_CHANNEL *channel)
     I3STRFREE(channel->layout_e);
 
     for (x = 0; x < MAX_I3HISTORY; x++) {
-	if (channel->history[x] && channel->history[x] != '\0')
+	if (channel->history[x] && channel->history[x] != 0/*'\0'*/) // prool: adaptation for osx/clang
 	    I3STRFREE(channel->history[x]);
     }
 

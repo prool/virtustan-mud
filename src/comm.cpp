@@ -1543,6 +1543,7 @@ int i; // prool
 		if (missed_pulses > (1 * PASSES_PER_SEC))
 		{
 			log("SYSERR: Missed %d seconds worth of pulses (%d).", missed_pulses / PASSES_PER_SEC, missed_pulses);
+			printf("VMUD %s Missed %d seconds worth of pulses (%d).\n", ptime(), missed_pulses / PASSES_PER_SEC, missed_pulses); // prool
 			missed_pulses = 1 * PASSES_PER_SEC;
 		}
 
@@ -2769,6 +2770,13 @@ int new_descriptor(socket_t s)
 	// prepend to list
 	newd->next = descriptor_list;
 	descriptor_list = newd;
+
+	// prool:
+#if 0
+	char buf0 [512];
+	sprintf(buf0,"Online: %i\r\n\r\n", total_players+1);
+	SEND_TO_Q(buf0, newd);
+#endif
 
 #ifdef HAVE_ICONV
 	SEND_TO_Q("\033[0;40;37;1mUsing keytable\033[0m\r\n"

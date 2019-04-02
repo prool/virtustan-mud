@@ -54,8 +54,7 @@ const int DEFAULT_SOLO_CHANCE = 30;
 const double MINI_SET_MULT = 1.5;
 // сообщение игрокам при резете таблицы дропа
 const char *RESET_MESSAGE =
-	"Внезапно мир содрогнулся, день поменялся с ночью, земля с небом\r\n"
-	"...но через миг все вернулось на круги своя.";
+	"ВНЕЗАПНО в мире произошло что-то непонятное.";
 
 enum { SOLO_MOB, GROUP_MOB, SOLO_ZONE, GROUP_ZONE };
 
