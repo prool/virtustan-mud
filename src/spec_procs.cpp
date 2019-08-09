@@ -2641,7 +2641,7 @@ if (CMD_IS("говорить"))
 		}
 	else if (!strcmp(argument," в начало")) dir=9900;
 	else if (!strcmp(argument," на небеса")) dir=100;
-	else if (!strcmp(argument," на остров")) dir=21000;
+	else if (!strcmp(argument," на остров")) dir=21049;
 	else send_to_char("Говори помоги и гейткипер тебе поможет\r\n",ch);
 
 	if (dir)
