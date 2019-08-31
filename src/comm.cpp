@@ -437,7 +437,7 @@ int main(int argc, char **argv)
 {
 int i;
 
-printf("%sVirtustan MUD%s code by Prool, mud.kharkov.org, bitbucket.org/prool/proolmud, github.com/prool/virtustan-mud\n",
+printf("%sVirtustan MUD%s code by Prool, mud.kharkov.org, github.com/prool/virtustan-mud\n",
 ansi_lcyan, ansi_reset);
 
 total_players=0; // prool
@@ -674,7 +674,7 @@ else
 	 */
 	log(circlemud_version);
 	log(DG_SCRIPT_VERSION);
-	log("Virtustan MUD by Prool: http://mud.kharkov.org https://bitbucket.org/prool/hgmud");
+	log("Virtustan MUD by Prool: http://mud.kharkov.org");
 	log_code_date();
 	if (chdir(dir) < 0)
 	{
