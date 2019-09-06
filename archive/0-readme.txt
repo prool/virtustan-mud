@@ -1,6 +1,4 @@
-Old files from bylins/mud repository
+Old readme from bylins/mud repository
+and old shop files from old version of Virtustan MUD
 
 Prool
-
-17.09.2013
-
