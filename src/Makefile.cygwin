@@ -93,21 +93,21 @@ CXREF_FILES = act.comm.cpp act.informative.cpp act.item.cpp act.movement.cpp \
 	help.cpp map.cpp ext_money.cpp noob.cpp parse.cpp reset_stats.cpp \
 	mob_stat.cpp obj_sets.cpp obj_sets_olc.cpp obj_enchant.cpp version.cpp
 
-default: circle
+default: vmud
 
 #all: .accepted
-#	$(MAKE) $(BINDIR)/circle
+#	$(MAKE) $(BINDIR)/vmud
 
 #accepted:
 #	@./licheck less
 
-circle:
-	$(MAKE) $(BINDIR)/circle
+vmud:
+	$(MAKE) $(BINDIR)/vmud
 #	HGENCODING=utf-8 hg log -v -M > $(BINDIR)/changelog
 
-$(BINDIR)/circle : $(OBJFILES)
+$(BINDIR)/vmud : $(OBJFILES)
 	$(MKDIR) $(BINDIR)
-	$(CC) -o $(BINDIR)/circle $(OBJFILES) $(LIBS)
+	$(CC) -o $(BINDIR)/vmud $(OBJFILES) $(LIBS)
 	rm -f version.o
 	@echo "Done building Bylins."
 
@@ -123,13 +123,13 @@ testdepend:
 	@echo "Done building dependencies."
 
 test:
-	$(MAKE) CFLAGS="$(TESTCFLAGS)" CC="$(TESTCC)" $(BINDIR)/circle
+	$(MAKE) CFLAGS="$(TESTCFLAGS)" CC="$(TESTCC)" $(BINDIR)/vmud
 
 debug:
-	$(MAKE) CFLAGS="$(TESTCFLAGS) $(DEBUGFLAGS)" CC="$(TESTCC)" $(BINDIR)/circle
+	$(MAKE) CFLAGS="$(TESTCFLAGS) $(DEBUGFLAGS)" CC="$(TESTCC)" $(BINDIR)/vmud
 
 fasttest:
-	$(MAKE) CFLAGS="$(FASTTEST)" CC="$(TESTCC)" $(BINDIR)/circle
+	$(MAKE) CFLAGS="$(FASTTEST)" CC="$(TESTCC)" $(BINDIR)/vmud
 
 # Dependencies for the object files (automagically generated with
 # gcc -MM)
