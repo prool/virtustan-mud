@@ -29,7 +29,7 @@ else
 EPOLL_FLAG = -DHAS_EPOLL
 endif
 
-CFLAGS = -std=gnu++0x -ggdb3 -O2 -Wall -Wextra -Wno-unused-parameter -DBOOST_ENABLE_ASSERT_HANDLER -DHAVE_ICONV -DUBUNTU64 $(EPOLL_FLAG) $(EXTRA_CFLAGS)
+CFLAGS = -std=gnu++0x -ggdb3 -O2 -Wall -Wextra -Wno-unused-parameter -DBOOST_ENABLE_ASSERT_HANDLER -DHAVE_ICONV $(EPOLL_FLAG) $(EXTRA_CFLAGS)
 
 # use 'make test' for faster compile w/o optimizations, crypt and 34lvl god for first character
 TESTCFLAGS = -std=gnu++0x -Wall -Wextra -Wno-unused-parameter -ggdb3 -DNOCRYPT -DTEST_BUILD -DLOG_AUTOFLUSH $(EXTRA_CFLAGS)
@@ -37,7 +37,7 @@ DEBUGFLAGS = -D_GLIBCXX_DEBUG -D_GLIBXX_DEBUG_PEDANTIC $(EPOLL_FLAG) $(EXTRA_CFL
 FASTTEST   = -ggdb3 -Wall -DNOCRYPT -DTEST_BUILD -O3 $(EPOLL_FLAG) $(EXTRA_CFLAGS)
 #SEARCHPATH = -I /usr/include/python2.6
 
-LIBS = -lpcre
+LIBS = -lpcre -lz
 
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Darwin)
@@ -91,21 +91,21 @@ CXREF_FILES = act.comm.cpp act.informative.cpp act.item.cpp act.movement.cpp \
 	help.cpp map.cpp ext_money.cpp noob.cpp parse.cpp reset_stats.cpp \
 	mob_stat.cpp obj_sets.cpp obj_sets_olc.cpp obj_enchant.cpp version.cpp i3.c
 
-default: vmud
+default: circle
 
 #all: .accepted
-#	$(MAKE) $(BINDIR)/vmud
+#	$(MAKE) $(BINDIR)/circle
 
 #accepted:
 #	@./licheck less
 
-vmud:
-	$(MAKE) $(BINDIR)/vmud
+circle:
+	$(MAKE) $(BINDIR)/circle
 #	HGENCODING=utf-8 hg log -v -M > $(BINDIR)/changelog
 
-$(BINDIR)/vmud : $(OBJFILES)
+$(BINDIR)/circle : $(OBJFILES)
 	$(MKDIR) $(BINDIR)
-	$(CC) -o $(BINDIR)/vmud $(OBJFILES) $(LIBS)
+	$(CC) -o $(BINDIR)/circle $(OBJFILES) $(LIBS)
 	rm -f version.o
 	@echo "Done building Bylins."
 
@@ -121,13 +121,13 @@ testdepend:
 	@echo "Done building dependencies."
 
 test:
-	$(MAKE) CFLAGS="$(TESTCFLAGS)" CC="$(TESTCC)" $(BINDIR)/vmud
+	$(MAKE) CFLAGS="$(TESTCFLAGS)" CC="$(TESTCC)" $(BINDIR)/circle
 
 debug:
-	$(MAKE) CFLAGS="$(TESTCFLAGS) $(DEBUGFLAGS)" CC="$(TESTCC)" $(BINDIR)/vmud
+	$(MAKE) CFLAGS="$(TESTCFLAGS) $(DEBUGFLAGS)" CC="$(TESTCC)" $(BINDIR)/circle
 
 fasttest:
-	$(MAKE) CFLAGS="$(FASTTEST)" CC="$(TESTCC)" $(BINDIR)/vmud
+	$(MAKE) CFLAGS="$(FASTTEST)" CC="$(TESTCC)" $(BINDIR)/circle
 
 # Dependencies for the object files (automagically generated with
 # gcc -MM)
