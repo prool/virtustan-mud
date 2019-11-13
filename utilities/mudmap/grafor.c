@@ -17,7 +17,6 @@
 #define MEGA_Z 110 // 102 // 15
 
 // cyrillic comments in koi8-r codetable
-// собирать под Ubuntu 64 bit с флагом gcc -m32 если падает в корку на функции ptime()
 
 int megamap [MEGA_X] [MEGA_Y] [MEGA_Z];
 
