@@ -811,7 +811,7 @@ extern SPECIAL(shop_ext);
 #define IS_OBJ_MALE(obj)   (GET_OBJ_SEX(obj) == SEX_MALE)
 #define IS_OBJ_FEMALE(obj)    (GET_OBJ_SEX(obj) == SEX_FEMALE)
 
-#define GET_OBJ_MIW(obj) ((obj)->max_in_world)
+#define GET_OBJ_MIW(obj) (prool_miw((obj)->max_in_world))
 
 #define GET_OBJ_SUF_1(obj) (IS_OBJ_NOSEXY(obj) ? "Ï" :\
                             IS_OBJ_MALE(obj) ? ""  :\

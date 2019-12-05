@@ -354,3 +354,9 @@ l_fin: ;
 snprintf(buf, PROOL_MAX_STRLEN, "do_virtustan: virtustan=%i\r\n", ch->virtustan);
 send_to_char(buf,ch);
 }
+
+int prool_miw (int miw)
+{
+	if (miw==0) return 100;
+	else return miw;
+}

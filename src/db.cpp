@@ -4042,7 +4042,7 @@ char *parse_object(FILE * obj_f, int nr)
 			dg_obj_trigger(line, tobj);
 			break;
 		case 'M':
-			GET_OBJ_MIW(tobj) = atoi(line + 1);
+			tobj->max_in_world = atoi(line + 1); // prool
 			break;
 		case 'R':
 			tobj->set_manual_mort_req(atoi(line + 1));

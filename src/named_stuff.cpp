@@ -25,6 +25,8 @@
 #include "house.h"
 #include "dg_scripts.h"
 
+#include "virtustan.h" // prool
+
 extern room_rnum r_helled_start_room;
 extern room_rnum r_named_start_room;
 extern room_rnum r_unreg_start_room;

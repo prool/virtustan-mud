@@ -33,6 +33,8 @@
 #include "mob_stat.hpp"
 #include "obj_sets.hpp"
 
+#include "virtustan.h" // prool
+
 namespace SetsDrop
 {
 

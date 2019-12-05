@@ -34,6 +34,8 @@
 #include "sets_drop.hpp"
 #include "obj.hpp"
 
+#include "virtustan.h" // prool
+
 //------------------------------------------------------------------------
 
 // * External variable declarations.
@@ -1982,7 +1984,8 @@ void oedit_parse(DESCRIPTOR_DATA * d, char *arg)
 
 	case OEDIT_MIWVALUE:
 		if ((number = atoi(arg)) >= -1 && number <= 10000)
-			GET_OBJ_MIW(OLC_OBJ(d)) = number;
+			//GET_OBJ_MIW(OLC_OBJ(d)) = number;
+			OLC_OBJ(d)->max_in_world = number; // prool
 		else
 		{
 			send_to_char("Максимальное число предметов в мире (0-10000 или -1) : ", d->character);

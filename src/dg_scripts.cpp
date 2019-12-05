@@ -34,6 +34,8 @@
 #include "noob.hpp"
 #include "genchar.h"
 
+#include "virtustan.h" // prool
+
 #define PULSES_PER_MUD_HOUR     (SECS_PER_MUD_HOUR*PASSES_PER_SEC)
 
 #define IS_CHARMED(ch)          (IS_HORSE(ch)||AFF_FLAGGED(ch, AFF_CHARM))
