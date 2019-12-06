@@ -145,16 +145,11 @@
 	</room>
 </celebrate>
 <celebrate day="14" month="1" start="0" end="0" name="Старый Новый год"></celebrate>
-<celebrate day="31" month="1" start="0" end="0" name="День рождения русской водки"></celebrate>
 <celebrate day="8" month="2" start="0" end="0" name="Масленица (Начало масленичной недели)"></celebrate>
 <celebrate day="14" month="2" start="0" end="0" name="День Святого Валентина (День всех влюбленных)"></celebrate>
-<celebrate day="8" month="3" start="0" end="0" name="Международный женский день"></celebrate>
 <celebrate day="1" month="4" start="0" end="0" name="День смеха (День дурака)"></celebrate>
-<celebrate day="4" month="4" start="0" end="0" name="Пасха"></celebrate>
 <celebrate day="1" month="5" start="0" end="0" name="Праздник труда (День труда)"></celebrate>
-<celebrate day="9" month="5" start="0" end="0" name="День Победы"></celebrate>
 <celebrate day="7" month="7" start="0" end="0" name="Иван Купала"></celebrate>
-<celebrate day="30" month="7" start="0" end="0" name="День системного администратора"></celebrate>
 <celebrate day="1" month="9" start="0" end="0" name="День знаний"></celebrate>
 <celebrate day="6" month="11" start="0" end="0" name="Всемирный день мужчин"></celebrate>
 
