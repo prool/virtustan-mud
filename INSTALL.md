@@ -49,9 +49,9 @@ bin/circle
 На это пути могут возникнуть подводные камни, так как скорее всего придется устанавливать библиотеки, отсутствующие
 в вашем Линуксе. Здесь придется включить моск!
 
-6. Другие ОС (FreeBSD, Android, iOS, MSDOS)
+6. Другие ОС (FreeBSD, Android, macOS, MSDOS)
 
-Многие другие ОС похожи на UNIX (например, Android, iOS, MacOS) и там тоже есть компилятор gcc++ и команда make.
+Многие другие ОС похожи на UNIX (например, Android, macOS) и там тоже есть компилятор gcc++ и команда make.
 А вот для сборки в среде MSDOS потребуется очень сильное колдунство
 
 **Автозапуск**
@@ -61,6 +61,10 @@ bin/circle
 su prool -c ~prool/proolmud/autorun.vmud & > /dev/null
 
 **Замечания по сборке**
+
+Ubuntu
+
+sudo apt-get install gcc-multilib g++-multilib libz-dev libboost-all-dev
 
 BOOST нужен не из репозиториев ОС, а свежий, с www.boost.org
 
