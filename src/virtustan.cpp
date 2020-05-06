@@ -3,10 +3,10 @@
 #define SEND_EMAIL 0
 
 /* ************************************************************************
-*   File: virtustan.cpp                          Part of Zerkalo MUD      *
+*   File: virtustan.cpp                          Part of Virtustan MUD    *
 *  Usage: prool subprograms for Virtustan MUD                             *
 *                                                                         *
-*  Copyleft 2011-2015, Prool                                              *
+*  Copyleft 2007-2015, Prool                                              *
 *                                                                         *
 *  Author: Prool, proolix@gmail.com, http://mud.kharkov.org               *
 ************************************************************************ */
