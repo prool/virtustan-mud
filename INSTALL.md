@@ -13,6 +13,7 @@ telnet mud.kharkov.org 3000
 #con mud.kharkov.org 3000
 
 Есть и другие мады, их список можно найти здесь - http://www.mudconnector.su/MudList
+или здесь http://muds.kharkov.org/muds.html
 
 2. Если все таки вам нужен свой мад сервер, то Виртустан мад это один из лучших выборов,
 так как у большинства других мадов (не у всех) код и файлы игровых зон закрыты,
@@ -20,7 +21,7 @@ telnet mud.kharkov.org 3000
 
 3. Далее всё зависит от того, какая у вас операционная система. Для Виндовс проще всего
 скачать и запустить уже сделанную мной откомпилированную сборку, которую можно взять
-здесь http://files.mud.kharkov.org/vmud-windows/ или здесь http://files.mud.kharkov.org/vmud-windows/
+здесь http://files.mud.kharkov.org/vmud-windows/
 (смотрите на даты файлов и качайте самую свежую).
 
 Этот архив надо скачать, распаковать и запустить бат-файл run.bat
@@ -37,6 +38,7 @@ http://files.mud.kharkov.org/proolmud-static/
 5. Но более правильный Linux way скачать данный дистрибутив и откомпилировать (собрать) его примерно так
 
 cd src
+
 make
 
 (возможно придется поставить недостающих библиотек, см. ниже)
@@ -44,6 +46,7 @@ make
 Потом
 
 cd ..
+
 bin/circle
 
 И запустится локальный сервер
@@ -54,13 +57,15 @@ bin/circle
 6. Другие ОС (FreeBSD, Android, macOS, MSDOS)
 
 Многие другие ОС похожи на UNIX (например, Android, macOS) и там тоже есть компилятор gcc++ и команда make.
-А вот для сборки в среде MSDOS потребуется очень сильное колдунство
+А вот для сборки в среде MSDOS потребуется очень сильное колдунство!
 
 **Автозапуск**
 
 Для автозапуска мада при загрузке компьютера в файл rc.local надо внести строку
 
 su prool -c ~prool/proolmud/autorun.vmud & > /dev/null
+
+Примечания: полные пути на вашем сервере могут быть немного другими
 
 **Замечания по сборке**
 
@@ -80,4 +85,7 @@ sudo ln -s /usr/include/x86_64-linux-gnu/zconf.h /usr/include
 и флаг -L/usr/lib/x86_64-linux-gnu/libz.a вместо -lz
 
 *Пруль*
-[prool.kharkov.org](http://prool.kharkov.org)
+
+http://prool.kharkov.org
+
+http://mud.kharkov.org
