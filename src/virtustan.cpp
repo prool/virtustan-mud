@@ -53,7 +53,7 @@ if (system(cmd)==-1)
 
 void prool_log(char *str)
 {
-FILE *fp; char buffer [PROOL_MAX_STRLEN];
+FILE *fp;
 fp=fopen("proolmud.log", "a");
 fprintf(fp,"%s %s\n",ptime(),str);
 fclose(fp);
@@ -189,7 +189,7 @@ void send_email2 (char *from, char *to, char *subj, char *text)
 	}
 
 void mssp_start(DESCRIPTOR_DATA * t)
-{char buf[1024]; int i;
+{char buf[1024];
 
 #if 0
 const char mssp_str[] = {IAC,SB,MSSP,
@@ -198,7 +198,7 @@ const char mssp_str[] = {IAC,SB,MSSP,
 	IAC,SE,'\0'};
 #endif
 
-i=sprintf(buf,
+sprintf(buf,
 "%c%c%c%cPLAYERS%c%i%cNAME%cVirtustan MUD%cUPTIME%c%li%cCRAWL_DELAY%c-1\
 %cHOSTNAME%cmud.kharkov.org\
 %cPORT%c8888\
@@ -320,6 +320,48 @@ void koi_to_utf8(char *str_i, char *str_o)
 	}
 }
 
+void telnet_prool_scanner(char *str)
+{
+char local_str [MAX_SOCK_BUF*6];
+int i;
+char *cc;
+
+cc=str; i=0;
+
+printf("prooldebug telnet_scanner 1 '%s'\n", str);
+
+while (*cc)
+	{
+	if ((*cc&0xFF)==0xFF)
+		{
+			printf("prooldebug: label 0xFF\n");
+		cc++;
+			switch (*cc&0xFF)
+			{
+				case 0xF4:
+					printf("prooldebug: label 0xF4\n");
+					local_str[i++]=0x83;
+					break;
+				case 0xF5:
+					printf("prooldebug: label 0xF5\n");
+					local_str[i++]=0x8f;
+					break;
+				case 0xFD: ;
+					printf("prooldebug: label 0xFD\n");
+				default: ;
+			}
+		}
+	else
+		local_str[i++]=*cc;
+	cc++;
+	if (i==(MAX_SOCK_BUF*6-1)) break;
+	}
+local_str[i]=0;
+
+strcpy(str, local_str);
+printf("prooldebug telnet_scanner 2 '%s'\n", str);
+}
+
 void utf8_to_koi(char *str_i, char *str_o)
 {
 	iconv_t cd;
@@ -327,6 +369,9 @@ void utf8_to_koi(char *str_i, char *str_o)
 	size_t i;
 	char *str_i_orig=str_i;
 	char *str_o_orig=str_o;
+
+//	telnet_prool_scanner(str_i);
+//	printf("prooldebug telnet_scanner 3 '%s'\n", str_i);
 
 #if 0 // debug print
 		printf("I '%s' [", str_i_orig);
