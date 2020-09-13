@@ -114,7 +114,7 @@ fflush(0);
 
 #define PUT_OBJ(obj_number) {r_num = real_object(obj_number); if (r_num==-1) {send_to_char("&RЭтого предмета почему-то не существует в мире и я не могу его найти!&n :(\r\n",ch); return;} obj = read_object(r_num, REAL); GET_OBJ_MAKER(obj) = GET_UNIQUE(ch); obj_to_char(obj, ch); act("$n получил$g от духа мада $o3!", FALSE, ch, obj, 0, TO_ROOM); act("Вы получили от духа мада $o3.", FALSE, ch, obj, 0, TO_CHAR); /* load_otrigger(obj); obj_decay(obj); */ olc_log("Духмада: %s load obj %s #%d", GET_NAME(ch), GET_OBJ_ALIAS(obj), obj_number);}
 
-#define DUH_INSTR "Список вещей, которые вам может принести дух мада: хлеб, фляга, меч, нож, лук, палица, лампа, шарик, доспех, руны, сума, кинжал, мизерикорд, стилет\r\n\r\nПример вызова:\r\nдухмада хлеб\r\n"
+#define DUH_INSTR "Список вещей, которые вам может принести дух мада: хлеб, фляга, меч, нож, лук, палица, лампа, шарик, доспех, руны, сума, кинжал, мизерикорд, стилет, бочка с синим колдовским зельем\r\n\r\nПример вызова:\r\nдухмада хлеб\r\n"
 
 ACMD(do_duhmada)
 {
@@ -146,6 +146,7 @@ else
 	else if (!strcmp(argument,"кинжал")) PUT_OBJ(9908)
 	else if (!strcmp(argument,"мизерикорд")) PUT_OBJ(9921)
 	else if (!strcmp(argument,"стилет")) PUT_OBJ(2215)
+	else if (!strcmp(argument,"бочка с синим колдовским зельем")) PUT_OBJ(500023)
 	else if (!strcmp(argument,"руны")) {PUT_OBJ(222/*693*/); PUT_OBJ(223/*692*/); PUT_OBJ(224/*695*/); PUT_OBJ(225/*694*/);}
 	else
 		{
