@@ -74,6 +74,11 @@ if (console_codetable==T_UTF)
 	koi_to_utf8((char*)pers,buffer);
 	printf("%s %s %s %s\n",ident, ptime(),buffer,verb);
 	}
+else if (console_codetable==T_LAT)
+	{
+	koi_to_lat((char*)pers,buffer);
+	printf("%s %s %s %s\n",ident, ptime(),buffer,verb);
+	}
 else
 	{
 	printf("%s %s %s %s\n",ident, ptime(),pers,verb);

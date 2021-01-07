@@ -407,6 +407,12 @@ printf("proolfool. checkpoint #U3\n");
 printf("proolfool. checkpoint #U4\n");
 #endif
 		}
+	else if (log_codetable==T_LAT)
+		{
+		vsnprintf(buffer1, PROOL_MAX_STRLEN, format, args);
+		koi_to_lat(buffer1,buffer2);
+		fprintf(logfile,"%s",buffer2);
+		}
 	else
 		vfprintf(logfile, format, args);
 	va_end(args);
@@ -425,6 +431,86 @@ printf("proolfool. checkpoint #U6\n");
 #ifdef PROOLDEBUG
 printf("proolfool. checkpoint #U7\n");
 #endif
+}
+
+void koi_to_lat(char *str_i, char *str_o)
+{
+if ((str_i==0)||(str_o==0)) return;
+while (*str_i)
+{
+	switch (*str_i)
+	{
+		case 'á': *str_o='A'; break;
+		case 'â': *str_o='B'; break;
+		case '÷': *str_o='V'; break;
+		case 'ç': *str_o='G'; break;
+		case 'ä': *str_o='D'; break;
+		case 'å': *str_o='E'; break;
+		case '³': *str_o='E'; break;
+		case 'ö': *str_o='*'; break;
+		case 'ú': *str_o='Z'; break;
+		case 'é': *str_o='I'; break;
+		case 'ê': *str_o='J'; break;
+		case 'ë': *str_o='K'; break;
+		case 'ì': *str_o='L'; break;
+		case 'í': *str_o='M'; break;
+		case 'î': *str_o='N'; break;
+		case 'ï': *str_o='O'; break;
+		case 'ð': *str_o='P'; break;
+		case 'ò': *str_o='R'; break;
+		case 'ó': *str_o='S'; break;
+		case 'ô': *str_o='T'; break;
+		case 'õ': *str_o='U'; break;
+		case 'æ': *str_o='F'; break;
+		case 'è': *str_o='H'; break;
+		case 'ã': *str_o='C'; break;
+		case 'þ': *str_o='4'; break;
+		case 'û': *str_o='W'; break;
+		case 'ø': *str_o='\''; break;
+		case 'ÿ': *str_o='"'; break;
+		case 'ù': *str_o='#'; break;
+		case 'ü': *str_o='E'; break;
+		case 'à': *str_o='Y'; break;
+		case 'ñ': *str_o='9'; break;
+		case 'Á': *str_o='a'; break;
+		case 'Â': *str_o='b'; break;
+		case '×': *str_o='v'; break;
+		case 'Ç': *str_o='g'; break;
+		case 'Ä': *str_o='d'; break;
+		case 'Å': *str_o='e'; break;
+		case '£': *str_o='e'; break;
+		case 'Ö': *str_o='*'; break;
+		case 'Ú': *str_o='z'; break;
+		case 'É': *str_o='i'; break;
+		case 'Ê': *str_o='j'; break;
+		case 'Ë': *str_o='k'; break;
+		case 'Ì': *str_o='l'; break;
+		case 'Í': *str_o='m'; break;
+		case 'Î': *str_o='n'; break;
+		case 'Ï': *str_o='o'; break;
+		case 'Ð': *str_o='p'; break;
+		case 'Ò': *str_o='r'; break;
+		case 'Ó': *str_o='s'; break;
+		case 'Ô': *str_o='t'; break;
+		case 'Õ': *str_o='u'; break;
+		case 'Æ': *str_o='f'; break;
+		case 'È': *str_o='h'; break;
+		case 'Ã': *str_o='c'; break;
+		case 'Þ': *str_o='4'; break;
+		case 'Û': *str_o='w'; break;
+		case 'Ý': *str_o='w'; break;
+		case 'Ø': *str_o='\''; break;
+		case 'ß': *str_o='"'; break;
+		case 'Ù': *str_o='#'; break;
+		case 'Ü': *str_o='e'; break;
+		case 'À': *str_o='y'; break;
+		case 'Ñ': *str_o='9'; break;
+		default: *str_o=*str_i;
+	}
+	str_i++;
+	str_o++;
+}
+*str_o=0;
 }
 
 void shop_log(const char *format, ...)

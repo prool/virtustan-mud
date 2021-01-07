@@ -54,6 +54,7 @@ void test_color(void);
 void system_(char *cmd);
 
 void koi_to_utf8(char *,char *);
+void koi_to_lat(char *,char *);
 void utf8_to_koi(char *str_i, char *str_o);
 
 int prool_miw(int);
