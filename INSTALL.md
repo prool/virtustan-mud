@@ -84,6 +84,10 @@ sudo ln -s /usr/include/x86_64-linux-gnu/zconf.h /usr/include
 
 и флаг -L/usr/lib/x86_64-linux-gnu/libz.a вместо -lz
 
+Ubuntu 20.04:
+
+Кроме всего прочего понадобится sudo apt install ibcrypt-dev:i386
+
 *Пруль*
 
 http://prool.kharkov.org
