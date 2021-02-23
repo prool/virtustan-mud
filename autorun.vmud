@@ -1,9 +1,16 @@
-#
+#!/bin/sh
+
+# batch file for running Virtustan MUD and webclient
+
 cd ~prool/proolmud
 
 # PREsave syslog
 mv syslog syslog-tail-`date "+%d-%m-%Y-%H-%M-%S"`
 
+# run webclient
+#websockify -D --log-file=webclient.log :3210 :3000
+
+# run MUD in cycle
 while [ 1 ]; do
 
 date "+%d-%m-%Y %H:%M:%S VMUD start"
