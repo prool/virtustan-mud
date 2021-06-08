@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="koi8-r"?>
+<obj_sets>
+	<messages>
+		<char_on_msg>&amp;W$o0 засветил$U мягким сиянием.&amp;n</char_on_msg>
+		<char_off_msg>&amp;WСияние $o1 медленно угасло.&amp;n</char_off_msg>
+		<room_on_msg>&amp;W$o0 $n1 засветил$U мягким сиянием.&amp;n</room_on_msg>
+		<room_off_msg>&amp;WСияние $o1 $n1 медленно угасло.&amp;n</room_off_msg>
+	</messages>
+	<set name="набор огнеслава" enabled="0">
+		<messages>
+			<char_on_msg>ну ты и сам всё знаешь</char_on_msg>
+			<char_off_msg>и вот зачем?</char_off_msg>
+		</messages>
+		<obj vnum="167000" />
+		<obj vnum="167001" />
+		<obj vnum="167002" />
+		<obj vnum="167003" />
+		<obj vnum="167004" />
+		<obj vnum="167005" />
+		<obj vnum="167006" />
+		<obj vnum="167007" />
+		<obj vnum="167008" />
+		<obj vnum="167009" />
+		<obj vnum="167012" />
+		<activ size="2" prof="00100000000000">
+			<affects>b0c0d0e0f0g0h0j0l0m0o0p0q0t0v0w0y0z0B0D0a1c1e1f1g1h1i1j1k1l1m1o1p1 </affects>
+			<apply loc="44" mod="20" />
+			<apply loc="13" mod="400" />
+			<apply loc="14" mod="400" />
+			<apply loc="1" mod="10" />
+			<apply loc="5" mod="10" />
+			<enchant vnum="167003" ndice="1" sdice="1" />
+			<phys_dmg pct="10" />
+		</activ>
+		<activ size="4" prof="00100000000000">
+			<apply loc="19" mod="50" />
+			<apply loc="37" mod="20" />
+			<apply loc="44" mod="10" />
+			<apply loc="1" mod="10" />
+			<apply loc="52" mod="20" />
+			<apply loc="5" mod="10" />
+			<enchant vnum="167003" ndice="1" sdice="1" />
+			<phys_dmg pct="10" />
+		</activ>
+		<activ size="6" prof="00100000000000">
+			<apply loc="14" mod="630" />
+			<apply loc="25" mod="100" />
+			<apply loc="26" mod="100" />
+			<apply loc="1" mod="10" />
+			<apply loc="51" mod="25" />
+			<apply loc="5" mod="10" />
+			<enchant vnum="167003" ndice="1" sdice="1" />
+			<phys_dmg pct="10" />
+		</activ>
+		<activ size="8" prof="00100000000000">
+			<apply loc="51" mod="25" />
+			<apply loc="18" mod="100" />
+			<apply loc="19" mod="100" />
+			<apply loc="23" mod="50" />
+			<apply loc="50" mod="50" />
+			<apply loc="24" mod="50" />
+			<enchant vnum="167003" ndice="1" sdice="1" />
+			<phys_dmg pct="10" />
+		</activ>
+		<activ size="10" prof="00100000000000">
+			<apply loc="13" mod="550" />
+			<apply loc="39" mod="50" />
+			<apply loc="42" mod="50" />
+			<apply loc="48" mod="50" />
+			<apply loc="49" mod="50" />
+			<apply loc="20" mod="50" />
+			<enchant vnum="167003" ndice="1" sdice="1" />
+			<phys_dmg pct="10" />
+		</activ>
+	</set>
+</obj_sets>
