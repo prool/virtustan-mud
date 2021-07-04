@@ -23,7 +23,7 @@
 #define MSSP_VAR		1
 #define MSSP_VAL		2
 
-#define PROOL_MAX_STRLEN 255
+#define PROOL_MAX_STRLEN 1024
 
 #define ansi_red  "\033[0;40;31m"
 #define ansi_green  "\033[0;40;32m"
