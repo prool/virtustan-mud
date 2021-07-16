@@ -5858,6 +5858,9 @@ ACMD(do_forcetime)
 	int m, t = 0;
 	char *ca;
 
+	send_to_char("Команда forcetime отключена. Пруль\r\n", ch); // prool
+	return;
+
 	// Parse command line
 	for (ca = strtok(argument, " "); ca; ca = strtok(NULL, " "))
 	{
