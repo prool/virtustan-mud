@@ -1,3 +1,8 @@
-* manulally by prool
-$
-$
+#91000
+сюрприз~
+0 ab 100
+~
+if (%random.20% ==1) пук
+end
+~
+$~
