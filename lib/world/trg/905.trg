@@ -290,45 +290,48 @@ if %object.vnum% == 90510
   говор _А теперь как я и обещала отблагодарю.
   wait 2s
   эм открыла каменный гроб и что-то от туда достала.
-  wait 1s
-  if %world.curobjs(90517)% <6
-    if %random.100% < 25
-      mload obj 90517 
-    end
-    if %world.curobjs(90518)% <6
-      if %random.100% < 25
-        mload obj 90518 
-      end
-      if %world.curobjs(90519)% <6
-        if %random.100% < 25
-          mload obj 90519 
-        end
-        mload obj 90525
-        да все .%actor.name%
-        wait 2s
-        говор _А егерю записку от меня передай, да пусть не серчает
-        wait 2s
-        mload obj 90514
-      end
-      да все .%actor.name%
-      wait 2s
-      говор _Ну а теперь мне пора уходить.
-      говор _И не дай бог нам еще хотябы раз встретиться
-      пока
-      wait 1s
-      эм надела рубин на цепочке на шею и в мгновенье ока обернулась летучей мышью.
-      mecho _Сделав пару кругов над вашими головами она взмыла во тьму под сводчатым потолком.
-      mpurge каменный.гроб
-      mload obj 90505
-    end
-    wait 1
-    mpurge %self% 
+end
+wait 1s
+if %world.curobjs(90517)% <6
+  if %random.100% < 25
+    mload obj 90517 
+  end
+end
+if %world.curobjs(90518)% <6
+  if %random.100% < 25
+    mload obj 90518 
+  end
+end
+if %world.curobjs(90519)% <6
+  if %random.100% < 25
+    mload obj 90519 
+  end
+end
+mload obj 90525
+да все .%actor.name%
+wait 2s
+говор _А егерю записку от меня передай, да пусть не серчает
+wait 2s
+mload obj 90514
+end
+да все .%actor.name%
+wait 2s
+говор _Ну а теперь мне пора уходить.
+говор _И не дай бог нам еще хотябы раз встретиться
+пока
+wait 1s
+эм надела рубин на цепочке на шею и в мгновенье ока обернулась летучей мышью.
+mecho _Сделав пару кругов над вашими головами она взмыла во тьму под сводчатым потолком.
+mpurge каменный.гроб
+mload obj 90505
+end
+wait 1
+mpurge %self% 
 ~
 #90515
 кинули карту~
 2 h 100
 ~
-say My trigger commandlist is not complete!
 if %object.vnum% == 90515 
   wait 1
   wpurge %object.id%
@@ -676,7 +679,6 @@ osend %actor% _Вы стали наливаться жизненной силой.
 1 j 100
 ~
 wait 2s
-say My trigger commandlist is not complete!
 oechoaround %actor% %actor.name% топнул%actor.q% ногой, и земля задрожала под вашими ногами.
 osend %actor% Вы топнули ногой, и все задрожало вокруг.
 ~

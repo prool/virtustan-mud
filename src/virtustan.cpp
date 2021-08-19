@@ -81,7 +81,7 @@ else if (console_codetable==T_LAT)
 	}
 else
 	{
-	printf("%s %s %s %s\n",ident, ptime(),pers,verb);
+	if (console_codetable!=T_EMPTY) printf("%s %s %s %s\n",ident, ptime(),pers,verb);
 	}
 fclose(fp);
 }

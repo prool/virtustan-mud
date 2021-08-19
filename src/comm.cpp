@@ -518,6 +518,7 @@ if (fconfig)
 		else if (!strcmp(string,"console_codetable_utf")) console_codetable=T_UTF;
 		else if (!strcmp(string,"console_codetable_koi")) console_codetable=T_KOI;
 		else if (!strcmp(string,"console_codetable_lat")) console_codetable=T_LAT;
+		else if (!strcmp(string,"console_codetable_empty")) console_codetable=T_EMPTY;
 		else if (!strcmp(string,"log_codetable_koi")) log_codetable=T_KOI;
 		else if (!strcmp(string,"log_codetable_utf")) log_codetable=T_UTF;
 		else if (!strcmp(string,"log_codetable_lat")) log_codetable=T_LAT;

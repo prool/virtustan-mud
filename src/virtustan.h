@@ -18,6 +18,7 @@
 #define T_WIN			2
 #define T_ALT			3
 #define T_LAT			4
+#define T_EMPTY			5
 
 #define MSSP			70
 #define MSSP_VAR		1
