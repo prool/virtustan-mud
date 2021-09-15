@@ -3985,7 +3985,7 @@ char *parse_object(FILE * obj_f, int nr)
 	}
 
 	// *** extra descriptions and affect fields ***
-	strcat(buf2, ", after numeric constants\n" "...expecting 'E', 'A', '$', or next object number");
+	strcat(buf2, ", after numeric constants!!\n" "...expecting 'E', 'A', '$', or next object number");
 	j = 0;
 
 	for (;;)
@@ -4018,8 +4018,9 @@ char *parse_object(FILE * obj_f, int nr)
 		case 'A':
 			if (j >= MAX_OBJ_AFFECT)
 			{
-				log("SYSERR: Too many A fields (%d max), %s", MAX_OBJ_AFFECT, buf2);
-				exit(1);
+				log("SYSERR: (warning) Too many A fields (%d max), %s", MAX_OBJ_AFFECT, buf2);
+				//exit(1);
+				break; // prool fool!
 			}
 			if (!get_line(obj_f, line))
 			{
@@ -4073,8 +4074,9 @@ char *parse_object(FILE * obj_f, int nr)
 			top_of_objt = i++;
 			return (line);
 		default:
-			log("SYSERR: Format error in %s", buf2);
-			exit(1);
+			log("SYSERR: (warning) Format error! in %s", buf2);
+			log("prool debug line='%s'", line);
+			//exit(1); // prool fool
 		}
 	}
 }
@@ -4179,6 +4181,7 @@ void load_zones(FILE * fl, char *zonename)
 		if (sscanf(buf, " %d %d %d %s %s", &Z.top, &Z.lifespan, &Z.reset_mode, t1, t2) < 3)
 		{
 			log("SYSERR: Format error in 3-constant line of %s", zname);
+			log("prooldebug: line='%s'", buf); // prool
 			exit(1);
 		}
 	}
