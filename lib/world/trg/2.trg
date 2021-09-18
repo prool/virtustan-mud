@@ -91,4 +91,20 @@ run 201 %train%
 wait 1
 run 201 %train%
 ~
+#204
+автозапуск поезда~
+2 f 100
+~
+%echo% поезд двинулся в путь
+set point 1
+set dir down down down
+set pdir up up up
+set place небеса харьков остров_Толк
+set vplace 207 9903 21000
+calcuid train 208 room
+detach 201 %train%
+attach 201 %train%
+exec 201 %train%
+detach 204 %self%
+~
 $~
