@@ -9,64 +9,89 @@ wait 1
 техномагическая винтовка~
 1 c 1
 выстрел~
-if !%shot%
-  eval shot 10
-end
-calcuid aroom %actor.realroom% room
+eval rroom %actor.realroom%
 eval arg1 %arg.car%
-eval arg2 %arg.cdr%
-eval dir %arg1%
-eval victim %arg2.id%
-if %arg1% == с
-  set dir north
-elseif %arg1% == ю
-  set dir south
-elseif %arg1% == з
-  set dir west
-elseif %arg1% == в
-  set dir east
-elseif %arg1% == вв
-  set dir up
-elseif %arg1% == вн
-  set dir down
-else
-  %send% %actor% непонятное направление для выстрела
+eval arg2 %arg.words(2)%
+switch %arg1.mudcommand%
+  case север
+    eval dir %rroom.north%
+    set tdir на север
+    set tdir2 с юга
+  break
+  case юг
+    eval dir %rroom.south%
+    set tdir на юг
+    set tdir2 с севера
+  break
+  case запад
+    eval dir %rroom.west%
+    set tdir на запад
+    set tdir2 с востока
+  break
+  case восток
+    eval dir %rroom.east%
+    set tdir на восток
+    set tdir2 с запада
+  break
+  case вверх
+    eval dir %rroom.up%
+    set tdir вверх
+    set tdir2 снизу
+  break
+  case вниз
+    eval dir %rroom.down%
+    set tdir вниз
+    set tdir2 сверху
+  break
+  default
+    %send% %actor% непонятное направление
+    halt
+  break
+done
+if !%dir%
+  %send% %actor% в указанном направлении нет комнаты
   halt
 end
-if %shot% < 1
-  %send% %actor% вы попытались надавить на спусковой крючок, но он не сдвинулся с места. видать заряды закончились.
-  eval shot 0
+foreach i %dir.all%
+  if %i.iname% /= %arg2%
+    eval victim %i%
+    eval vexp %victim.exp%
+  break
+end
+done
+if !%victim%
+  %send% %actor% вы не видите цель
   halt
 end
-if %aroom.%dir%% == nil
-  %send% %actor% там нету прохода, чтоб туда выстрелить
-  halt
-end
-eval dir2 %aroom.%dir%%
-eval vroom %victim.realroom%
-if %dir2% != %vroom%
-  %send% %actor% вы не нашли желаемую цель, увы
-  halt
-else
-  calcuid vroom2 %vroom% room
-  eval dmg %random.801% +199
-  foreach i %vroom2.all%
-    if %i% == %victim%
-      %send% %victim% внезапно не пойми откуда в вас прилетел сгусток смертоносной магии
-      %damage% %victim% %dmg%
-    else
-      %send% %i% внезапно не пойми откуда прилетел и врезался в %victim.dname% сгусток смертоносной магии
-    done
+%send% %actor% вы выстрелили %tdir% в %victim.vname%
+%echoaround% %actor% %actor.iname% выстрелил%actor.g% %tdir%
+%send% %victim% %actor.iname% выстрелил%actor.g% %tdir2%
+oat %dir% %echoaround% %victim% кто-то выстрелил в %victim.vname% %tdir2%
+%damage% %victim% 1000
+%actor.wait(2)%
+if %victim.position% == 0
+  eval exp1 %actor.exp%
+  %actor.exp(+%vexp%)%
+  eval exp2 %actor.exp%-%exp1%
+  if %exp2% == 0
+    %send% %actor% вы не получили опыта
+  else
+    %send% %actor% получено опыта: %exp2% единиц
   end
 end
-eval shot %shot% -1
-global shot
-%send% %actor% цель: %victim.name%, нанесено урона: %dmg%, осталось зарядов: %shot% из 10
 ~
 #91102
 заклинания~
 1 c 3
 каст~
-dg_cast %arg%
+attach 91103 %actor%
+exec 91103 %actor%
+detach 91103 %actor%
+~
+#91103
+кастуем закл~
+0 z 100
+~
+dg_cast %arg.car% '%arg.cdr%'
 ~
 $~
