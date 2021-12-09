@@ -65,6 +65,38 @@ done
 гов слава Виртустану, слава королю!
 %echo% %self.name% отдал%actor.g% честь
 ~
+#9904
+казино~
+2 c 100
+играть~
+if !%arg%
+  %send% %actor% играть шанс ставка
+  %send% %actor% игра происходит на куны, выигрыш расчитывается так: ставках100/шанс
+  %send% %actor% внимание: казино не поддерживает дробных чисел
+  halt
+end
+set chance %arg.car%
+set bet %arg.words(2)%
+if %chance% > 95 || %chance% < 1
+  %send% %actor% шанс выигрыша не может быть выше 95 и ниже 1
+  halt
+end
+if %bet% < 1
+  %send% %actor% ставка не может быть ниже 1
+  halt
+end
+wat 9999 %echo% %actor.gold(-%bet%)%
+eval rnd %random.100%
+if %rnd% <= %chance%
+  eval vin (%bet%*100)/%chance%
+  eval vin2 %vin%-%bet%
+  %send% %actor% вы выиграли!!!
+  %send% %actor% выигрыш: %vin%, чистая прибыль: %vin2%, стало кун: %actor.gold(+%vin%)%
+else
+  %send% %actor% вы проиграли %bet% кун
+  %send% %actor% ничего, в следующий раз повезет.
+end
+~
 #9950
 телепорт к полянам~
 2 c 100

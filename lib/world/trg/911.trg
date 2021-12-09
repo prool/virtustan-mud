@@ -92,7 +92,7 @@ detach 91103 %actor%
 кастуем закл~
 0 z 100
 ~
-dg_cast %arg.car% '%arg.cdr%'
+dg_cast '%arg.cdr%' %arg.car%
 ~
 #91104
 тест мханта~
