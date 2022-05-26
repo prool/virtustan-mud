@@ -433,6 +433,86 @@ printf("proolfool. checkpoint #U7\n");
 #endif
 }
 
+void lat_to_koi(char *str_i, char *str_o)
+{
+if ((str_i==0)||(str_o==0)) return;
+while (*str_i)
+{
+	switch (*str_i)
+	{
+case'A': *str_o='á'; break;
+case'B': *str_o='â'; break;
+case'V': *str_o='÷'; break;
+case'G': *str_o='ç'; break;
+case'D': *str_o='ä'; break;
+case'E': *str_o='å'; break;
+case'=': *str_o='³'; break;
+case'&': *str_o='ö'; break;
+case'Z': *str_o='ú'; break;
+case'I': *str_o='é'; break;
+case'J': *str_o='ê'; break;
+case'K': *str_o='ë'; break;
+case'L': *str_o='ì'; break;
+case'M': *str_o='í'; break;
+case'N': *str_o='î'; break;
+case'O': *str_o='ï'; break;
+case'P': *str_o='ğ'; break;
+case'R': *str_o='ò'; break;
+case'S': *str_o='ó'; break;
+case'T': *str_o='ô'; break;
+case'U': *str_o='õ'; break;
+case'F': *str_o='æ'; break;
+case'H': *str_o='è'; break;
+case'C': *str_o='ã'; break;
+case'$': *str_o='ş'; break;
+case'W': *str_o='û'; break;
+case'\\': *str_o='ø'; break;
+case'`': *str_o='ÿ'; break;
+case'~': *str_o='ù'; break;
+case']': *str_o='ü'; break;
+case'Y': *str_o='à'; break;
+case'9': *str_o='ñ'; break;
+case'a': *str_o='Á'; break;
+case'b': *str_o='Â'; break;
+case'v': *str_o='×'; break;
+case'g': *str_o='Ç'; break;
+case'd': *str_o='Ä'; break;
+case'e': *str_o='Å'; break;
+case':': *str_o='£'; break;
+case'*': *str_o='Ö'; break;
+case'z': *str_o='Ú'; break;
+case'i': *str_o='É'; break;
+case'j': *str_o='Ê'; break;
+case'k': *str_o='Ë'; break;
+case'l': *str_o='Ì'; break;
+case'm': *str_o='Í'; break;
+case'n': *str_o='Î'; break;
+case'o': *str_o='Ï'; break;
+case'p': *str_o='Ğ'; break;
+case'r': *str_o='Ò'; break;
+case's': *str_o='Ó'; break;
+case't': *str_o='Ô'; break;
+case'u': *str_o='Õ'; break;
+case'f': *str_o='Æ'; break;
+case'h': *str_o='È'; break;
+case'c': *str_o='Ã'; break;
+case'4': *str_o='Ş'; break;
+case'w': *str_o='Û'; break;
+case'%': *str_o='İ'; break;
+case'\'': *str_o='Ø'; break;
+case'"': *str_o='ß'; break;
+case'#': *str_o='Ù'; break;
+case'}': *str_o='Ü'; break;
+case'y': *str_o='À'; break;
+case'@': *str_o='Ñ'; break;
+		default: *str_o=*str_i;
+	}
+	str_i++;
+	str_o++;
+}
+*str_o=0;
+}
+
 void koi_to_lat(char *str_i, char *str_o)
 {
 if ((str_i==0)||(str_o==0)) return;

@@ -2912,6 +2912,9 @@ int process_output(DESCRIPTOR_DATA * t)
 		koi_to_utf8(pi, po);
 		break;
 #endif
+	case KT_LAT:
+		koi_to_lat(pi, po);
+		break;
 	default:
 		for (; *pi; *po = *pi, pi++, po++);
 		break;
@@ -3514,6 +3517,23 @@ int process_input(DESCRIPTOR_DATA * t)
 			space_left = space_left + len_i - len_o;
 		}
 #endif
+		if (t->keytable == KT_LAT)
+		{
+			int i;
+			char lat_tmp[MAX_SOCK_BUF];
+			size_t len_i, len_o;
+
+			len_i = strlen(tmp);
+
+			for (i = 0; i < MAX_SOCK_BUF; i++)
+			{
+				lat_tmp[i] = 0;
+			}
+			lat_to_koi(tmp, lat_tmp);
+			len_o = strlen(lat_tmp);
+			strncpy(tmp, lat_tmp, MAX_INPUT_LENGTH - 1);
+			space_left = space_left + len_i - len_o;
+		}
 
 		if ((space_left <= 0) && (ptr < nl_pos))
 		{

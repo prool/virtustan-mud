@@ -133,7 +133,8 @@ typedef struct trig_data TRIG_DATA;
 #define KT_WINZ       3
 #define KT_WINZ6      4
 #define KT_UTF8       5
-#define KT_LAST       6
+#define KT_LAT        6
+#define KT_LAST       7
 #define KT_SELECTMENU 255
 
 // room-related defines ************************************************
