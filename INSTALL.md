@@ -87,7 +87,7 @@ sudo ln -s /usr/include/x86_64-linux-gnu/zconf.h /usr/include
 
 Ubuntu 20.04:
 
-Кроме всего прочего понадобится sudo apt install ibcrypt-dev:i386
+Кроме всего прочего понадобится sudo apt install libcrypt-dev:i386
 
 ---
 
