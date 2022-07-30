@@ -2470,10 +2470,7 @@ void do_entergame(DESCRIPTOR_DATA * d)
 	sprintf(buf, "%s вошел в игру.", GET_NAME(d->character));
 	if (send_email) if (strcmp(GET_NAME(d->character),"Пруль"))
 		{
-		char local_buf [PROOL_MAX_STRLEN]; int i;
-		for (i=0;i<PROOL_MAX_STRLEN;i++) local_buf[i]=0;
-		snprintf(local_buf, PROOL_MAX_STRLEN, "User logon %s", GET_NAME(d->character));
-		send_email2("VMUD", "prool2@itl.ua", local_buf, (char *) GET_NAME(d->character));
+		send_email2("VMUD", "prool2@itl.ua", "Login", (char *) GET_NAME(d->character));
 		}
 	perslog("login", GET_NAME(d->character)); // prool
 
