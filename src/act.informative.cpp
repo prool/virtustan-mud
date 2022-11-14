@@ -5525,7 +5525,7 @@ void make_who2html(void)
 		return;		// or log it ? *shrug*
 
 	fprintf(opf, "<HTML><HEAD><TITLE>Who in Virtustan MUD</TITLE>\n\
-<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n\
+<meta http-equiv=\"Content-Type\" content=\"text/html; charset=koi8-r\">\n\
 </HEAD>\n");
 	if (mudname[0])
 	    fprintf(opf, "<BODY>%s <b>Who in %s</b><HR>\n",ptime(), mudname);
@@ -5544,8 +5544,8 @@ void make_who2html(void)
 			ch = d->character;
 			if (web_codetable==T_UTF)
 				{
-				koi_to_utf8((char*)ch->race_or_title().c_str(), utf_buf);
-				sprintf(buf, "%s <BR> \r\n ", utf_buf);
+				//printf("prooldebug make www L1\n");
+				sprintf(buf,"%s",(char*)ch->race_or_title().c_str());
 				}
 			else
 			sprintf(buf, "%s <BR> \r\n ", ch->race_or_title().c_str());
