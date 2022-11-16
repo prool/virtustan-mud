@@ -212,7 +212,7 @@ sprintf(buf,
 %cCODEBASE%cCircleMUD/Byliny\
 %cCONTACT%cproolix@gmail.com\
 %cCREATED%c2007\
-%cIP%c217.12.220.191\
+%cIP%c195.123.245.173\
 %cLANGUAGE%cRussian\
 %cLOCATION%cUkraine\
 %cMINIMUM AGE%c0\
@@ -248,10 +248,10 @@ MSSP_VAR,MSSP_VAL,
 MSSP_VAR,MSSP_VAL,
 MSSP_VAR,MSSP_VAL,
 MSSP_VAR,MSSP_VAL,
-MSSP_VAR,MSSP_VAL,87 /*statistic_zones*/,
-MSSP_VAR,MSSP_VAL,1684 /*statistic_mobs*/,
-MSSP_VAR,MSSP_VAL,898 /*statistic_objs*/,
-MSSP_VAR,MSSP_VAL,3795 /*statistic_rooms*/,
+MSSP_VAR,MSSP_VAL,92 /*statistic_zones*/,
+MSSP_VAR,MSSP_VAL,1703 /*statistic_mobs*/,
+MSSP_VAR,MSSP_VAL,1052 /*statistic_objs*/,
+MSSP_VAR,MSSP_VAL,3866 /*statistic_rooms*/,
 MSSP_VAR,MSSP_VAL,
 MSSP_VAR,MSSP_VAL,
 MSSP_VAR,MSSP_VAL,
