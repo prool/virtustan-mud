@@ -97,6 +97,54 @@ else
   %send% %actor% ничего, в следующий раз повезет.
 end
 ~
+#9905
+уничтожить Харьков, немедленно!~
+2 f 100
+~
+if %random.100% <= 30
+  eval event %random.100%
+  if %event% <= 70
+    eval firstvnum 9700
+    eval lastvnum 9997
+    eval counter %firstvnum%
+    while %counter% <= %lastvnum%
+      eval room %world.room(%counter%)%
+      if %room%
+        foreach j %room.objects%
+          if %j.vnum% == 9995
+            eval flag 1
+          end
+        done
+        if !%flag% && %random.100% <= 15
+          wat %counter% %load% obj 9995
+        end
+      end
+      unset flag
+      wait 2
+      eval counter %counter%+1
+    done
+    if %random.100% <= 80
+      wzoneecho 9900 &RВнимание, харьковчани! Разведка Виртустана установила проведение вражескими силами диверсии, заключающейся в минировании города.&n
+      wzoneecho 9900 &RБудте крайне осторожны и старайтесь не покидать своих домов до специального оповещения.&n
+    end
+  end
+end
+~
+#9906
+нарвались на растяжку~
+1 t 100
+~
+%send% %actor% Вы неосторожно задели установленную здесь растяжку!!!
+%echoaround% %actor% %actor.iname% неосторожно задел%actor.g% установленную здесь растяжку!!!
+%echo% &RУжасающий по мощности взрыв сотряс землю!&n
+foreach i %self.all%
+  %send% %i% Мощнейшим взрывом вас убило на месте!
+  %echoaround% %i% Мощнейшим взрывом %i.vname% убило на месте!
+  eval dmg %i.hitp%+20
+  %damage% %i% %dmg%
+done
+%purge% %self%
+~
 #9950
 телепорт к полянам~
 2 c 100

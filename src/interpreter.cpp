@@ -1805,7 +1805,7 @@ int special(CHAR_DATA * ch, int cmd, char *arg, int fnum)
 
 	// special in room? //
 	if (GET_ROOM_SPEC(ch->in_room) != NULL)
-		if (GET_ROOM_SPEC(ch->in_room)(ch, world[ch->in_room], cmd, arg))
+		if (GET_ROOM_SPEC(ch->in_room)(ch, world[ch->in_room], cmd, arg)) // prool: crash here
 		{
 			check_hiding_cmd(ch, -1);
 			return (1);
