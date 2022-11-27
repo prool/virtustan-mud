@@ -216,7 +216,7 @@ ACMD(do_olc)
 	// * Find the zone.
 	if ((OLC_ZNUM(d) = real_zone(number)) == -1)
 	{
-		send_to_char("ú×ÙÎÑÊÔÜ, ÔÁËÏÊÉ ÚÏÎÙ ÎÜÍÁÅ.\r\n", ch);
+		send_to_char("úÏÎÙ Ó ÔÁËÉÍ ÎÏÍÅÒÏÍ ÎÅÔ\r\n", ch);
 		delete d->olc;
 		return;
 	}
