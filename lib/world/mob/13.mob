@@ -12,9 +12,10 @@
 ВЛОЖИТЬ, ПОЛУЧИТЬ, БАЛАНС, ПОМОЩЬ и ПОМОЩЬ БАНК
 ~
 b0d0e0g0n0o0p0q0r0t0u0x0B0o1 n1 600 E
-30 0 -3 100d7+600 7d6+8
+1 0 -3 100d7+600 7d6+8
 0d0+1 1
 8 8 1
+Absorbe: 1
 BareHandAttack: 7
 Str: 36
 Dex: 36
@@ -25,6 +26,7 @@ Cha: 36
 Size: 60
 ExtraAttack: 3
 Class: 100
+Race: 100
 Height: 198
 Weight: 50
 Special_Bitvector: 0 
@@ -41,14 +43,17 @@ E
 ~
 В мешке есть немного денег, если его ударить, мешок разорвется и из него
 можно будет достать деньги
+Это немного напоминает пиньяту
 ~
 b0d0g0 0 -600 E
 1 20 10 0d0+1 0d0+0
 1d2+9 1
 8 8 1
+Absorbe: 1
 BareHandAttack: 4
 Size: 1
 Class: 100
+Race: 100
 Height: 198
 Weight: 1
 Special_Bitvector: 0 
@@ -68,9 +73,10 @@ E
 или ОЦЕНИТЬ товар перед продажей.
 ~
 b0d0e0g0n0o0p0q0r0t0u0x0B0o1 d0n1 600 E
-30 0 -3 100d7+600 7d6+8
+1 0 -3 100d7+600 7d6+8
 0d0+1000 1
 8 8 1
+Absorbe: 1
 BareHandAttack: 7
 Str: 36
 Dex: 36
@@ -81,6 +87,7 @@ Cha: 36
 Size: 60
 ExtraAttack: 3
 Class: 100
+Race: 100
 Height: 198
 Weight: 50
 Special_Bitvector: 0 
