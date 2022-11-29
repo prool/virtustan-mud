@@ -3032,6 +3032,7 @@ ACMD(do_dig)
 	int stone_num, random_stone;
 	int vnum;
 	int old_wis, old_int;
+	int i;
 
 	if (IS_NPC(ch) || !ch->get_skill(SKILL_DIG))
 	{
@@ -3085,6 +3086,29 @@ ACMD(do_dig)
 	break_inst(ch);
 
 	// случайные события
+if (number(1,20)==1)
+	{
+	send_to_char("Но неудачно размахнулись и попали по ноге.\r\n", ch);
+	GET_HIT(ch)=GET_HIT(ch)-1;
+	return;
+	}
+
+if (number(1,30)==1)
+	{
+	send_to_char("Но неудачно и слегка поцарапали инструмент\r\n",ch);
+	for (i = WEAR_WIELD; i <= WEAR_BOTHS; i++)
+		{
+		if (GET_EQ(ch, i) && (strstr(GET_EQ(ch, i)->aliases, "кирка") ))
+			{
+			GET_OBJ_CUR(GET_EQ(ch,i))--;
+			}
+		if (GET_EQ(ch, i) && (strstr(GET_EQ(ch, i)->aliases, "лопата") ))
+			{
+			GET_OBJ_CUR(GET_EQ(ch,i))--;
+			}
+		}
+	return;
+	}
 
 	if (number(1, dig_vars.treasure_chance) == 1)	// копнули клад
 	{
@@ -3209,6 +3233,7 @@ ACMD(do_dig)
 }
 
 #define FISH 410
+#define WATER_SPIRIT 400
 
 ACMD(do_fish) // by prool
 {
@@ -3232,7 +3257,6 @@ int i;
 
 send_to_char("Вы забросили удочку.\r\n", ch);
 
-#define WATER_SPIRIT 400
 if (number(1,20)==1)
 	{
 	send_to_char("Но очень неудачно и поранились крючком.\r\n", ch);
@@ -3268,7 +3292,7 @@ if (number(1,30)==1)
 		{
 		if (GET_EQ(ch, i) && (strstr(GET_EQ(ch, i)->aliases, "удочка") ))
 			{
-			GET_OBJ_CUR(GET_EQ(ch,i))--; // $$$
+			GET_OBJ_CUR(GET_EQ(ch,i))--;
 			}
 		}
 	return;
