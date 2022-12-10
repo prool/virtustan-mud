@@ -23,7 +23,7 @@
 //
 // Если вам нужна упрощенная версия при сборке не под цигвином, замените ниже слово CYGWIN на единицу
 // / prool
-#ifdef CYGWIN
+#if defined(CYGWIN) || defined (OSX)
 #define TEST_BUILD 1
 #endif
 

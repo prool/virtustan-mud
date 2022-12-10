@@ -149,8 +149,13 @@
 
 // prool static
 char mudname [PROOL_MAX_STRLEN];
+char wholist_file [PROOL_MAX_STRLEN];
+char email_notif [PROOL_MAX_STRLEN];
 int webstat;
 int send_email;
+
+char noname[MAX_NONAME][PROOL_MAX_STRLEN];
+int noname_i;
 
 void our_terminate();
 
@@ -221,7 +226,6 @@ int total_players;
 // prool:
 int console_codetable;
 int log_codetable;
-int web_codetable;
 extern char room_title [PROOL_MAX_STRLEN];
 extern char room_descr [PROOL_MAX_STRLEN];
 extern int room_type;
@@ -475,22 +479,20 @@ room_flag=0;
 FILE *fconfig;
 char string[PROOL_MAX_STRLEN];
 char buffer_string[PROOL_MAX_STRLEN];
+char *cc;
 
-#ifdef CYGWIN
 console_codetable=T_UTF;
-#else
-console_codetable=T_KOI;
-#endif
 
 webstat=0;
 send_email=0;
-
-log_codetable=T_KOI;
-web_codetable=T_KOI;
-
+email_notif[0]=0;
 mudname[0]=0;
+log_codetable=T_KOI;
+noname_i=0;
+for (i=0;i<MAX_NONAME;i++) noname[i][0]=0;
+strcpy(wholist_file, WHOLIST_FILE);
 
-prool_log("Log of Virtustan MUD start\nVirtustan MUD sites: prool.kharkov.org, mud.kharkov.org, github.com/prool/virtustan-mud");
+prool_log("Log of Virtustan MUD start\nsites: prool.kharkov.org, mud.kharkov.org, github.com/prool/virtustan-mud");
 
 fconfig=fopen("../proolmud.cfg","r");
 if (fconfig)
@@ -510,6 +512,7 @@ if (fconfig)
 	while (!feof(fconfig))
 		{char *pp;
 		string[0]=0;
+		buffer_string[0]=0;
 		fgets(string,PROOL_MAX_STRLEN,fconfig);
 		pp=strchr(string,'\n');
 		if (pp) *pp=0;
@@ -522,11 +525,8 @@ if (fconfig)
 		else if (!strcmp(string,"log_codetable_koi")) log_codetable=T_KOI;
 		else if (!strcmp(string,"log_codetable_utf")) log_codetable=T_UTF;
 		else if (!strcmp(string,"log_codetable_lat")) log_codetable=T_LAT;
-		else if (!strcmp(string,"web_codetable_utf")) web_codetable=T_UTF;
-		else if (!strcmp(string,"web_codetable_koi")) web_codetable=T_KOI;
 		else if (!memcmp(string,"reboot ",strlen("reboot ")))
 			{
-			int i; char *cc;
 			//printf("config: reboot param\n");
 			cc=string;
 			i=atoi(cc+strlen("reboot "));
@@ -535,7 +535,6 @@ if (fconfig)
 			}
 		else if (!memcmp(string,"port ",strlen("port ")))
 			{
-			int i; char *cc;
 			cc=string;
 			i=atoi(cc+strlen("port "));
 			if (i)	{
@@ -545,7 +544,6 @@ if (fconfig)
 			}
 		else if (!memcmp(string,"webstat ",strlen("webstat ")))
 			{
-			int i; char *cc;
 			cc=string;
 			i=atoi(cc+strlen("webstat "));
 			webstat=i;
@@ -553,7 +551,6 @@ if (fconfig)
 			}
 		else if (!memcmp(string,"send_email ",strlen("send_email ")))
 			{
-			int i; char *cc;
 			cc=string;
 			i=atoi(cc+strlen("send_email "));
 			send_email=i;
@@ -561,12 +558,60 @@ if (fconfig)
 			}
 		else if (!memcmp(string,"mudname ",strlen("mudname ")))
 			{
-			char *cc;
 			cc=string;
 			strcpy(mudname, cc+strlen("mudname "));
 			sprintf(buffer_string, "config: mudname %s", mudname);
 			}
-		else buffer_string[0]=0;
+		else if (!memcmp(string,"noname ",strlen("noname ")))
+			{
+			char tmp_n [PROOL_MAX_STRLEN];
+			cc=string;
+			strcpy(tmp_n, cc+strlen("noname "));
+			//sprintf(buffer_string, "config: noname=%s", tmp_n);
+			if (noname_i<MAX_NONAME) strcpy(noname[noname_i++],tmp_n);
+			//printf("noname debug '%s'\n", noname[0]);
+			}
+		else if (!memcmp(string,"email ",strlen("email ")))
+			{
+			cc=string;
+			strcpy(email_notif, cc+strlen("email "));
+			sprintf(buffer_string, "config: e-mail %s", email_notif);
+			// check e-mail: 
+			if (!strchr(email_notif,'@')) email_notif[0]=0;
+			if (strchr(email_notif,'%')) email_notif[0]=0;
+			if (strchr(email_notif,'<')) email_notif[0]=0;
+			if (strchr(email_notif,'>')) email_notif[0]=0;
+			if (strchr(email_notif,'|')) email_notif[0]=0;
+			if (strchr(email_notif,'&')) email_notif[0]=0;
+			if (strchr(email_notif,'"')) email_notif[0]=0;
+			if (strchr(email_notif,'`')) email_notif[0]=0;
+			if (strchr(email_notif,'\'')) email_notif[0]=0;
+			if (strchr(email_notif,'!')) email_notif[0]=0;
+			if (strchr(email_notif,'$')) email_notif[0]=0;
+			if (strchr(email_notif,'(')) email_notif[0]=0;
+			if (strchr(email_notif,')')) email_notif[0]=0;
+			if (strchr(email_notif,'*')) email_notif[0]=0;
+			if (strchr(email_notif,',')) email_notif[0]=0;
+			if (strchr(email_notif,'-')) email_notif[0]=0;
+			if (strchr(email_notif,':')) email_notif[0]=0;
+			if (strchr(email_notif,'?')) email_notif[0]=0;
+			if (strchr(email_notif,'[')) email_notif[0]=0;
+			if (strchr(email_notif,']')) email_notif[0]=0;
+			if (strchr(email_notif,'\\')) email_notif[0]=0;
+			if (strchr(email_notif,'^')) email_notif[0]=0;
+			if (strchr(email_notif,'~')) email_notif[0]=0;
+			if (strchr(email_notif,'{')) email_notif[0]=0;
+			if (strchr(email_notif,'}')) email_notif[0]=0;
+			if (strchr(email_notif,';')) email_notif[0]=0;
+			if (email_notif[0]) printf("e-mail is correct\n");
+			else printf("e-mail is incorrect\n");
+			}
+		else if (!memcmp(string,"webstat_file ",strlen("webstat_file ")))
+			{
+			cc=string;
+			strcpy(wholist_file, cc+strlen("webstat_file "));
+			sprintf(buffer_string, "config: wholist_file %s", wholist_file);
+			}
 		if (buffer_string[0])
 			{
 			puts(buffer_string);
@@ -574,6 +619,11 @@ if (fconfig)
 			}
 		}
 	fclose(fconfig);
+
+#if 0
+	// noname debug print
+	for (i=0;i<MAX_NONAME;i++) printf("noname array [%i] '%s'\n", i, noname[i]);
+#endif
 	}
 else
 	{

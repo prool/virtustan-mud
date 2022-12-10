@@ -121,6 +121,8 @@ extern char *name_rules;
 // prool:
 extern int total_players;
 extern int send_email;
+extern char email_notif[];
+extern char noname[MAX_NONAME][PROOL_MAX_STRLEN];
 
 // external functions
 void do_start(CHAR_DATA * ch, int newbie);
@@ -2468,9 +2470,13 @@ void do_entergame(DESCRIPTOR_DATA * d)
 	}
 
 	sprintf(buf, "%s вошел в игру.", GET_NAME(d->character));
-	if (send_email) if (strcmp(GET_NAME(d->character),"Пруль"))
-		{
-		send_email2("VMUD", "prool2@itl.ua", "Login", (char *) GET_NAME(d->character));
+	if (send_email && email_notif[0])
+		{int i, silence;
+		//printf("debug: send email? enter %s\n", (char *) GET_NAME(d->character));
+		silence=0;
+		for (i=0;i<MAX_NONAME;i++) if (!strcmp((char *) GET_NAME(d->character), noname[i])) silence=1;
+		if (!silence) send_email2("VMUD", email_notif, "Login", (char *) GET_NAME(d->character));
+		//else printf("no mail!\n");
 		}
 	perslog("login", GET_NAME(d->character)); // prool
 

@@ -44,6 +44,7 @@ lib/plrs/*
 lib/misc/new_name
 lib/misc/globaluid
 lib/etc/board/*
+*.log
 
 # from bitbucket
 readme.markdown

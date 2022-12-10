@@ -85,9 +85,9 @@ extern int top_of_p_table;
 
 // prool's extern:
 extern int total_players;
-extern int web_codetable;
 extern int webstat;
 extern char mudname[];
+extern char wholist_file[];
 
 // extern functions
 long find_class_bitvector(char arg);
@@ -5521,7 +5521,7 @@ void make_who2html(void)
 
 	if (webstat==0) return;
 
-	if ((opf = fopen(WHOLIST_FILE, "w")) == 0)
+	if ((opf = fopen(wholist_file, "w")) == 0)
 		return;		// or log it ? *shrug*
 
 	fprintf(opf, "<HTML><HEAD><TITLE>Who in Virtustan MUD</TITLE>\n\
@@ -5542,12 +5542,6 @@ void make_who2html(void)
 		if (STATE(d) == CON_PLAYING && GET_INVIS_LEV(d->character) < 31)
 		{
 			ch = d->character;
-			if (web_codetable==T_UTF)
-				{
-				//printf("prooldebug make www L1\n");
-				sprintf(buf,"%s",(char*)ch->race_or_title().c_str());
-				}
-			else
 			sprintf(buf, "%s <BR> \r\n ", ch->race_or_title().c_str());
 
 			if (IS_IMMORTAL(ch))
