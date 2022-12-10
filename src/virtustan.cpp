@@ -65,7 +65,7 @@ FILE *fp; char buffer [PROOL_MAX_STRLEN];
 char *ident;
 
 if (mudname[0]) ident=mudname;
-else ident = "VMUD";
+else ident = (char *)"VMUD";
 
 fp=fopen(PERSLOG_FILE, "a");
 fprintf(fp,"%s %s %s\n",ptime(),pers,verb);
@@ -205,10 +205,10 @@ const char mssp_str[] = {IAC,SB,MSSP,
 #endif
 
 sprintf(buf,
-"%c%c%c%cPLAYERS%c%i%cNAME%cVirtustan MUD%cUPTIME%c%li%cCRAWL_DELAY%c-1\
+"%c%c%c%cPLAYERS%c%i%cNAME%cVirtustan MUD%cUPTIME%c%li%cCRAWL DELAY%c-1\
 %cHOSTNAME%cmud.kharkov.org\
-%cPORT%c8888\
 %cPORT%c3000\
+%cPORT%c8888\
 %cCODEBASE%cCircleMUD/Byliny\
 %cCONTACT%cproolix@gmail.com\
 %cCREATED%c2007\
@@ -231,8 +231,12 @@ sprintf(buf,
 %cMXP%c0\
 %cPUEBLO%c0\
 %cHIRING BUILDERS%c1\
+%cHIRING CODERS%c1\
 %cPLAYER CLANS%c1\
 %cWORLD ORIGINALITY%c1\
+%cGENRE%cFantasy\
+%cGAMESYSTEM%cCustom\
+%cLEVELS%c30\
 %c%c",
 IAC,SB,MSSP,MSSP_VAR,MSSP_VAL,total_players,MSSP_VAR,MSSP_VAL,MSSP_VAR,MSSP_VAL,(long int)boot_time,
 MSSP_VAR,MSSP_VAL,
@@ -252,6 +256,10 @@ MSSP_VAR,MSSP_VAL,92 /*statistic_zones*/,
 MSSP_VAR,MSSP_VAL,1703 /*statistic_mobs*/,
 MSSP_VAR,MSSP_VAL,1052 /*statistic_objs*/,
 MSSP_VAR,MSSP_VAL,3866 /*statistic_rooms*/,
+MSSP_VAR,MSSP_VAL,
+MSSP_VAR,MSSP_VAL,
+MSSP_VAR,MSSP_VAL,
+MSSP_VAR,MSSP_VAL,
 MSSP_VAR,MSSP_VAL,
 MSSP_VAR,MSSP_VAL,
 MSSP_VAR,MSSP_VAL,
