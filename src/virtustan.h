@@ -4,7 +4,7 @@
 *   File: virtustan.h                        Part of Virtustan MUD        *
 *  Usage: prool subprograms for Virtustan MUD                             *
 *                                                                         *
-*  (CC) 2012-2015, Prool                                                  *
+*  (CC) 2012-2023, Prool                                                  *
 *                                                                         *
 *  Author: Prool, proolix@gmail.com, http://prool.kharkov.org             *
 ************************************************************************ */

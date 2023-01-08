@@ -6,7 +6,7 @@
 *   File: virtustan.cpp                          Part of Virtustan MUD    *
 *  Usage: prool subprograms for Virtustan MUD                             *
 *                                                                         *
-*  Copyleft 2007-2015, Prool                                              *
+*  Copyleft 2007-2023, Prool                                              *
 *                                                                         *
 *  Author: Prool, proolix@gmail.com, http://mud.kharkov.org               *
 ************************************************************************ */
@@ -42,6 +42,7 @@ extern int total_players;
 extern int boot_time;
 extern int console_codetable;
 extern char mudname[];
+extern obj_rnum top_of_objt;
 
 void system_(char *cmd)
 {
@@ -230,6 +231,8 @@ sprintf(buf,
 %cMSP%c0\
 %cMXP%c0\
 %cPUEBLO%c0\
+%cGMCP%c0\
+%cMSDP%c0\
 %cHIRING BUILDERS%c1\
 %cHIRING CODERS%c1\
 %cPLAYER CLANS%c1\
@@ -237,6 +240,14 @@ sprintf(buf,
 %cGENRE%cFantasy\
 %cGAMESYSTEM%cCustom\
 %cLEVELS%c30\
+%cVT100%c0\
+%cPAY TO PLAY%c0\
+%cPAY FOR PERKS%c0\
+%cINTERMUD%c0\
+%cXTERM 256 COLORS%c0\
+%cXTERM TRUE COLORS%c0\
+%cUTF-8%c1\
+%cCHARSET%cUTF-8\
 %c%c",
 IAC,SB,MSSP,MSSP_VAR,MSSP_VAL,total_players,MSSP_VAR,MSSP_VAL,MSSP_VAR,MSSP_VAL,(long int)boot_time,
 MSSP_VAR,MSSP_VAL,
@@ -252,10 +263,20 @@ MSSP_VAR,MSSP_VAL,
 MSSP_VAR,MSSP_VAL,
 MSSP_VAR,MSSP_VAL,
 MSSP_VAR,MSSP_VAL,
-MSSP_VAR,MSSP_VAL,92 /*statistic_zones*/,
-MSSP_VAR,MSSP_VAL,1703 /*statistic_mobs*/,
-MSSP_VAR,MSSP_VAL,1052 /*statistic_objs*/,
-MSSP_VAR,MSSP_VAL,3866 /*statistic_rooms*/,
+MSSP_VAR,MSSP_VAL,top_of_zone_table + 1 /*statistic_zones*/,
+MSSP_VAR,MSSP_VAL,top_of_mobt + 1 /*statistic_mobs*/,
+MSSP_VAR,MSSP_VAL,top_of_objt + 1 /*statistic_objs*/,
+MSSP_VAR,MSSP_VAL,top_of_world + 1 /*statistic_rooms*/,
+MSSP_VAR,MSSP_VAL,
+MSSP_VAR,MSSP_VAL,
+MSSP_VAR,MSSP_VAL,
+MSSP_VAR,MSSP_VAL,
+MSSP_VAR,MSSP_VAL,
+MSSP_VAR,MSSP_VAL,
+MSSP_VAR,MSSP_VAL,
+MSSP_VAR,MSSP_VAL,
+MSSP_VAR,MSSP_VAL,
+MSSP_VAR,MSSP_VAL,
 MSSP_VAR,MSSP_VAL,
 MSSP_VAR,MSSP_VAL,
 MSSP_VAR,MSSP_VAL,
