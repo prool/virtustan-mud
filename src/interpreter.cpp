@@ -2683,10 +2683,11 @@ void nanny(DESCRIPTOR_DATA * d, char *arg)
 		d->keytable = (ubyte) * arg - (ubyte) '0';
 		ip_log(d->host);
 
-		// prool:
+#if 0 // prool
 		char buf0 [512];
 		sprintf(buf0,"\r\nVirtustan MUD. Online players = %i\r\n", total_players);
 		SEND_TO_Q(buf0, d);
+#endif
 
 		SEND_TO_Q(GREETINGS, d);
 		STATE(d) = CON_GET_NAME;
