@@ -247,7 +247,8 @@ sprintf(buf,
 %cXTERM 256 COLORS%c0\
 %cXTERM TRUE COLORS%c0\
 %cUTF-8%c1\
-%cCHARSET%cUTF-8\
+%cCHARSET%cUTF-8%ckoi8-r%ccp1251\
+%cREFERRAL%clolamud.net:6969%ctbamud.com:9091\
 %c%c",
 IAC,SB,MSSP,MSSP_VAR,MSSP_VAL,total_players,MSSP_VAR,MSSP_VAL,MSSP_VAR,MSSP_VAL,(long int)boot_time,
 MSSP_VAR,MSSP_VAL,
@@ -291,7 +292,8 @@ MSSP_VAR,MSSP_VAL,
 MSSP_VAR,MSSP_VAL,
 MSSP_VAR,MSSP_VAL,
 MSSP_VAR,MSSP_VAL,
-MSSP_VAR,MSSP_VAL,
+MSSP_VAR, MSSP_VAL, MSSP_VAL, MSSP_VAL,
+MSSP_VAR, MSSP_VAL, MSSP_VAL,
 IAC,SE);
 
 // printf("MSSP total_players %i\n",total_players);
