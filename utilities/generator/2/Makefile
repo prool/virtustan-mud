@@ -1,6 +1,10 @@
-WORLD	=	/home/www/mud/lib/world
+WORLD	=	/home/prool/MUD/lib/world
 
 generator: generator.c config.h
+	gcc generator.c -o generator
+
+clean:
+	rm generator
 
 install: generator
 	    ./generator
@@ -9,4 +13,3 @@ install: generator
 	    cp *.zon $(WORLD)/zon
 	    cp *.wld $(WORLD)/wld
 	    cp *.trg $(WORLD)/trg
-	    cp *.shp $(WORLD)/shp

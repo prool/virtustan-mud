@@ -1,5 +1,10 @@
 // zone generator by proolix@gmail.com
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+
 #include "config.h"
 
 #define NAMELEN 200
@@ -14,7 +19,7 @@
 #define CALC(i,j) j-1+(i-1)*10+zone*100
 #define EXIT(DIREKT) fprintf(fw, "D%i\n~\n~\n%i %i %i\n", DIREKT, ROOM_EXIT_FLAG, ROOM_EXIT_KEY, exit_num(DIREKT, i, j, zone))
 
-#include <stdio.h>
+char *ptime(void); // Возвращаемое значение: ссылка на текстовую строку с текущим временем
 
 int exit_num (int direkt, int i, int j, int zone)
 {
@@ -40,14 +45,12 @@ FILE *fm;
 FILE *fo;
 FILE *ft;
 FILE *fw;
-FILE *fs;
 
 char namez[NAMELEN];
 char namem[NAMELEN];
 char nameo[NAMELEN];
 char namet[NAMELEN];
 char namew[NAMELEN];
-char names[NAMELEN];
 
 // генерация имен файлов
 sprintf(namez,"%i.zon",zone);
@@ -55,32 +58,27 @@ sprintf(namem,"%i.mob",zone);
 sprintf(nameo,"%i.obj",zone);
 sprintf(namet,"%i.trg",zone);
 sprintf(namew,"%i.wld",zone);
-sprintf(names,"%i.shp",zone);
 
 if ((fz=fopen (namez, "w"))==NULL) exit(1);
 if ((fm=fopen (namem, "w"))==NULL) exit(1);
 if ((fo=fopen (nameo, "w"))==NULL) exit(1);
 if ((ft=fopen (namet, "w"))==NULL) exit(1);
 if ((fw=fopen (namew, "w"))==NULL) exit(1);
-if ((fs=fopen (names, "w"))==NULL) exit(1);
 
 // формирование пустого trg файла
-fprintf(ft,"* %s\n", COPYLEFT);
+fprintf(ft,"* %s %s\n", COPYLEFT, ptime());
 fputs("$\n$\n", ft);
 
 // формирование пустого obj файла
-fprintf(fo,"* %s\n", COPYLEFT);
+fprintf(fo,"* %s %s\n", COPYLEFT, ptime());
 fputs("$\n$\n", fo);
-
-// формирование пустого shp файла
-
-fputs("CircleMUD v3.0 Shop File~\n$\n$\n~\n", fs);
 
 // формирование zon файла
 
-fprintf(fz,"* %s\n", COPYLEFT);
+fprintf(fz,"* %s %s\n", COPYLEFT, ptime());
 fprintf(fz,"#%i\n",zone);
 fprintf(fz,"%s~\n",ZONE_NAME);
+fprintf(fz,"#1 0 0\n"); // for Zerkalo: эта строка нужна для Зеркала. код Виртустана работает и с ней и без неё
 fprintf(fz,"%i99 %i %i\n",zone,REPOP_TIME,REPOP_TYPE);
 
 // mobs to zonefile
@@ -232,7 +230,6 @@ fclose(fm);
 fclose(fo);
 fclose(ft);
 fclose(fw);
-fclose(fs);
 
 return 0;
 }
@@ -247,3 +244,19 @@ printf("\n\nGeneration done.\n\n");
 
 return 0;
 }
+
+// код из Virtustan MUD
+char *ptime(void) // Возвращаемое значение: ссылка на текстовую строку с текущим временем
+	{
+	char *tmstr;
+	time_t mytime;
+
+	mytime = time(0);
+
+	tmstr = (char *) asctime(localtime(&mytime));
+	*(tmstr + strlen(tmstr) - 1) = '\0';
+
+	return tmstr;
+
+	}
+// последняя строка исходника

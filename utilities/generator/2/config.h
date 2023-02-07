@@ -2,10 +2,10 @@
 
 // config
 
-#define ZONE_START 200
-#define ZONE_END 209
-#define ZONE_NAME "Великие равнины"
-#define REPOP_TIME 10 // minutes
+#define ZONE_START 6200
+#define ZONE_END (ZONE_START+9)
+#define ZONE_NAME "Каменистая пустошь"
+#define REPOP_TIME 90 // minutes
 #define REPOP_TYPE 2 // repop: 0 - none, 1 - no gamers, 2 - always
 
 #define MOB_IFFLAG "0" // mob ifflag for zon file, string
@@ -19,10 +19,9 @@
 #define PADEZH4 "дракона"
 #define PADEZH5 "драконом"
 #define PADEZH6 "драконе"
-#define DESCR "В воздухе парит золотой дракон"
-#define LONG_DESCR "Драконы древние магические существа.\n\
-Не надо будить спящего дракона!"
-#define MOB_FLAG "b0f0"
+#define DESCR "В воздухе парит изумрудный дракон"
+#define LONG_DESCR "Драконы древние магические существа.\n"
+#define MOB_FLAG "b0" // f0 - agressive, b0 - not walking
 #define MOB_AFF "u1"
 #define ALIGN 0 // 0 - neutral, -900 - evil, +900 - good
 #define MOB_LVL 50 
@@ -60,12 +59,9 @@ Skill: 136 90" // у последнего параметра \n не ставится
 #define OBJ_NADET -1
 
 // параметры комнат
-#define ROOM_TITLE "Великие равнины"
-#define ROOM_DESCR "Вокруг простираются степи, кое-где перемежающиеся небольшими \
-рощами и холмами, поросшими терновником" // default room description
-#define ROOM_DESCR1 "Вокруг простираются степи, кое-где перемежающиеся небольшими \
-рощами и холмами, поросшими терновником" // plain
-#define ROOM_DESCR2 "   Вы парите над степью на высоте %i м. От ощущения высоты и простора захватывает дух" // in fly
+#define ROOM_TITLE "Каменистая пустошь"
+#define ROOM_DESCR1 "Вокруг простирается каменистая пустошь. Кое-где поднимается дымок" // plain
+#define ROOM_DESCR2 "   Вы парите над равниной на высоте %i м. От ощущения высоты захватывает дух" // in fly
 #define ROOM_FLAGS 0
 #define ROOM_SECTOR_TYPE 2
 #define ROOM_EXIT_FLAG 0
