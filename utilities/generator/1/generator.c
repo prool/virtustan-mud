@@ -1,5 +1,10 @@
 // zone generator 0.1 by prool@itl.ua
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+
 #include "config.h"
 
 #define NAMELEN 200
@@ -14,7 +19,7 @@
 #define CALC(i,j) j-1+(i-1)*10+ZONE*100
 #define EXIT(DIREKT) fprintf(fw, "D%i\n~\n~\n%i %i %i\n", DIREKT, ROOM_EXIT_FLAG, ROOM_EXIT_KEY, exit_num(DIREKT, i, j));
 
-#include <stdio.h>
+char *ptime(void);  // Возвращаемое значение: ссылка на текстовую строку с текущим временем
 
 int exit_num (int direkt, int i, int j)
 {
@@ -38,14 +43,12 @@ FILE *fm;
 FILE *fo;
 FILE *ft;
 FILE *fw;
-FILE *fs;
 
 char namez[NAMELEN];
 char namem[NAMELEN];
 char nameo[NAMELEN];
 char namet[NAMELEN];
 char namew[NAMELEN];
-char names[NAMELEN];
 
 // генерация имен файлов
 sprintf(namez,"%i.zon",ZONE);
@@ -53,30 +56,24 @@ sprintf(namem,"%i.mob",ZONE);
 sprintf(nameo,"%i.obj",ZONE);
 sprintf(namet,"%i.trg",ZONE);
 sprintf(namew,"%i.wld",ZONE);
-sprintf(names,"%i.shp",ZONE);
 
 if ((fz=fopen (namez, "w"))==NULL) exit(1);
 if ((fm=fopen (namem, "w"))==NULL) exit(1);
 if ((fo=fopen (nameo, "w"))==NULL) exit(1);
 if ((ft=fopen (namet, "w"))==NULL) exit(1);
 if ((fw=fopen (namew, "w"))==NULL) exit(1);
-if ((fs=fopen (names, "w"))==NULL) exit(1);
 
 // формирование пустого trg файла
-fprintf(ft,"* %s\n", COPYLEFT);
+fprintf(ft,"* %s %s\n", COPYLEFT, ptime());
 fputs("$\n$\n", ft);
 
 // формирование пустого obj файла
-fprintf(fo,"* %s\n", COPYLEFT);
+fprintf(fo,"* %s %s\n", COPYLEFT, ptime());
 fputs("$\n$\n", fo);
-
-// формирование пустого shp файла
-
-fputs("CircleMUD v3.0 Shop File~\n$\n$\n~\n", fs);
 
 // формирование zon файла
 
-fprintf(fz,"* %s\n", COPYLEFT);
+fprintf(fz,"* %s %s\n", COPYLEFT, ptime());
 fprintf(fz,"#%i\n",ZONE);
 fprintf(fz,"%s~\n",ZONE_NAME);
 fprintf(fz,"%i99 %i %i\n",ZONE,REPOP_TIME,REPOP_TYPE);
@@ -97,7 +94,7 @@ fputs("S\n$\n$\n",fz);
 
 // формирование mob файла
 
-fprintf(fm, "* %s\n", COPYLEFT);
+fprintf(fm, "* %s %s\n", COPYLEFT, ptime());
 
 for (i=0;i<90;i++)
 { // генерация зверя
@@ -160,8 +157,10 @@ for (i=1;i<=9; i++)
 				EXIT(ZAPAD);
 				}
 			else	{// середина 1-й строки
-				// выходы ю
+				// выходы ю з в
 				EXIT(YUG);
+				EXIT(ZAPAD);
+				EXIT(VOSTOK);
 				}
 			}
 		else if (i==9)
@@ -179,8 +178,10 @@ for (i=1;i<=9; i++)
 				EXIT(ZAPAD);
 				}
 			else	{// середина последней строки
-				// выходы с
+				// выходы с з в
 				EXIT(SEVER);
+				EXIT(ZAPAD);
+				EXIT(VOSTOK);
 				}
 			}
 		else	{ // средняя строка
@@ -216,7 +217,22 @@ fclose(fm);
 fclose(fo);
 fclose(ft);
 fclose(fw);
-fclose(fs);
 
 return 0;
 }
+
+// код из Virtustan MUD
+char *ptime(void) // Возвращаемое значение: ссылка на текстовую строку с текущим временем
+	{
+	char *tmstr;
+	time_t mytime;
+
+	mytime = time(0);
+
+	tmstr = (char *) asctime(localtime(&mytime));
+	*(tmstr + strlen(tmstr) - 1) = '\0';
+
+	return tmstr;
+
+	}
+// последняя строка исходника

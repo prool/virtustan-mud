@@ -2,8 +2,8 @@
 
 // config
 
-#define ZONE 1014
-#define ZONE_NAME "Тест генератора"
+#define ZONE 44
+#define ZONE_NAME "Розовая пустыня"
 #define REPOP_TIME 10 // minutes
 #define REPOP_TYPE 2 // repop: 0 - none, 1 - no gamers, 2 - always
 
@@ -18,11 +18,10 @@
 #define PADEZH4 "дракона"
 #define PADEZH5 "драконом"
 #define PADEZH6 "драконе"
-#define DESCR "Дракон пустоты"
-#define LONG_DESCR "Это дракон пустоты, он черный, его глаза ярко-фиолетовые.\n\
-Он неторопливо машет крыльями, его взмахи громко отдаются по всей округе.\n\
-Некоторые исследователи называют его эндердракон"
-#define MOB_FLAG "b0" // f0 - aggressive, b0 - not walk
+#define DESCR "В воздухе здесь парит розовый дракон"
+#define LONG_DESCR "Драконы древние магические существа.\n\
+Не надо будить спящего дракона!"
+#define MOB_FLAG "b0f0"
 #define MOB_AFF "u1"
 #define ALIGN 0 // 0 - neutral, -900 - evil, +900 - good
 #define MOB_LVL 50 
@@ -54,8 +53,8 @@ Skill: 134 90\n\
 Skill: 136 90" // у последнего параметра \n не ставится
 
 // параметры комнат
-#define ROOM_TITLE "Пустота"
-#define ROOM_DESCR "Надо мною тишина. Небо, полное огня. Дождь проходит сквозь меня. Но боли больше нет. Я свободен!"
+#define ROOM_TITLE "Розовая пустыня"
+#define ROOM_DESCR "Вокруг простираются барханы розового песка"
 #define ROOM_FLAGS 0
 #define ROOM_SECTOR_TYPE 2
 #define ROOM_EXIT_FLAG 0
