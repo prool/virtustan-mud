@@ -76,6 +76,7 @@ fputs("$\n$\n", fo);
 fprintf(fz,"* %s %s\n", COPYLEFT, ptime());
 fprintf(fz,"#%i\n",ZONE);
 fprintf(fz,"%s~\n",ZONE_NAME);
+fprintf(fz,"#1 0 0\n"); // for Zerkalo: эта строка нужна для Зеркала. код Виртустана работает и с ней и без неё
 fprintf(fz,"%i99 %i %i\n",ZONE,REPOP_TIME,REPOP_TYPE);
 
 // mobs to zonefile
