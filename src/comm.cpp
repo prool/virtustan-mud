@@ -2826,7 +2826,7 @@ int new_descriptor(socket_t s)
 
 #if 1 // prool
 	char buf0 [1024];
-	sprintf(buf0,"Virtustan MUD\r\n\r\nOnline is %i\r\nYour IP is %s\r\nServer time is %s\r\n\r\n",
+	sprintf(buf0,"Virtustan MUD\r\n\r\nOnline is %i\r\nYour IP is %s\r\n<b>Server</b> time is %s\r\n\r\n",
 		total_players, newd->host, ptime());
 	SEND_TO_Q(buf0, newd);
 	//printf("[%s] [%s]\n", newd->host, nslookup(newd->host)); // prool
