@@ -1,4 +1,4 @@
-generator: generator.c config.h
+generator: generator.c
 	gcc generator.c -o generator
 
 clean:
