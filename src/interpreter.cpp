@@ -443,6 +443,7 @@ ACMD(do_room_flag);
 ACMD(do_newpass);
 ACMD(do_virtustan);
 ACMD(do_fish);
+ACMD(do_archeo);
 
 /* This is the Master Command List(tm).
 
@@ -490,6 +491,7 @@ cpp_extern const struct command_info cmd_info[] =
 
 	{"аффекты", POS_DEAD, do_affects, 0, SCMD_AUCTION, 0},
 	{"авторы", POS_DEAD, do_gen_ps, 0, SCMD_CREDITS, 0},
+	{"археология", POS_STANDING, do_archeo, 0, 0, -1}, // prool
 	{"атаковать", POS_FIGHTING, do_hit, 0, SCMD_MURDER, -1},
 	{"аукцион", POS_RESTING, do_gen_comm, 0, SCMD_AUCTION, 100},
 	{"анонсы", POS_DEAD, DoBoard, 1, Boards::NOTICE_BOARD, -1},

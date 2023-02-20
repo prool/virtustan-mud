@@ -3023,6 +3023,32 @@ void fish_obj(CHAR_DATA *ch, struct obj_data *obj) // by prool, from text of dig
 	}
 }
 
+void archeo_obj(CHAR_DATA *ch, struct obj_data *obj) // by prool, from text of fish_obj()
+{
+	char textbuf[300];
+
+	if (GET_OBJ_MIW(obj) >=
+			obj_index[GET_OBJ_RNUM(obj)].stored + obj_index[GET_OBJ_RNUM(obj)].number || GET_OBJ_MIW(obj) == -1)
+	{
+		sprintf(textbuf, "Вы обнаружили %s!\r\n", obj->PNames[3]);
+		send_to_char(textbuf, ch);
+		sprintf(textbuf, "$n обнаружил$g %s!\r\n", obj->PNames[3]);
+		act(textbuf, FALSE, ch, 0, 0, TO_ROOM);
+		if (IS_CARRYING_N(ch) >= CAN_CARRY_N(ch))
+		{
+			send_to_char("Вы не смогли унести столько предметов.\r\n", ch);
+			obj_to_room(obj, ch->in_room);
+		}
+		else if (IS_CARRYING_W(ch) + GET_OBJ_WEIGHT(obj) > CAN_CARRY_W(ch))
+		{
+			send_to_char("Вы не смогли унести такой веc.\r\n", ch);
+			obj_to_room(obj, ch->in_room);
+		}
+		else
+			obj_to_char(obj, ch);
+	}
+}
+
 ACMD(do_dig)
 {
 	CHAR_DATA *mob;
@@ -3307,6 +3333,83 @@ obj = read_object(real_object(FISH), REAL);
 if (obj)
 	{
 	fish_obj(ch, obj);
+	}
+else
+		send_to_char("Object error: Не найден прототип!", ch);
+}
+
+#define DREVNOST 180
+#define EARTH_SPIRIT 1004
+
+ACMD(do_archeo) // by prool
+{
+struct obj_data *obj;
+CHAR_DATA *mob;
+char textbuf[300];
+int i;
+
+#if 0
+	if (!check_for_archeo(ch) /*&& !IS_IMMORTAL(ch)*/)
+	{
+		send_to_char("Для занятий археологией нужна археологическая кисточка!\r\n", ch);
+		return;
+	}
+#endif
+
+send_to_char("Вы начали осторожно сметать пыль археологической кисточкой\r\n", ch);
+
+if (number(1,20)==1)
+	{
+	send_to_char("Но очень неудачно и поранились.\r\n", ch);
+	GET_HIT(ch)=GET_HIT(ch)-1;
+	return;
+	}
+
+	if (number(1, 30) == 1)	// потревожили духа
+	{
+	send_to_char("Но очень неудачно: вы потревожили покой подземного духа, охраняющего здешние недра\r\n", ch);
+		mob = read_mobile(real_mobile(EARTH_SPIRIT), REAL);
+		if (mob)
+		{
+			if (GET_LEVEL(mob) <= GET_LEVEL(ch))
+			{
+				SET_BIT(MOB_FLAGS(mob, MOB_AGGRESSIVE), MOB_AGGRESSIVE);
+				sprintf(textbuf, "Вы вызвали %s!\r\n", mob->player_data.PNames[3]);
+				send_to_char(textbuf, ch);
+				sprintf(textbuf, "$n вызвал$g %s!\r\n", mob->player_data.PNames[3]);
+				act(textbuf, FALSE, ch, 0, 0, TO_ROOM);
+				char_to_room(mob, ch->in_room);
+				return;
+			}
+		}
+		else
+			send_to_char("Mob error: Не найден прототип", ch);
+	} // end of потревожили духа
+
+#if 0
+if (number(1,30)==1)
+	{
+	send_to_char("Но неудачно и слегка поцарапали удочку\r\n",ch);
+	for (i = WEAR_WIELD; i <= WEAR_BOTHS; i++)
+		{
+		if (GET_EQ(ch, i) && (strstr(GET_EQ(ch, i)->aliases, "удочка") ))
+			{
+			GET_OBJ_CUR(GET_EQ(ch,i))--;
+			}
+		}
+	return;
+	}
+#endif
+
+if (number(1,10)!=1)
+	{
+	send_to_char("Но ничего не обнаружили!\r\n", ch);
+	return;
+	}
+obj = read_object(real_object(DREVNOST), REAL);
+if (obj)
+	{
+	archeo_obj(ch, obj);
 	}
 else
 		send_to_char("Object error: Не найден прототип!", ch);
