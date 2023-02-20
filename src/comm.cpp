@@ -1054,6 +1054,11 @@ socket_t init_socket(ush_int port)
 
 int get_max_players(void)
 {
+
+#ifdef MACOS
+#undef HAS_RLIMIT // prool for macOS
+#endif
+
 #ifndef CIRCLE_UNIX
 	return (max_playing);
 #else
