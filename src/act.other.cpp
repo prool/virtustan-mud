@@ -2971,6 +2971,20 @@ int check_for_fish(CHAR_DATA *ch)
 	return 0;
 }
 
+int check_for_archeo(CHAR_DATA *ch)
+{
+	int i;
+
+	for (i = WEAR_WIELD; i <= WEAR_BOTHS; i++)
+	{
+		if (GET_EQ(ch, i) && (strstr(GET_EQ(ch, i)->aliases, "кисточка") ))
+		{
+			return 1;
+		}
+	}
+	return 0;
+}
+
 void dig_obj(CHAR_DATA *ch, struct obj_data *obj)
 {
 	char textbuf[300];
@@ -3348,7 +3362,7 @@ CHAR_DATA *mob;
 char textbuf[300];
 int i;
 
-#if 0
+#if 1
 	if (!check_for_archeo(ch) /*&& !IS_IMMORTAL(ch)*/)
 	{
 		send_to_char("Для занятий археологией нужна археологическая кисточка!\r\n", ch);
