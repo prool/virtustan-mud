@@ -90,7 +90,9 @@ Ubuntu 20.04 (и следующие)
 Кроме всего прочего понадобится
 
 sudo dpkg --add-architecture i386
+
 sudo apt update
+
 sudo apt install libcrypt-dev:i386
 
 ---
