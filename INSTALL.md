@@ -70,7 +70,7 @@ su prool -c ~prool/proolmud/autorun.vmud & > /dev/null
 
 **Замечания по сборке**
 
-Ubuntu 18.04:
+Ubuntu 18.04 (и следующие)
 
 sudo apt-get install gcc-multilib g++-multilib libz-dev libboost-all-dev
 
@@ -85,9 +85,13 @@ sudo ln -s /usr/include/x86_64-linux-gnu/zconf.h /usr/include
 
 и флаг -L/usr/lib/x86_64-linux-gnu/libz.a вместо -lz
 
-Ubuntu 20.04:
+Ubuntu 20.04 (и следующие)
 
-Кроме всего прочего понадобится sudo apt install libcrypt-dev:i386
+Кроме всего прочего понадобится
+
+sudo dpkg --add-architecture i386
+sudo apt update
+sudo apt install libcrypt-dev:i386
 
 ---
 
