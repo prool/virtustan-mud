@@ -2831,7 +2831,22 @@ int new_descriptor(socket_t s)
 
 #if 1 // prool
 	char buf0 [1024];
-	sprintf(buf0,"Virtustan MUD\r\n\r\nOnline is %i\r\nYour IP is %s\r\nServer time is %s\r\n\r\n",
+	FILE *fp;
+	
+	fp=fopen("text0.txt","r");
+	if (fp) {
+		do {
+		buf0[0]=0;
+		fgets(buf0,1024,fp);
+		//printf("'%s'\n", buf0);
+		SEND_TO_Q(buf0, newd);
+		} while(!feof(fp));
+	}
+	else {
+	//printf("file text0.txt not found\n");
+	}
+
+	sprintf(buf0,"Online is %i\r\nYour IP is %s\r\nServer time is %s\r\n\r\n",
 		total_players, newd->host, ptime());
 	SEND_TO_Q(buf0, newd);
 	//printf("[%s] [%s]\n", newd->host, nslookup(newd->host)); // prool
