@@ -3365,7 +3365,7 @@ int i;
 #if 1
 	if (!check_for_archeo(ch) /*&& !IS_IMMORTAL(ch)*/)
 	{
-		send_to_char("Для занятий археологией нужна археологическая кисточка!\r\n", ch);
+		send_to_char("Для занятий археологией нужна археологическая кисточка в руках!\r\n", ch);
 		return;
 	}
 #endif
@@ -3400,13 +3400,13 @@ if (number(1,20)==1)
 			send_to_char("Mob error: Не найден прототип", ch);
 	} // end of потревожили духа
 
-#if 0
+#if 1
 if (number(1,30)==1)
 	{
-	send_to_char("Но неудачно и слегка поцарапали удочку\r\n",ch);
+	send_to_char("Но неудачно и слегка поцарапали кисточку\r\n",ch);
 	for (i = WEAR_WIELD; i <= WEAR_BOTHS; i++)
 		{
-		if (GET_EQ(ch, i) && (strstr(GET_EQ(ch, i)->aliases, "удочка") ))
+		if (GET_EQ(ch, i) && (strstr(GET_EQ(ch, i)->aliases, "кисточка") ))
 			{
 			GET_OBJ_CUR(GET_EQ(ch,i))--;
 			}

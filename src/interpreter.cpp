@@ -444,6 +444,7 @@ ACMD(do_newpass);
 ACMD(do_virtustan);
 ACMD(do_fish);
 ACMD(do_archeo);
+ACMD(do_debug);
 
 /* This is the Master Command List(tm).
 
@@ -856,6 +857,7 @@ cpp_extern const struct command_info cmd_info[] =
 	{"credits", POS_DEAD, do_gen_ps, 0, SCMD_CREDITS, 0},
 	{"date", POS_DEAD, do_date, LVL_IMMORT, SCMD_DATE, 0},
 	{"dc", POS_DEAD, do_dc, LVL_GRGOD, 0, 0},
+	{"debug", POS_DEAD, do_debug, 1, 0, 0}, // prool
 	{"deposit", POS_STANDING, do_not_here, 1, 0, 500},
 	{"deviate", POS_FIGHTING, do_deviate, 0, 0, -1},
 	{"diagnose", POS_RESTING, do_diagnose, 0, 0, 500},
@@ -4121,3 +4123,45 @@ bool who_spamcontrol(CHAR_DATA *ch, unsigned short int mode = WHO_LISTALL)
 	return false;
 }
 
+// prool:
+#define BUFLEN 512
+
+char * sector_desc (int sect)
+{
+switch (sect) {
+case 0: return "SECT_INSIDE";
+case 1: return "SECT_CITY";
+case 2: return "SECT_FIELD";
+case 3: return "SECT_FOREST";
+case 4: return "SECT_HILLS";
+case 5: return "SECT_MOUNTAIN";
+case 6: return "SECT_WATER_SWIM";
+case 7: return "SECT_WATER_NOSWIM";
+case 8: return "SECT_FLYING";
+case 9: return "SECT_UNDERWATER";
+case 10: return "SECT_SECRET";
+case 11: return "SECT_STONEROAD";
+case 12: return "SECT_ROAD";
+case 13: return "SECT_WILDROAD";
+case 20: return "SECT_FIELD_SNOW";
+case 21: return "SECT_FIELD_RAIN";
+case 22: return "SECT_FOREST_SNOW";
+case 23: return "SECT_FOREST_RAIN";
+case 24: return "SECT_HILLS_SNOW";
+case 25: return "SECT_HILLS_RAIN";
+case 26: return "SECT_MOUNTAIN_SNOW";
+case 27: return "SECT_THIN_ICE";
+case 28: return "SECT_NORMAL_ICE";
+case 29: return "SECT_THICK_ICE";
+default: return "SECT_UNKNOWN";
+}
+}
+
+ACMD (do_debug)
+{
+char buf[BUFLEN];
+int sector = SECT(ch->in_room);
+
+snprintf(buf,BUFLEN,"Player in room %i\r\nSector type %s\r\n", GET_ROOM_VNUM(ch->in_room), sector_desc(sector));
+send_to_char(buf,ch);
+}
