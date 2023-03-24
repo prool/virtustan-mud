@@ -1294,7 +1294,7 @@ inline void process_io(fd_set input_set, fd_set output_set, fd_set exc_set, fd_s
 	for (d = descriptor_list; d; d = next_d)
 	{
 		next_d = d->next;
-		if (FD_ISSET(d->descriptor, &exc_set))
+		if (FD_ISSET(d->descriptor, &exc_set)) // prool: crash here: *** buffer overflow detected ***: terminated
 		{
 			FD_CLR(d->descriptor, &input_set);
 			FD_CLR(d->descriptor, &output_set);

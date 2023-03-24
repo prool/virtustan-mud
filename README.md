@@ -5,15 +5,18 @@ Virtustan MUD: the fork of Byliny MUD code (CircleMUD derivative) with Prool's o
 
 ---
 
-Main repository of Virtustan MUD (aka Prool MUD) here: https://github.com/prool/virtustan-mud
-(since august'2019)
+This repository (here: https://github.com/prool/virtustan-mud) is stopped about 23-24 Mart 2023.
 
-Installation instructions in Russian in file INSTALL.md
+Next development will be in repo https://github.com/Zerkalo-MUD/mud in branch prool-virtustan.
+
+History note: https://github.com/prool/virtustan-mud (was started at august'2019)
+
+Installation instructions in Russian look at file INSTALL.md
 
 ---
 
 Site of Virtustan MUD (main language is Russian) - http://mud.kharkov.org
 
-The Virtustan MUD: mud.kharkov.org, ports 3000 or 8888 (main MUD language is Russian, some English CircleMUD-style command allowed)
+The Virtustan MUD runned: mud.kharkov.org, ports 3000 (main MUD language is Russian, some English CircleMUD-style command allowed)
 
 Prool
