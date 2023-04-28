@@ -9,14 +9,12 @@ This repository (here: https://github.com/prool/virtustan-mud) is stopped about 
 
 Next development will be in repo https://github.com/Zerkalo-MUD/mud in branch prool-virtustan.
 
-History note: https://github.com/prool/virtustan-mud (was started at august'2019)
-
-Installation instructions in Russian look at file INSTALL.md
+Installation instructions look at file INSTALL.md
 
 ---
 
-Site of Virtustan MUD (main language is Russian) - http://mud.kharkov.org
+Site of Virtustan MUD - http://mud.kharkov.org
 
-The Virtustan MUD runned: mud.kharkov.org, ports 3000 (main MUD language is Russian, some English CircleMUD-style command allowed)
+The Virtustan MUD runned: mud.kharkov.org, ports 3000 (main MUD language is russian, some English CircleMUD-style command allowed)
 
 Prool
