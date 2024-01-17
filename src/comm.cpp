@@ -456,8 +456,6 @@ total_players=0; // prool
 	malloc_options = "A";
 #endif
 
-extern int ports[10]; // prool
-
 	int pos = 1;
 	const char *dir;
 
