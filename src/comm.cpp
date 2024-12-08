@@ -272,7 +272,7 @@ log_info logs[NLOG] =
 
 // prool:
 /* Port options ( These need to be altered in order to add more ports.) */
-int ports[10] = {8888,3000,-1,-1,-1,-1,-1,-1,-1,-1};
+int ports[10] = {8888,-1,-1,-1,-1,-1,-1,-1,-1,-1};
 socket_t mother_descs[10] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
 
 char src_path[4096];
