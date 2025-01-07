@@ -442,7 +442,7 @@ int main(int argc, char **argv)
 int i;
 
 printf("%sVirtustan MUD%s code by Prool, mud.kharkov.org, virtustan.net, virtustan.tk,\
-\ngithub.com/prool/virtustan-mudi, codeberg.org/prool/virtustan-mud\n",
+\ngithub.com/prool/virtustan-mud, codeberg.org/prool/virtustan-mud\n",
 ansi_lcyan, ansi_reset);
 
 total_players=0; // prool
@@ -508,6 +508,7 @@ else 	{ fconfig=fopen("proolmud.cfg", "r");
 	}
 if (fconfig)
 	{
+	int port_nummer=0;
 	while (!feof(fconfig))
 		{char *pp;
 		string[0]=0;
@@ -538,7 +539,11 @@ if (fconfig)
 			i=atoi(cc+strlen("port "));
 			if (i)	{
 				sprintf(buffer_string, "config: port %i", i);
-				ports[0]=i; ports[1]=-1;
+				ports[port_nummer++]=i;
+				if (port_nummer>9) {
+					printf("VMUD: Too many ports in cfg!\n");
+					exit(1);
+					}
 				}
 			}
 		else if (!memcmp(string,"webstat ",strlen("webstat ")))
