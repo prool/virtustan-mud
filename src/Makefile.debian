@@ -38,7 +38,7 @@ FASTTEST   = -m32 -ggdb3 -Wall -DNOCRYPT -DTEST_BUILD -O3 $(EPOLL_FLAG) $(EXTRA_
 #SEARCHPATH = -I /usr/include/python2.6
 
 # LIBS =  -m32 -L/usr/lib/x86_64-linux-gnu/libz.a
-LIBS =  -m32 /usr/lib/i386-linux-gnu/libcrypt.a
+LIBS =  -m32
 
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Darwin)
@@ -46,7 +46,7 @@ ifeq ($(UNAME_S),Darwin)
 EXTRA_CFLAGS += -Wno-invalid-source-encoding -Wno-out-of-line-declaration
 else
 # there is no -lcrypt on darwin
-#LIBS +=  -lcrypt
+LIBS +=  /usr/lib/i386-linux-gnu/libcrypt.so.1
 endif
 #LIBS =  -lz -lcrypt -lpython2.6 -lboost_python-mt
 

@@ -272,7 +272,7 @@ log_info logs[NLOG] =
 
 // prool:
 /* Port options ( These need to be altered in order to add more ports.) */
-int ports[10] = {8888,-1,-1,-1,-1,-1,-1,-1,-1,-1};
+int ports[10] = {3000,-1,-1,-1,-1,-1,-1,-1,-1,-1};
 socket_t mother_descs[10] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
 
 char src_path[4096];
@@ -441,7 +441,8 @@ int main(int argc, char **argv)
 {
 int i;
 
-printf("%sVirtustan MUD%s code by Prool, mud.kharkov.org, github.com/prool/virtustan-mud\n",
+printf("%sVirtustan MUD%s code by Prool, mud.kharkov.org, virtustan.net, virtustan.tk,\
+\ngithub.com/prool/virtustan-mudi, codeberg.org/prool/virtustan-mud\n",
 ansi_lcyan, ansi_reset);
 
 total_players=0; // prool
@@ -773,6 +774,8 @@ void init_game(int ports[])
 	max_players = get_max_players();
 
 #if 1 // prool
+
+	printf("Port %i\n", ports[0]);
         log("Binding interface to ports:");
         for (i = 0; ports[i] != -1;i++) {
                log( "   Opening port %d ...", ports[i]);

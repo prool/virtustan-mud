@@ -1,11 +1,10 @@
-virtustan-mud
-=============
+virtustan-mud - multiuser dungeon in russian lang
 
 Virtustan MUD: the fork of Byliny MUD code (CircleMUD derivative) with Prool's own zones
 
 ---
 
-This repository (here: https://github.com/prool/virtustan-mud) is stopped about 23-24 Mart 2023.
+Main repo of this repository here: https://github.com/prool/virtustan-mud is stopped about 23-24 Mart 2023.
 
 Next development will be in repo https://github.com/Zerkalo-MUD/mud in branch prool-virtustan.
 
