@@ -209,13 +209,13 @@ sprintf(buf,
 "%c%c%c%cPLAYERS%c%i%cNAME%cVirtustan MUD%cUPTIME%c%li%cCRAWL DELAY%c-1\
 %cHOSTNAME%cmud.kharkov.org\
 %cPORT%c3000\
-%cPORT%c8888\
+%cPORT%c3001\
 %cCODEBASE%cCircleMUD/Byliny\
 %cCONTACT%cproolix@gmail.com\
 %cCREATED%c2007\
-%cIP%c195.123.245.173\
-%cLANGUAGE%cRussian\
-%cLOCATION%cUkraine\
+%cIP%c95.217.157.136\
+%cLANGUAGE%crussian\
+%cLOCATION%cEurope\
 %cMINIMUM AGE%c0\
 %cWEBSITE%chttp://mud.kharkov.org\
 %cFAMILY%cDikuMUD\
@@ -248,7 +248,7 @@ sprintf(buf,
 %cXTERM TRUE COLORS%c0\
 %cUTF-8%c1\
 %cCHARSET%cUTF-8%ckoi8-r%ccp1251\
-%cREFERRAL%clolamud.net:6969%ctbamud.com:9091\
+%cREFERRAL%ctbamud.com:4000%ctbamud.com:9091\
 %c%c",
 IAC,SB,MSSP,MSSP_VAR,MSSP_VAL,total_players,MSSP_VAR,MSSP_VAL,MSSP_VAR,MSSP_VAL,(long int)boot_time,
 MSSP_VAR,MSSP_VAL,
