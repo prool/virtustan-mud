@@ -445,6 +445,7 @@ ACMD(do_virtustan);
 ACMD(do_fish);
 ACMD(do_archeo);
 ACMD(do_debug);
+ACMD(do_coredump);
 
 /* This is the Master Command List(tm).
 
@@ -854,6 +855,7 @@ cpp_extern const struct command_info cmd_info[] =
 	{"color", POS_DEAD, do_color, 0, 0, 0},
 	{"commands", POS_DEAD, do_commands, 0, SCMD_COMMANDS, 0},
 	{"consider", POS_RESTING, do_consider, 0, 0, 500},
+	{"coredump", POS_RESTING, do_coredump, LVL_IMPL, 0, 0},
 	{"credits", POS_DEAD, do_gen_ps, 0, SCMD_CREDITS, 0},
 	{"date", POS_DEAD, do_date, LVL_IMMORT, SCMD_DATE, 0},
 	{"dc", POS_DEAD, do_dc, LVL_GRGOD, 0, 0},
@@ -4165,3 +4167,12 @@ int sector = SECT(ch->in_room);
 snprintf(buf,BUFLEN,"Player in room %i\r\nSector type %s\r\n", GET_ROOM_VNUM(ch->in_room), sector_desc(sector));
 send_to_char(buf,ch);
 }
+
+ACMD (do_coredump)
+{
+char *c=0;
+printf("prool debug command coredump!!!!!\r\n\r\n");
+fflush(0);
+*c=255;
+}
+
