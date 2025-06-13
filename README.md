@@ -4,15 +4,12 @@ Virtustan MUD - the fork of Byliny MUD code (CircleMUD derivative) with Prool's 
 
 **This version is erroneus and crashed!!! Do not use!**
 
+Use newest version https://gitlab.com/mud-museum/virtustan-mud-2024/
+or old stable ver https://gitlab.com/mud-museum/vmud-2012
+
 ---
 
-Main repo of this repository here: https://github.com/prool/virtustan-mud is stopped about 23-24 Mart 2023
-
-Another development will be in repo https://github.com/Zerkalo-MUD/mud in branch prool-virtustan (stopped, do not use)
-
-Yest another version is here: https://gitlab.com/mud-museum/virtustan-mud-2024/
-
-Old stable version is https://gitlab.com/mud-museum/vmud-2012
+This repository is stopped about 23-24 Mart 2023
 
 Installation instructions look at file INSTALL.md
 
@@ -24,7 +21,7 @@ The Virtustan MUD runned: mud.kharkov.org, port 3000
 Additional domain mud.virtustan.net
 
 Prool
-May 2025, Dusburg, Deutschland
+Year of 2025, Duisburg, Deutschland
 
 Glory to Ukraine!
 
