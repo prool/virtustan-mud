@@ -48,6 +48,7 @@ if (fp==0) {printf("Cant open syslog\n"); return 1;}
 
 // skip lines
 
+#if 0
 while(1)
 	{
 	str[0]=0;
@@ -55,12 +56,13 @@ while(1)
 	if (str[0]==0) break;
 	//printf("%s",str);
 	}
+#endif
 
 while(1)
 	{
 	str[0]=0;
 	fgets(str,STRLEN,fp);
-	if (str[0]==0) {sleep(1);continue;}
+	//if (str[0]==0) {sleep(1);continue;}
 	koi_to_utf8(str,str2);
 	printf("%s",str2);
 	}
