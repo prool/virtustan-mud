@@ -540,7 +540,7 @@ if (fconfig)
 			cc=string;
 			i=atoi(cc+strlen("port "));
 			if (i)	{
-				sprintf(buffer_string, "config: port %i", i);
+				//sprintf(buffer_string, "config: port %i", i);
 				ports[port_nummer++]=i;
 				if (port_nummer>9) {
 					printf("VMUD: Too many ports in cfg!\n");
