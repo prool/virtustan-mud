@@ -445,6 +445,8 @@ printf("%sVirtustan MUD%s code by Prool, mud.kharkov.org, virtustan.net, virtust
 \ngithub.com/prool/virtustan-mud, codeberg.org/prool/virtustan-mud\n",
 ansi_lcyan, ansi_reset);
 
+printf("gcc ver. %i\n", __GNUC__);
+
 total_players=0; // prool
 
 #ifdef TEST_BUILD
