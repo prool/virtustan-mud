@@ -2,10 +2,8 @@ Virtustan MUD - multiuser dungeon in russian lang
 
 Virtustan MUD - the fork of Byliny MUD code (CircleMUD derivative) with Prool's own zones
 
-**This version is erroneus and crashed!!! Do not use!**
-
-Use newest version https://gitlab.com/mud-museum/virtustan-mud-2024/
-or old stable ver https://gitlab.com/mud-museum/vmud-2012
+References: Newest version https://gitlab.com/mud-museum/virtustan-mud-2024/
+and old stable version https://gitlab.com/mud-museum/vmud-2012
 
 ---
 
@@ -21,7 +19,7 @@ The Virtustan MUD runned: mud.kharkov.org, port 3000
 Additional domain mud.virtustan.net
 
 Prool
-Year of 2025, Duisburg, Deutschland
+Year of 2025, Duisburg, Germany
 
 Glory to Ukraine!
 
